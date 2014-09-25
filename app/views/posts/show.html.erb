@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<div class="source">
+  <p><%= @post.source %></p>
+</div>
+
+<div class="note">
+  <p>
+    <%= @post.note %>
+  </p>
+</div>
+
+<%= link_to "返回文章列表", posts_path  %>

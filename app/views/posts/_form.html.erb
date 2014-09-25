@@ -1,0 +1,8 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :note %>
+  <%= f.input :source %>
+  <%= f.button :submit %>
+  <%= link_to "返回文章列表", posts_path  %>
+<% end %>

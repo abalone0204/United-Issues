@@ -36,6 +36,14 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'faker'
+end
+
+group :test do
+  gem 'fabrication'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

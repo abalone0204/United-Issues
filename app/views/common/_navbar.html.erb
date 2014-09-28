@@ -1,9 +1,37 @@
-<nav>
-   <% unless user_signed_in? %>
-    <%= link_to "註冊", new_user_registration_path %>
-    <%= link_to "登入", new_user_session_path %>  
-   <% end %> 
-  <% if user_signed_in? %>
-    <%= link_to "登出", destroy_user_session_path, method: :delete %>
-  <% end %>
-</nav>
+<nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <%= link_to "United Issues", root_path, class:"navbar-brand" %>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "文章列表", posts_path %></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <% unless user_signed_in? %>
+        <%= link_to new_user_registration_path do%>
+        <span class="glyphicon glyphicon-user registration"></span>註冊
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "登入", new_user_session_path %>
+        
+      </li>
+      <% end %>
+      <li>
+        <% if user_signed_in? %>
+        <%= link_to "登出", destroy_user_session_path, method: :delete %>
+        <% end %>
+      </li>
+    </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>

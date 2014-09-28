@@ -1,8 +1,12 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :note %>
-  <%= f.input :source %>
-  <%= f.button :submit %>
+  <%= f.input :title, 
+  input_html: {class: 'form-control'} %>
+  <%= f.input :content,
+  input_html: {class: 'form-control'} %>
+  <%= f.input :note,
+  input_html: {class: 'form-control'} %>
+  <%= f.input :source,
+  input_html: {class: 'form-control'} %>
+  <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "返回文章列表", posts_path  %>
 <% end %>

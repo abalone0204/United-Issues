@@ -49,6 +49,8 @@ gem 'guard'
 gem 'guard-rspec'
 gem 'terminal-notifier-guard'
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

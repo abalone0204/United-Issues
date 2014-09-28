@@ -45,6 +45,10 @@ group :test do
   gem 'fabrication'
 end
 
+gem 'guard'
+gem 'guard-rspec'
+gem 'terminal-notifier-guard'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

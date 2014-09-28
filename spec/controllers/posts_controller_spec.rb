@@ -2,27 +2,33 @@ require 'rails_helper'
 
 RSpec.describe PostsController, :type => :controller do
   describe "GET #index" do
+
+    let(:post) { Fabricate(:post) } 
+
     it "should assigns all posts to @posts" do
-      post = Post.create(title:"Testing post", content:"lorem ipsm")
       get :index
       expect(assigns(:posts)).to eq [post]
     end
+
   end
 
   describe "GET #show" do
+    let(:post) { Fabricate(:post) } 
     it "should assigns post to @post" do
-      post = Post.create(title:"Testing post", content:"lorem ipsm")
       get :show, id: post
       expect(assigns(:post)).to eq post
     end
   end
 
   describe "GET #edit" do
+
+    let(:post) { Fabricate(:post) } 
+
     it "should assigns post to @post" do
-      post = Post.create(title:"Testing post", content:"lorem ipsm")
       get :edit, id: post
       expect(assigns(:post)).to eq post
     end
+
   end
 
   describe "GET #new" do
@@ -34,28 +40,29 @@ RSpec.describe PostsController, :type => :controller do
 
   describe "POST #create" do
     context "with valid params" do
+
+      let(:valid_post_params) { Fabricate.attributes_for(:post) } 
+      
       it "should create a post" do
-        valid_post_params = {title: "Valid title", content: "Valid content"}
         expect {
           post :create, post: valid_post_params
         }.to change(Post, :count).by(1)
       end
+
       it "should redirect to post" do
-        valid_post_params = {title: "Valid title", content: "Valid content"}
         post :create, post: valid_post_params
         expect(response).to redirect_to Post.last
       end
     end
 
     context "with invalid params" do
+      let(:invalid_post_params) { Fabricate.attributes_for(:invalid_post) } 
       it "should not create a post" do
-        invalid_post_params = {title: "", content: "doesn't matter"}
         expect {
           post :create, post: invalid_post_params
         }.not_to change(Post, :count)
       end
       it "should render edit template" do
-        invalid_post_params = {title: "", content: "doesn't matter"}
         post :create, post: invalid_post_params
         expect(response).to render_template(:new)
       end
@@ -64,7 +71,7 @@ RSpec.describe PostsController, :type => :controller do
 
   describe "PUT #update" do
 
-    let(:post) { Post.create(title: "For test", content: "lalala") }
+    let(:post) { Fabricate(:post) }
 
     context "with valid params" do
       it "should update post's attributes" do
@@ -99,7 +106,7 @@ RSpec.describe PostsController, :type => :controller do
   end
 
   describe "DELETE #destroy" do
-    let!(:post) { Post.create(title: "OK bye", content: "doesn't matter") } 
+    let!(:post) { Fabricate(:post) } 
 
     it "should delete a post" do
        expect {

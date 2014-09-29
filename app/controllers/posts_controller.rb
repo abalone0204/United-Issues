@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
   
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user).all
   end
 
   def show
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :note, :source)
+    params.require(:post).permit( :user_id,:title, :content, :note, :source)
   end
 
   def find_post

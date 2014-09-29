@@ -7,7 +7,5 @@ RSpec.describe User, :type => :model do
     expect(user).to have_many(:posts)
   end
   
-  
-  
 
 end

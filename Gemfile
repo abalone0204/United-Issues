@@ -40,6 +40,7 @@ end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
+  gem 'shoulda-matchers', require: false
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'faker'

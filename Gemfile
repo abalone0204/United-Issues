@@ -31,17 +31,17 @@ gem 'spring',        group: :development
 
 
 
+
+
+gem 'simple_form'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
 
-gem 'simple_form'
 group :development, :test do
   gem 'pry-rails'
-end
-
-group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'faker'
   gem 'guard'

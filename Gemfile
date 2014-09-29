@@ -44,6 +44,9 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'faker'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
 end
 
 group :test do
@@ -55,9 +58,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'guard'
-gem 'guard-rspec'
-gem 'terminal-notifier-guard'
 
 gem 'devise'
 

@@ -58,6 +58,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    enumerize (0.8.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.2.1)
     fabrication (2.11.3)
@@ -163,6 +165,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda-matchers (2.4.0)
+      activesupport (>= 3.0.0)
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -206,19 +210,25 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   devise
+  enumerize
   fabrication
   faker
   guard
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
+<<<<<<< HEAD
   pg
+=======
+  minitest
+>>>>>>> development
   pry-rails
   rails (= 4.1.4)
   rails_12factor
   rspec-rails (~> 3.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shoulda-matchers (~> 2.4.0)
   simple_form
   spring
   terminal-notifier-guard

@@ -25,8 +25,23 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
+        country_classification: 媒體分類
         title: 標題
         translator: 譯者
         content: 內容
         source: 資料來源
         note: 備註
+  enumerize:
+    post:
+      country_classification:
+        Franch: 法媒 
+        Russia: 俄媒 
+        Arab: 阿媒 
+        Germany: 德媒 
+        Korean: 韓媒 
+        Spanish: 西媒 
+        Japan: 日媒 
+        Polish: 波蘭媒 
+        Czech: 捷克媒 
+        Turkey: 土媒
+    

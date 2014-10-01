@@ -4,6 +4,7 @@
   <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control"} %>
   <%= f.input :title, 
   input_html: {class: 'form-control'} %>
+  <%= f.input :tag_list, input_html: { class: 'form-control'} %>
   <%= f.input :content,
   input_html: {class: 'form-control'} %>
   <%= f.input :note,

@@ -1,3 +1,6 @@
+<div id="tags_cloud">
+  <%= link_to tags_cloud(Tag.all), tag_path('1231') %>
+</div>
 
 <div>
   <%= link_to t('common.new'), new_post_path(), class:"btn btn-info" %>
@@ -10,6 +13,7 @@
   <table class="striped-table table">
     <thead>
       <th class="col-md-3"><%= t('activerecord.attributes.post.title') %></th>
+      <th>Tags</th>
       <th><%= t('activerecord.attributes.post.translator') %></th>
       <th><%= t('activerecord.attributes.post.content') %></th>
       <th class="col-md-2"></th>
@@ -18,6 +22,7 @@
       <% @posts.each do |post| %>
       <tr>
         <td><%= post.render_title %></td>
+        <td><%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         <td><%= post.user.name %></td>
         <td>
           <%= truncate(post.content, length: 14) %>

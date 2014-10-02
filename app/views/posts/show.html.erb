@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
+<p><%= raw @post.content.gsub(/\n/, '<br/>') %></p>
 
 <div class="source">
   <p><%= @post.source %></p>
@@ -7,7 +7,7 @@
 
 <div class="note">
   <p>
-    <%= @post.note %>
+    <%= raw @post.note.gsub(/\n/, '<br/>') %>
   </p>
 </div>
 

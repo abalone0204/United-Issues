@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require jqcloud
  *= require_tree .
  *= require_self
  */
@@ -18,9 +17,46 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Common
 
+.shadow {
+  -moz-box-shadow:    2px 2px 2px 2px #ccc;
+  -webkit-box-shadow: 2px 2px 2px 2px #ccc;
+  box-shadow:         2px 2px 2px 2px #ccc;
+}
+
+.main {
+  margin-top: 1em;
+}
+
+// Navbar
 .sign-bar {
   margin-right: 1%;
 }
+
+.customnavbar {
+  border-bottom: solid 2px #cfd8dc;
+  .brand{
+    a:hover{
+      color: #eceff1;
+      background-color: #607d8b;
+    }
+  }
+  background-color: #607d8b;
+  a {
+    color: #eceff1;
+  }
+  a:hover {
+    color: #37474f;
+    -o-transition: color .20s linear;
+    -webkit-transition: color .20s linear;
+    -moz-transition: color .20s linear;
+    transition:  color .20s linear;
+    transition: background-color .20s linear;
+  }
+}
+
+
+
 
 

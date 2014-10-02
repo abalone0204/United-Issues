@@ -31,7 +31,6 @@ group :development do
 end
 
 gem 'simple_form'
-gem "jqcloud-rails"
 group :development, :test do
   gem 'pry-rails'
   gem 'guard'

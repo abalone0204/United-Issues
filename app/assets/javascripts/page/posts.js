@@ -1,3 +1,3 @@
 $(function(){
-  var word_array = []
+  var word_array = [];
 });

@@ -1,6 +1,5 @@
 <div class="jumbotron">
 <%= simple_form_for @admin_post do |f| %>
-  <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id} %>
 
   <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
   <%= f.input :title, 

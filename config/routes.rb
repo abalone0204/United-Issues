@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :posts
+  end
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts
-
+  
+  namespace :admin do
+    resources :posts
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

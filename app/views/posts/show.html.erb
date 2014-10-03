@@ -1,14 +1,13 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-
-<div class="source">
-  <p><%= @post.source %></p>
+<div class="well">
+  <h1><%= @post.title %></h1>
+  <p class="well"><%= raw @post.content.gsub(/\n/, '<br/>') %></p>
+  <div class="source">
+    <p><%= t('activerecord.attributes.post.source') %>:<%= @post.source %></p>
+  </div>
+  <div class="note">
+    <p>
+    <%= t('activerecord.attributes.post.note') %>:<%= raw @post.note.gsub(/\n/, '<br/>') %>
+    </p>
+  </div>
+  <%= link_to "返回文章列表", posts_path  %>
 </div>
-
-<div class="note">
-  <p>
-    <%= @post.note %>
-  </p>
-</div>
-
-<%= link_to "返回文章列表", posts_path  %>

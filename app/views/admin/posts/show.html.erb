@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<div class="well">
+  <h1><%= @admin_post.title %></h1>
+  <p class="well"><%= raw @admin_post.content.gsub(/\n/, '<br/>') %></p>
+  <div class="source">
+    <p><%= t('activerecord.attributes.post.source') %>:<%= @admin_post.source %></p>
+  </div>
+  <div class="note">
+    <p>
+    <%= t('activerecord.attributes.post.note') %>:<%= raw @admin_post.note.gsub(/\n/, '<br/>') %>
+    </p>
+  </div>
+  <%= link_to 'Edit', edit_admin_post_path(@admin_post) %> |
+<%= link_to 'Back', admin_posts_path %>
+</div>
+

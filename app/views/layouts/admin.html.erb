@@ -20,7 +20,10 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <%= link_to "回到前台", root_path %>
+        
+        <%= link_to root_path do %>
+        <span class="icon-material-android change-mode"></span>Normal
+        <% end %>
       </li> 
       <li>
         <% if user_signed_in? %>

@@ -6,9 +6,11 @@
 </div>
 
 <div>
-  <%= link_to t('common.new'), new_post_path(), class:"btn btn-info" %>
+  <%= link_to new_post_path(), class:"btn-default btn"  do %>
+      <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+  <% end %>
 </div>
-<div class="panel panel-default posts">
+<div class="panel panel-default posts well">
   <div class="panel-heading">
     <%= t('attributes.posts') %>
   </div>

@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  layout 'admin'
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
   #GET /admin/posts
@@ -62,13 +63,14 @@ class Admin::PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def get_admin_post
-      @admin_post = Admin::Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def get_admin_post
+    @admin_post = Admin::Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_post_params
-      params[:admin_post]
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_post_params
+    params.require(:admin_post).permit( :user_id,:title, :content, :note, :source,
+                                        :country_classification, :tag_list)
+  end
 end

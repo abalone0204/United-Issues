@@ -25,17 +25,34 @@
   -webkit-box-shadow: 2px 2px 2px 2px #ccc;
   box-shadow:         2px 2px 2px 2px #ccc;
 }
+.admin-main{
+  background-color: #607d8b;
+}
 
 .main {
   margin-top: 1em;
+}
+a {
+  color: #212121;
+}
+
+a:hover{
+  background: white;
+  text-decoration: none;
 }
 
 // Navbar
 .sign-bar {
   margin-right: 1%;
 }
+.admin-navbar {
+  a:hover {
+    background-color: white;
+  }
+}
 
 .customnavbar {
+  background-color: #607d8b;
   border-top: solid 4px #37474f;
   border-bottom: solid 2px #cfd8dc;
   .brand{
@@ -44,7 +61,7 @@
       background-color: #607d8b;
     }
   }
-  background-color: #607d8b;
+  
   a {
     color: #eceff1;
   }
@@ -54,6 +71,10 @@
     -webkit-transition: color .20s linear;
     -moz-transition: color .20s linear;
     transition:  color .20s linear;
+
+    -o-transition: background-color .20s linear;
+    -webkit-transition: background-color .20s linear;
+    -moz-transition: background-color .20s linear;
     transition: background-color .20s linear;
   }
 }

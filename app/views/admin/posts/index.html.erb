@@ -1,23 +1,41 @@
-<h1>Listing admin_posts</h1>
+<div>
+  <%= link_to new_admin_post_path(), class:"btn-default btn"  do %>
+      <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+  <% end %>
+</div>
+<div class="panel panel-default posts well">
+  <div class="panel-heading">
+    <%= t('attributes.posts') %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_posts.each do |admin_post| %>
+  <table class="striped-table table">
+    <thead>
+      <th class="col-md-3">
+        <%= t('activerecord.attributes.post.title') %>
+      </th>
+      <th><%= t('activerecord.attributes.post.translator') %></th>
+      <th><%= t('activerecord.attributes.post.content') %></th>
+      <th class="col-md-2"></th>
+    </thead>
+    <tbody>
+      <% @admin_posts.each do |post| %>
       <tr>
-        <td><%= link_to 'Show', admin_post %></td>
-        <td><%= link_to 'Edit', edit_admin_post_path(admin_post) %></td>
-        <td><%= link_to 'Destroy', admin_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to post.render_title, post %></td>
+        <td><%= post.user.name %></td>
+        <td>
+          <%= truncate(post.content, length: 14) %>
+        </td>
+        <td>
+          <% if post.user == current_user %>
+            <%= link_to t('common.edit'), edit_admin_post_path(post) %> |
+            <%= link_to t('common.destroy'), admin_post_path(post), method: :delete %>  
+          <% end %>
+        </td>
+        <td></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
-
-<%= link_to 'New Post', new_admin_post_path %>
+<%= javascript_include_tag 'page/posts.js' %>

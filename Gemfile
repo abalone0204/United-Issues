@@ -44,16 +44,12 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
-
-end
-
-group :development, :test do
-  # Use sqlite3 as the database for Active Record
   gem "shoulda-matchers", "~> 2.4.0", require: false
   gem 'sqlite3'
-  gem 'faker'
   gem "minitest"
+
 end
+
 
 group :test do
   gem 'fabrication'

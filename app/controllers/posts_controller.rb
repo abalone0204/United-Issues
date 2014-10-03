@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new]
+  authorize_resource :post
 
   def index
     if params[:tag]

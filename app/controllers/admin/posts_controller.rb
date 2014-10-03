@@ -1,5 +1,5 @@
-class Admin::PostsController < ApplicationController
-  layout 'admin'
+class Admin::PostsController < AdminController
+
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
   #GET /admin/posts

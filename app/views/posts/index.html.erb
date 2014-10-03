@@ -1,9 +1,10 @@
-
+<% if Post.tag_counts.present? %>
 <div id="tags_cloud">
-  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
+      <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>    
 </div>
+<% end %>
 
 <div>
   <%= link_to new_post_path(), class:"btn-default btn"  do %>

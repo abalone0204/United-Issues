@@ -29,7 +29,7 @@
     <tbody>
       <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.render_title, post %></td>
+        <td><%= link_to render_post_title(post), post %></td>
         <td><%= raw render_post_tags(post) %></td>
         <td><%= post.user.name %></td>
         <td>

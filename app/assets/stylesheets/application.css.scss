@@ -128,18 +128,33 @@ a:hover{
 
 
 // Home
-.home-banner{
-  height:100%;
+
+.feature-posts{
   min-height: 100%;
+  background: #00B9F2;
+  .well{
+
+    border-top: solid $highlight-color 0.5em;
+  }
+}
+.home-banner{
+  .heading {
+    margin-top: 5%;
+    font-size: 4em;
+  }
+  .description{
+    margin-top: 5%;
+    font-size: 2em;
+    color: $second-text-color;
+  }
+  min-height: 80%;
   text-align: center;
   padding: 2em;
   padding-bottom: 15%;
   color: $primary-color;
   margin-top: 0px;
   background: $link-text-color;
-  p{
-    color: $second-text-color;
-  }
+
 }
 .home-nav{
   margin-bottom: 0;

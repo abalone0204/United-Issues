@@ -57,6 +57,7 @@ $second-text-color: #eee;
 
 
 // Common
+
 .flash-container {
   margin-top: 0.5em;
 }
@@ -103,6 +104,13 @@ a:hover{
 
 
 // Navbar
+
+.change-mode{
+  font-size: 1.25em;
+  margin: 0px auto;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
+}
 .navbar-header{
   margin-left: 10%;
 }

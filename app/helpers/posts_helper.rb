@@ -11,4 +11,12 @@ module PostsHelper
       "【尚未分類】 #{post.title}"
     end
   end
+
+  def publish_status(post)
+    if post.publish?
+      "已發佈"
+    else
+      "尚未發佈"
+    end
+  end
 end

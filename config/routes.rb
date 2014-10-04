@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get 'tags/:tag', to: 'posts#index', as: :tag
+  get 'posts/my_posts', to: 'posts#my_posts', as: :my_posts
+  
   resources :posts
   
   namespace :admin do

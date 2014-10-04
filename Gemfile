@@ -71,6 +71,8 @@ gem 'autoprefixer-rails'
 gem 'cancancan', '~> 1.9'
 
 gem 'enumerize'
+
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

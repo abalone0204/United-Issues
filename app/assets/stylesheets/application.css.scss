@@ -15,9 +15,10 @@
  *= require_self
  */
 
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 // material design
 $primary-color: white;
@@ -26,8 +27,48 @@ $highlight-color: #212121;
 $link-text-color: #00b8d4;
 $second-text-color: #eee;
 
+@media (max-width: 759px) {
+  .navbar-nav {
+    margin-left: 0px;
+  }
+  .user-nav {
+  li {
+    border-left: $link-text-color solid 1px;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .navbar-nav{
+    margin-left: 10%;
+  }
+  .user-nav {
+  li {
+    border-left: $link-text-color solid 1px;
+  }
+  li:first-child{
+    border-left: none;
+    }
+  }
+}
+
+
+
+
 
 // Common
+#paginator{
+  a{
+    color: $link-text-color;  
+  }
+  .active{
+    a{
+      background-color: $highlight-color;
+      color: $link-text-color;
+    }
+  }
+}
+
 .flash-container {
   margin-top: 0.5em;
 }
@@ -74,8 +115,12 @@ a:hover{
 
 
 // Navbar
-.navbar-nav{
-  margin-left: 10%;
+
+.change-mode{
+  font-size: 1.25em;
+  margin: 0px auto;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
 }
 .navbar-header{
   margin-left: 10%;
@@ -86,13 +131,7 @@ a:hover{
     color: $primary-color;
     background: $highlight-color;
   }
-  li {
-    border-left: $link-text-color solid 1px;
-  }
-  li:first-child{
-    border-left: none;
-  }
-  
+
 }
 .sign-bar {
   margin-right: 1%;

@@ -14,7 +14,7 @@ class Admin::PostsController < AdminController
   #GET /admin/posts
   # GET /admin/posts.json
   def index
-    @admin_posts = Admin::Post.all
+    @admin_posts = Admin::Post.all.order("created_at DESC").page(params[:page])
   end
 
   # GET /admin/posts/1
@@ -35,6 +35,7 @@ class Admin::PostsController < AdminController
   # POST /admin/posts.json
   def create
     @admin_post = Admin::Post.new(admin_post_params)
+    @admin_post.user_id = current_user.id
     respond_to do |format|
       if @admin_post.save
         format.html { redirect_to @admin_post, notice: 'Post was successfully created.' }

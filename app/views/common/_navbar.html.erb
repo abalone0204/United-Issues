@@ -1,12 +1,20 @@
 <nav class="customnavbar shadow" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header col-md-5">
+  <div class="navbar-header">
+
+    <button class="navbar-toggle collapsed"  data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-material-menu"></span>
+    </button>
+
     <%= link_to "United Issues", root_path, class:"navbar-brand brand" %>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav rws-nav">
       <li><%= link_to t('attributes.posts'), posts_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "My Posts", my_posts_path %></li>  
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
       <% unless user_signed_in? %>

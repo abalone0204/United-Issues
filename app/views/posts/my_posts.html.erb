@@ -1,13 +1,3 @@
-<% if Post.tag_counts.present? %>
-<div id="tags_cloud">
-      <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-      <% if tag.posts.published.any? %>
-        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-      <% end %>
-      <% end %>    
-</div>
-<% end %>
-
 <div>
     <%= link_to new_post_path(), class:"btn-default btn"  do %>
       <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
@@ -20,6 +10,7 @@
 
   <table class="striped-table table">
     <thead>
+      <th><%= t('activerecord.attributes.post.publish') %></th>
       <th class="col-md-3">
         <%= t('activerecord.attributes.post.title') %>
       </th>
@@ -31,6 +22,7 @@
     <tbody>
       <% @posts.each do |post| %>
       <tr>
+        <td><%= publish_status(post) %></td>
         <td><%= link_to render_post_title(post), post %></td>
         <td><%= raw render_post_tags(post) %></td>
         <td><%= post.user.name %></td>
@@ -48,7 +40,7 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @posts,id:"123123" %>
 </div>
-<%= paginate @posts %>
 
 <%= javascript_include_tag 'page/posts.js' %>

@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   resources :posts
   
   namespace :admin do
-    resources :posts, :users
+    resources :posts 
+    resources :users do
+      collection do
+        put :toggle_admin
+      end
+    end
   end
 
   # Example of regular route:

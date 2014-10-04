@@ -1,3 +1,25 @@
-<% @users.each do |user| %>
-<h1><%= user.name %></h1>
-<% end %>
+<%= form_tag(toggle_admin_admin_users_path, method: :put) do %>
+  <table class='table table-striped table-hover'>
+    <thead>
+      <th></th>
+      <th>譯者</th>
+      <th>身份</th>
+      <th>文章數</th>
+    </thead>
+    <tbody>
+      <% @admin_users.each do |user| %> 
+      <tr>
+        <td>
+          <% unless user.id == current_user.id %>
+            <%= check_box_tag "user_ids[]", user.id %>
+          <% end %>
+        </td>
+        <td><%= user.name %></td>
+        <td><%= render_user_role(user) %></td>
+        <td><%= user.posts.count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= submit_tag "變更使用者權限" %>
+<% end -%>

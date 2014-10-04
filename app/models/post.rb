@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  scope :published, -> {where(publish: true)}
   
   extend Enumerize
   extend ActiveModel::Naming

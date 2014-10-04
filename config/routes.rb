@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :posts
-  end
-
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,7 +9,11 @@ Rails.application.routes.draw do
   resources :posts
   
   namespace :admin do
-    resources :posts 
+    resources :posts do
+      collection do
+        put :toggle_publish
+      end
+    end
     resources :users do
       collection do
         put :toggle_admin

@@ -15,9 +15,10 @@
  *= require_self
  */
 
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 // material design
 $primary-color: white;
@@ -25,6 +26,34 @@ $divider-color: #cfd8dc;
 $highlight-color: #212121;
 $link-text-color: #00b8d4;
 $second-text-color: #eee;
+
+@media (max-width: 759px) {
+  .navbar-nav {
+    margin-left: 0px;
+  }
+  .user-nav {
+  li {
+    border-left: $link-text-color solid 1px;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .navbar-nav{
+    margin-left: 10%;
+  }
+  .user-nav {
+  li {
+    border-left: $link-text-color solid 1px;
+  }
+  li:first-child{
+    border-left: none;
+    }
+  }
+}
+
+
+
 
 
 // Common
@@ -74,9 +103,6 @@ a:hover{
 
 
 // Navbar
-.navbar-nav{
-  margin-left: 10%;
-}
 .navbar-header{
   margin-left: 10%;
 }
@@ -86,13 +112,7 @@ a:hover{
     color: $primary-color;
     background: $highlight-color;
   }
-  li {
-    border-left: $link-text-color solid 1px;
-  }
-  li:first-child{
-    border-left: none;
-  }
-  
+
 }
 .sign-bar {
   margin-right: 1%;

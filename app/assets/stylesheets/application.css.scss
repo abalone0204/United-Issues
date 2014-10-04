@@ -57,6 +57,17 @@ $second-text-color: #eee;
 
 
 // Common
+#paginator{
+  a{
+    color: $link-text-color;  
+  }
+  .active{
+    a{
+      background-color: $highlight-color;
+      color: $link-text-color;
+    }
+  }
+}
 
 .flash-container {
   margin-top: 0.5em;

@@ -39,8 +39,12 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @admin_posts %>
+
   <%= submit_tag "變更文章發佈狀態", class: 'btn btn-success' %>
+
 </div>
 <% end -%>
+
 
 <%= javascript_include_tag 'page/posts.js' %>

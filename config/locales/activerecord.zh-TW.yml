@@ -1,5 +1,6 @@
 zh-TW:
   attributes:
+      users: 使用者列表
       posts: 文章列表
       email: 聯絡信箱
       password: 密碼

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UnitedIssues</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="home-nav">
+<%= render partial: "common/navbar" %>
+</div>
+<%= yield %>
+<%= render partial: "common/flash" %>
+<%= debug(params) if Rails.env.development? %>
+
+
+
+  
+</body>
+</html>

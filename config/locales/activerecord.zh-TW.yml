@@ -1,5 +1,6 @@
 zh-TW:
   attributes:
+      users: 使用者列表
       posts: 文章列表
       email: 聯絡信箱
       password: 密碼
@@ -25,6 +26,7 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
+        publish: 發佈狀態
         country_classification: 媒體分類
         title: 標題
         translator: 譯者

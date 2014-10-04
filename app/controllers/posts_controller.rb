@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
+  before_action :authenticate_user!, only: [:new]
+  authorize_resource :post
+  before_action :validate_publish, only: [:show]
 
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).published
     else
-      @posts = Post.all
+      @posts = Post.published
     end
   end
 
@@ -49,6 +51,13 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def validate_publish
+    if !@post.publish? && @post.user_id != current_user.id
+      flash[:error] = "此文章尚未發佈"
+      redirect_to posts_path 
+    end
+  end
 
   def post_params
     params.require(:post).permit( :user_id,:title, :content, :note, :source,

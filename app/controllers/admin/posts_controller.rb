@@ -1,7 +1,16 @@
-class Admin::PostsController < ApplicationController
-  layout 'admin'
+class Admin::PostsController < AdminController
+
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
+  def toggle_publish
+    params[:post_ids] = params[:post_ids].map{|i| i.to_i}
+    @admin_posts = Admin::Post.find(params[:post_ids])
+    @admin_posts.each do |post|
+      post.toggle_publish!
+      post.save
+    end
+    redirect_to admin_posts_path 
+  end
   #GET /admin/posts
   # GET /admin/posts.json
   def index
@@ -26,7 +35,6 @@ class Admin::PostsController < ApplicationController
   # POST /admin/posts.json
   def create
     @admin_post = Admin::Post.new(admin_post_params)
-
     respond_to do |format|
       if @admin_post.save
         format.html { redirect_to @admin_post, notice: 'Post was successfully created.' }
@@ -61,6 +69,8 @@ class Admin::PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

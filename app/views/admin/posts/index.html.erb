@@ -1,15 +1,18 @@
 <div>
   <%= link_to new_admin_post_path(), class:"btn-default btn"  do %>
-      <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+  <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
   <% end %>
 </div>
+
+<%= form_tag(toggle_publish_admin_posts_path, method: 'put') do %>
 <div class="panel panel-default posts well">
   <div class="panel-heading">
     <%= t('attributes.posts') %>
   </div>
-
-  <table class="striped-table table">
+  <table class="striped-table table table-hover">
     <thead>
+      <th></th>
+      <th><%= t('activerecord.attributes.post.publish') %></th>
       <th class="col-md-3">
         <%= t('activerecord.attributes.post.title') %>
       </th>
@@ -20,22 +23,24 @@
     <tbody>
       <% @admin_posts.each do |post| %>
       <tr>
-        <td><%= link_to post.render_title, post %></td>
+        <td><%= check_box_tag "post_ids[]", post.id %></td>
+        <td><%= post.publish %></td>
+        <td><%= link_to render_post_title(post), post %></td>
         <td><%= post.user.name %></td>
         <td>
           <%= truncate(post.content, length: 14) %>
         </td>
         <td>
-          <% if post.user == current_user %>
-            <%= link_to t('common.edit'), edit_admin_post_path(post) %> |
-            <%= link_to t('common.destroy'), admin_post_path(post), method: :delete %>  
-          <% end %>
+          <%= link_to t('common.edit'), edit_admin_post_path(post) %> |
+          <%= link_to t('common.destroy'), admin_post_path(post), method: :delete %>
         </td>
         <td></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+  <%= submit_tag "變更文章發佈狀態", class: 'btn btn-success' %>
 </div>
+<% end -%>
 
 <%= javascript_include_tag 'page/posts.js' %>

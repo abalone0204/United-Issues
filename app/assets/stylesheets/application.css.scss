@@ -18,7 +18,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+// material design
+$primary-color: white;
+$divider-color: #cfd8dc;
+$highlight-color: #212121;
+$link-text-color: #00b8d4;
+$second-text-color: #eee;
+
+
 // Common
+.flash-container {
+  margin-top: 0.5em;
+}
 
 .shadow {
   -moz-box-shadow:    2px 2px 2px 2px #ccc;
@@ -37,41 +49,99 @@ a {
 }
 
 a:hover{
+  color: $highlight-color;
   background: white;
   text-decoration: none;
 }
 
+
+// Home
+.home-banner{
+  text-align: center;
+  padding: 2em;
+  padding-bottom: 15%;
+  color: $primary-color;
+  margin-top: 0px;
+  background: $link-text-color;
+  p{
+    color: $second-text-color;
+  }
+}
+.home-nav{
+  margin-bottom: 0;
+}
+
+
+
 // Navbar
+.navbar-nav{
+  margin-left: 10%;
+}
+.navbar-header{
+  margin-left: 10%;
+}
+.user-nav {
+  background: $highlight-color;
+  a:hover{
+    color: $primary-color;
+    background: $highlight-color;
+  }
+  li {
+    border-left: $link-text-color solid 1px;
+  }
+  li:first-child{
+    border-left: none;
+  }
+  
+}
 .sign-bar {
   margin-right: 1%;
 }
 .admin-navbar {
   a:hover {
-    background-color: white;
+    background-color: none;
   }
+}
+#admin-brand{
+    background-color: $highlight-color;
+    margin-left: 5%;
+    color: $primary-color;
+    margin: 0px auto;
+    a{
+      color: $primary-color;
+    }
+    a:hover{
+      color: #eceff1;
+      background-color: $highlight-color;
+    }
 }
 
 .customnavbar {
-  background-color: #607d8b;
-  border-top: solid 4px #37474f;
-  border-bottom: solid 2px #cfd8dc;
+  background-color: $primary-color;
+  border-top: solid 1px $highlight-color;
+  border-bottom: solid 2px $divider-color;
+  
   .brand{
+    margin-left: 5%;
+    color: $highlight-color;
+    margin: 0px auto;
     a:hover{
       color: #eceff1;
-      background-color: #607d8b;
+      background-color: $primary-color;
     }
   }
   
   a {
-    color: #eceff1;
+    color: $link-text-color;
   }
   a:hover {
-    color: #37474f;
+    color: $highlight-color;
     -o-transition: color .20s linear;
     -webkit-transition: color .20s linear;
     -moz-transition: color .20s linear;
     transition:  color .20s linear;
-
+    
+    background: $primary-color;
     -o-transition: background-color .20s linear;
     -webkit-transition: background-color .20s linear;
     -moz-transition: background-color .20s linear;

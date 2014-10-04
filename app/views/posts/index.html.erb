@@ -1,15 +1,17 @@
 <% if Post.tag_counts.present? %>
 <div id="tags_cloud">
       <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+      <% if tag.posts.published.any? %>
         <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
       <% end %>    
 </div>
 <% end %>
 
 <div>
-  <%= link_to new_post_path(), class:"btn-default btn"  do %>
+    <%= link_to new_post_path(), class:"btn-default btn"  do %>
       <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-  <% end %>
+    <% end %>
 </div>
 <div class="panel panel-default posts well">
   <div class="panel-heading">
@@ -29,14 +31,14 @@
     <tbody>
       <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.render_title, post %></td>
+        <td><%= link_to render_post_title(post), post %></td>
         <td><%= raw render_post_tags(post) %></td>
         <td><%= post.user.name %></td>
         <td>
           <%= truncate(post.content, length: 14) %>
         </td>
         <td>
-          <% if post.user == current_user %>
+          <% if can? :update, post %>
             <%= link_to t('common.edit'), edit_post_path(post) %> |
             <%= link_to t('common.destroy'), post_path(post), method: :delete %>  
           <% end %>

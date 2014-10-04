@@ -2,7 +2,7 @@
   <h1><%= @post.title %></h1>
   <p class="well"><%= raw @post.content.gsub(/\n/, '<br/>') %></p>
   <div class="source">
-    <p><%= t('activerecord.attributes.post.source') %>:<%= @post.source %></p>
+    <%= link_to t('activerecord.attributes.post.source'), @post.source %>
   </div>
   <div class="note">
     <p>

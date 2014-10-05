@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141005112300) do
     t.integer  "user_id"
     t.string   "country_classification"
     t.boolean  "publish",                default: false
-    t.text     "note"
+    t.text     "note",                   default: ""
   end
 
   create_table "taggings", force: true do |t|

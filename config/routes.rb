@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts do
       collection do
+        get :schedule, as: :schedule
         put :toggle_publish
       end
     end

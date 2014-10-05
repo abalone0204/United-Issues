@@ -2,12 +2,18 @@ class Admin::PostsController < AdminController
 
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
+  def schedule
+    
+  end
+
   def toggle_publish
-    params[:post_ids] = params[:post_ids].map{|i| i.to_i}
-    @admin_posts = Admin::Post.find(params[:post_ids])
-    @admin_posts.each do |post|
-      post.toggle_publish!
-      post.save
+    if params[:post_ids].present?
+      params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
+      @admin_posts = Admin::Post.find(params[:post_ids])
+      @admin_posts.each do |post|
+        post.toggle_publish!
+        post.save
+      end
     end
     redirect_to admin_posts_path 
   end

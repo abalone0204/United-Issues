@@ -40,6 +40,15 @@
   <%= paginate @admin_posts %>
 
   <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
-  <%= date_field_tag :set_publish_time, Date.today  %>
+  <%= text_field_tag :set_publish_time, Date.today, class:"datepicker"  %>
   </div>
   <% end %>
+  <script>
+    $(function(){
+      $('.datepicker').datepicker({
+        autoclose: true,
+        format: "yyyy-mm-dd",
+        todayHighlight: true
+      });
+    })
+  </script>

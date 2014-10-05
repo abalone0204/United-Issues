@@ -1,6 +1,8 @@
 zh-TW:
+  link:
+    schedule: 文章排程
   common:
-    new: 新增
+    new: 開始翻譯文章
     edit: 編輯
     destroy: 刪除
   date:

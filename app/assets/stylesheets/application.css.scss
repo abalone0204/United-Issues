@@ -11,12 +11,11 @@
  * file per style scope.
  *
  *= require bootstrap-material-design
- *= require owl.carousel
- *= require owl.theme
  *= require_tree .
  *= require_self
  */
 
+@import "sweet-alert";
 
 
 @import "bootstrap-sprockets";

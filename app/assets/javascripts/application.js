@@ -16,5 +16,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require owl.carousel
+//= require sweet-alert.min
 
 

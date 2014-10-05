@@ -13,6 +13,7 @@
     <thead>
       <th></th>
       <th><%= t('activerecord.attributes.post.publish') %></th>
+      <th><%= t('activerecord.attributes.post.publish_date') %></th>
       <th class="col-md-3">
         <%= t('activerecord.attributes.post.title') %>
       </th>
@@ -25,6 +26,7 @@
       <tr>
         <td><%= check_box_tag "post_ids[]", post.id %></td>
         <td><%= publish_status(post) %></td>
+        <td><%= post.publish_date %></td>
         <td><%= link_to render_post_title(post), post %></td>
         <td><%= post.user.name %></td>
         <td>

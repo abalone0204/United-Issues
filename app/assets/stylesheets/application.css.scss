@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require bootstrap-material-design
+ *= require owl.carousel
+ *= require owl.theme
  *= require_tree .
  *= require_self
  */
@@ -127,17 +129,20 @@ a:hover{
 }
 
 
-// Home
+// Home page
+
 
 .feature-posts{
   min-height: 100%;
   background: #00B9F2;
   .well{
-
+    color: $highlight-color;
     border-top: solid $highlight-color 0.5em;
   }
 }
+
 .home-banner{
+
   .heading {
     margin-top: 5%;
     font-size: 4em;
@@ -147,7 +152,7 @@ a:hover{
     font-size: 2em;
     color: $second-text-color;
   }
-  min-height: 80%;
+  min-height: 75%;
   text-align: center;
   padding: 2em;
   padding-bottom: 15%;
@@ -163,6 +168,18 @@ a:hover{
 
 
 // Navbar
+
+.country_classification{
+
+  ul{
+    background: $primary-color;
+    li{
+      a{
+        color: $highlight-color;
+      }
+    }
+  }
+}
 
 .change-mode{
   font-size: 1.25em;

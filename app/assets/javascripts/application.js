@@ -15,5 +15,6 @@
 //= require bootstrap-material-design
 //= require jquery_ujs
 //= require turbolinks
+//= require owl.carousel
 
 

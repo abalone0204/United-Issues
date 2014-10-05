@@ -14,9 +14,9 @@ module PostsHelper
 
   def publish_status(post)
     if post.publish?
-      "已發佈"
+      "通過"
     else
-      "尚未發佈"
+      "未通過"
     end
   end
 end

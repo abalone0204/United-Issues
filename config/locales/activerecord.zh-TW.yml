@@ -26,7 +26,8 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
-        publish: 發佈狀態
+        publish: 審核狀態
+        publish_date: 發佈時間
         country_classification: 媒體分類
         title: 標題
         translator: 譯者

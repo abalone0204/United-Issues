@@ -11,15 +11,21 @@
  * file per style scope.
  *
  *= require bootstrap-material-design
+ *= require bootstrap-datepicker3
  *= require_tree .
  *= require_self
  */
 
+@import "sweet-alert";
 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
 // material design
 $primary-color: white;
 $divider-color: #cfd8dc;
@@ -57,6 +63,31 @@ $second-text-color: #eee;
 
 
 // Common
+
+footer {
+  margin-top: -1%;
+  padding-top: 0.5em;
+  padding-bottom: 15%;
+  background-color: #EEFDFF;
+  clear : both;
+  .author{
+    margin-top: -5px;
+    margin-left: -5px;
+    color: #B8BDBC;
+    a {
+      color: #B8BDBC;
+      position: relative;
+      top: 1em;
+      left: 1em;
+    }
+    a:hover{
+      background: none;
+      color: $highlight-color;
+    }
+  }
+}
+
+
 #paginator{
   a{
     color: $link-text-color;  
@@ -83,7 +114,9 @@ $second-text-color: #eee;
 }
 
 .main {
+  min-height: 100%;
   margin-top: 1em;
+  margin-bottom: 0px;
 }
 a {
   color: #212121;
@@ -96,17 +129,37 @@ a:hover{
 }
 
 
-// Home
+// Home page
+
+
+.feature-posts{
+  min-height: 100%;
+  background: #00B9F2;
+  .well{
+    color: $highlight-color;
+    border-top: solid $highlight-color 0.5em;
+  }
+}
+
 .home-banner{
+
+  .heading {
+    margin-top: 5%;
+    font-size: 4em;
+  }
+  .description{
+    margin-top: 5%;
+    font-size: 2em;
+    color: $second-text-color;
+  }
+  min-height: 75%;
   text-align: center;
   padding: 2em;
   padding-bottom: 15%;
   color: $primary-color;
   margin-top: 0px;
   background: $link-text-color;
-  p{
-    color: $second-text-color;
-  }
+
 }
 .home-nav{
   margin-bottom: 0;
@@ -115,6 +168,18 @@ a:hover{
 
 
 // Navbar
+
+.country_classification{
+
+  ul{
+    background: $primary-color;
+    li{
+      a{
+        color: $highlight-color;
+      }
+    }
+  }
+}
 
 .change-mode{
   font-size: 1.25em;

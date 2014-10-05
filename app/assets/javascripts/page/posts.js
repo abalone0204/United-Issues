@@ -1,3 +1,7 @@
-$(function(){
-  var word_array = [];
+$(function() {
+  $('.datepicker').datepicker({
+    autoclose: true,
+    format: "yyyy-mm-dd",
+    todayHighlight: true
+  });
 });

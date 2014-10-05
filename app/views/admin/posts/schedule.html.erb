@@ -1,10 +1,6 @@
-<div>
-  <%= link_to new_admin_post_path(), class:"btn-default btn"  do %>
-  <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-  <% end %>
-</div>
 
-<%= form_tag(toggle_publish_admin_posts_path, method: 'put') do %>
+<%= link_to "只顯示未通過審核的文章", schedule_admin_posts_path(show_unpublish: true) %>
+<%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
 <div class="panel panel-default posts well">
   <div class="panel-heading">
     <%= t('attributes.posts') %>
@@ -43,10 +39,9 @@
   </table>
   <%= paginate @admin_posts %>
 
-  <%= submit_tag "變更文章發佈狀態", class: 'btn btn-success' %>
-
-</div>
-<% end -%>
-
-
-<%= javascript_include_tag 'page/posts.js' %>
+  <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
+  <%= text_field_tag :set_publish_time, Date.today, class:"datepicker"  %>
+  </div>
+  <% end %>
+  
+<%= javascript_include_tag 'page/posts' %>

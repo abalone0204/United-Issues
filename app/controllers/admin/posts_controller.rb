@@ -2,12 +2,36 @@ class Admin::PostsController < AdminController
 
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
+  def schedule
+    if params[:show_unpublish]
+      @admin_posts = Admin::Post.unpublished.page(params[:page])
+    else
+      @admin_posts = Admin::Post.order("publish_date ASC").page(params[:page])  
+    end
+  end
+
+  def set_publish_time
+
+    if params[:post_ids].present?
+        params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
+        @admin_posts = Admin::Post.find(params[:post_ids])
+        @admin_posts.each do |post|
+          post.publish = true
+          post.update_attribute(:publish_date, params[:set_publish_time])
+          post.save
+        end
+    end    
+    redirect_to schedule_admin_posts_path 
+  end
+
   def toggle_publish
-    params[:post_ids] = params[:post_ids].map{|i| i.to_i}
-    @admin_posts = Admin::Post.find(params[:post_ids])
-    @admin_posts.each do |post|
-      post.toggle_publish!
-      post.save
+    if params[:post_ids].present?
+      params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
+      @admin_posts = Admin::Post.find(params[:post_ids])
+      @admin_posts.each do |post|
+        post.toggle_publish!
+        post.save
+      end
     end
     redirect_to admin_posts_path 
   end
@@ -81,7 +105,7 @@ class Admin::PostsController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_post_params
-    params.require(:admin_post).permit( :user_id,:title, :content, :note, :source,
+    params.require(:admin_post).permit( :publish, :publish_date, :user_id,:title, :content, :note, :source,
                                         :country_classification, :tag_list)
   end
 end

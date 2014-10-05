@@ -10,6 +10,9 @@ class PostsController < ApplicationController
     else
       @posts = Post.published.order("created_at DESC").page(params[:page])
     end
+    if params[:classification].present?
+      @posts = @posts.country(params[:classification]).order("created_at DESC").page(params[:page])
+    end
   end
 
   def show

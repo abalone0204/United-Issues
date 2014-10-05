@@ -45,3 +45,10 @@
     </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
+  <div class="country_classification">
+    <ul class="nav nav-tabs" role="tablist">
+      <% Post.country_classification.options.each do|option| %>
+      <li><%= link_to option[0], posts_path(classification: option[1])%></li>
+      <% end %>
+    </ul>
+  </div>

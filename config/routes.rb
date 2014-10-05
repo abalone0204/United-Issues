@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :posts do
       collection do
         get :schedule, as: :schedule
+        put :set_publish_time
         put :toggle_publish
       end
     end

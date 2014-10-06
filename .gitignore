@@ -17,3 +17,6 @@
 
 # Ignore or sensitive info
 /config/application.rb
+
+# Ignor all upload pics
+/public/uploads

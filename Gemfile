@@ -66,6 +66,9 @@ gem 'kaminari'
 gem 'owlcarousel-rails'
 gem 'bootstrap-datepicker-rails'
 
+gem "rmagick", :require => 'RMagick'
+gem "carrierwave"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

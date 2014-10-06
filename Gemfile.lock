@@ -45,6 +45,11 @@ GEM
       sass (~> 3.2)
     builder (3.2.2)
     cancancan (1.9.1)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
@@ -140,6 +145,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    rmagick (2.13.3)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -216,6 +222,7 @@ DEPENDENCIES
   bootstrap-material-design
   bootstrap-sass (~> 3.2.0)
   cancancan (~> 1.9)
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   enumerize
@@ -230,6 +237,7 @@ DEPENDENCIES
   owlcarousel-rails
   pry-rails
   rails (= 4.1.4)
+  rmagick
   rspec-rails (~> 3.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

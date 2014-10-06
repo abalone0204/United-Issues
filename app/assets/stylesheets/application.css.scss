@@ -34,6 +34,7 @@ $link-text-color: #00b8d4;
 $second-text-color: #eee;
 
 @media (max-width: 759px) {
+
   .navbar-nav {
     margin-left: 0px;
   }
@@ -45,6 +46,30 @@ $second-text-color: #eee;
 }
 
 @media (min-width: 760px) {
+  .post-title, .image-container{
+    display: inline-block;
+  }
+  .post-detail {
+    display: inline-block;
+  }
+  .post-title{
+    position: relative;
+    bottom:0;
+    margin-top: 0px;
+    padding-top: 0;
+  }
+  .image-container.well{
+    height: 50%;
+  }
+  .post-content-container.well{
+    height: 50%;
+  }
+  .translator-name{
+    position: relative;
+    right:0;
+    bottom:0;
+  }
+
   .navbar-nav{
     margin-left: 10%;
   }
@@ -63,6 +88,9 @@ $second-text-color: #eee;
 
 
 // Common
+.post{
+  color: $highlight-color;
+}
 
 footer {
   margin-top: -1%;
@@ -254,6 +282,12 @@ a:hover{
 }
 
 
+
+// Post
+
+.post-detail{
+    margin-bottom: 5%;
+}
 
 
 

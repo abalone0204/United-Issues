@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   extend ActiveModel::Naming
 
   validates :title, presence: true, length: {maximum: 50}
+  validates :source_date, presence: true
+  validates :source, presence: true
 
   # Association 
 

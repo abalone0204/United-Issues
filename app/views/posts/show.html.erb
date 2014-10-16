@@ -31,3 +31,12 @@
   </div>
   <%= link_to "返回文章列表", posts_path  %>
 </div>
+
+
+<div id="disqus_thread"></div>
+<noscript>
+  Please enable JavaScript to view the 
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<%= javascript_include_tag "disqus/thread.js", :cache => true %>

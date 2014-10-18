@@ -63,11 +63,13 @@ gem 'cancancan', '~> 1.9'
 gem 'enumerize'
 
 gem 'kaminari'
-gem 'owlcarousel-rails'
 gem 'bootstrap-datepicker-rails'
 
 gem "rmagick", :require => 'RMagick'
 gem "carrierwave"
+
+gem 'redcarpet'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

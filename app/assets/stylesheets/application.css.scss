@@ -46,9 +46,7 @@ $second-text-color: #eeeeee;
 
 @media (min-width: 760px) {
     .post {
-        .title, .image-container {
-            display: inline-block;
-        }
+
         .detail {
             display: inline-block;
         }
@@ -298,14 +296,35 @@ a:hover {
 
 // Post
 .post {
+  a {
+    color: $link-text-color;
+  }
   .header {
     margin-top: 4%;
+  }
+  .content-container{
+    text-indent: 2%;
+    p {
+      margin-right: 4%;
+      margin-left: 4%;
+    }
+    p:first-child{
+      padding-top: 4%;
+    }
+    p:last-child{
+     padding-bottom: 4%; 
+    }
+  }
+  .image {
+
   }
 }
 
 .detail {
-    margin-bottom: 5%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background: rgba(233, 233, 233, 0.6);
-    width: 100%;
-    
+    width: 50%;
+    border-radius: 5%; 
 }

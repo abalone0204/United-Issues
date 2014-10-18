@@ -15,7 +15,6 @@
 //= require bootstrap-material-design
 //= require jquery_ujs
 //= require turbolinks
-//= require owl.carousel
 //= require sweet-alert.min
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core

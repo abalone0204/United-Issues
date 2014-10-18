@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div class="home-nav">
 <%= render partial: "common/navbar" %>
+<%= render partial: "common/flash" %>
 </div>
 <%= yield %>
-<%= render partial: "common/flash" %>
 <%= render partial: "common/footer" %>
 <%= debug(params) if Rails.env.development? %>
 

@@ -1,29 +1,32 @@
-<div class="well post">
-  <div class="post-header">
-    <h1 class="post-title well">
+<div class="post">
+  <div class="header">
+    <h3 class="title">
     <%= render_post_title @post %>
-    </h1>
+    </h3>
     <% if @post.image_url.present? %>
-    <div class="image-container">
-      <%= image_tag @post.image_url(:display),class:"well post-image" %>
+    <div class="image-container row">
+      <%= image_tag @post.image_url(:display),class:"col-md-6 image" %>
     </div>
     <% end %>
-    <div class="post-detail">
-      <span class="source-time well">
-      來源時間: <%= @post.source_date.strftime("%Y-%m-%d") %>
-      </span>
-      <span class="translator-name well">
-      譯者: <%= @post.user.name %>
-      </span>
-    </div>
     
   </div>
-  <div class="post-content-container well">
-    <%= raw @post.content.gsub(/\n/, '<br/>') %>
+  <div class="content-container well">
+    <div class="detail row">
+      <span class="source-time col-md-6">
+        來源時間: <%= @post.source_date.strftime("%Y-%m-%d") %>
+      </span>
+      <span class="translator-name col-md-6">
+        譯者: <%= @post.user.name %>
+      </span>
+    </div>
+    <p>
+      <%= raw @post.content.gsub(/\n/, '<br/>') %>
+    </p>
   </div>
   <div class="source">
-    <%= link_to t('activerecord.attributes.post.source'), @post.source %>
+    <%= link_to t('activerecord.attributes.post.source')+":#{@post.source}", @post.source %>
   </div>
+  <hr>
   <div class="note">
     <p>
     <%= t('activerecord.attributes.post.note') %>:<%= raw @post.note.gsub(/\n/, '<br/>') %>

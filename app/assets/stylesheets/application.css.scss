@@ -33,10 +33,16 @@ $highlight-color: #212121;
 $link-text-color: #00b8d4;
 $second-text-color: #eeeeee;
 
-
+@media (max-width: 759px){
+    .country_classification {
+      display: none;
+    }
+}
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
+
+
     .navbar-nav {
         margin-left: 0;
     }

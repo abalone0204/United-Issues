@@ -1,53 +1,44 @@
 <div>
-    <%= link_to new_post_path(), class:"btn-default btn"  do %>
-      <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-    <% end %>
+  <%= link_to new_post_path(), class:"btn-default btn"  do %>
+  <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+  <% end %>
 </div>
 <div class="panel panel-default posts well">
   <div class="panel-heading">
     <%= t('attributes.posts') %>
   </div>
-
-  <table class="striped-table table">
-    <thead>
-      <th class="col-md-3">
-        <%= t('activerecord.attributes.post.title') %>
-      </th>
-      <th>Tags</th>
-      <th><%= t('activerecord.attributes.post.translator') %></th>
-      <th><%= t('activerecord.attributes.post.content') %></th>
-      <th class="col-md-2"></th>
-    </thead>
-    <tbody>
-      <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to render_post_title(post), post %></td>
-        <td><%= raw render_post_tags(post) %></td>
-        <td><%= post.user.name %></td>
-        <td>
-          <%= truncate(post.content, length: 14) %>
-        </td>
-        <td>
-          <% if can? :update, post %>
-            <%= link_to t('common.edit'), edit_post_path(post) %> |
-            <%= link_to t('common.destroy'), post_path(post), method: :delete %>  
-          <% end %>
-        </td>
-        <td></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="striped-table table">
+      <thead>
+        <th></th>
+        <th class="col-md-3">
+          <%= t('activerecord.attributes.post.title') %>
+        </th>
+        <th>Tags</th>
+        <th><%= t('activerecord.attributes.post.translator') %></th>
+        <th><%= t('activerecord.attributes.post.content') %></th>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <% if can? :update, post %>
+            <%= render partial: "edit_options", locals: {post: post} %>
+            <% end %>
+          </td>
+          <td><%= link_to render_post_title(post), post %></td>
+          <td><%= raw render_post_tags(post) %></td>
+          <td><%= post.user.name %></td>
+          <td>
+            <%= truncate(post.content, length: 14) %>
+          </td>
+          <td></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <%= paginate @posts %>
-<% if Post.tag_counts.present? %>
-<div id="tags_cloud">
-      <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-      <% if tag.posts.published.country(params[:classification]).any? %>
-        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-      <% end %>
-      <% end %>    
-</div>
-<% end %>
-
+<%= render 'tag_cloud' %>
 <%= javascript_include_tag 'page/posts.js' %>

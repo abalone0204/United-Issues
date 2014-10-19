@@ -9,10 +9,11 @@
 </head>
 <body>
 
-
+  <div class="main-nav">
+    <%= render partial: "common/navbar" %>
+  </div>
 
 <div class="bg-setup">
-  <%= render partial: "common/navbar" %>
   <%= render partial: "common/flash" %>
   <div class="container main shadow">
     <%= yield %>

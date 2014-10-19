@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$link-text-color: #00b8d4;
+@import "color_var";
 
 .posts {
   margin-top: 2%;
@@ -24,4 +24,45 @@ $link-text-color: #00b8d4;
 }
 .new_post_sign {
   margin-right: 0.5em;
+}
+
+.edit-options{
+  a{
+    color: $link-text-color;
+  }
+}
+
+.post {
+  min-height: 100%;
+  a {
+    color: $link-text-color;
+  }
+  .header {
+    margin-top: 4%;
+  }
+  .content-container{
+    text-indent: 2%;
+    p {
+      margin-right: 4%;
+      margin-left: 4%;
+    }
+    p:first-child{
+      padding-top: 4%;
+    }
+    p:last-child{
+     padding-bottom: 4%; 
+    }
+  }
+  .image {
+
+  }
+}
+
+.detail {
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: rgba(233, 233, 233, 0.6);
+    width: 50%;
+    border-radius: 5%; 
 }

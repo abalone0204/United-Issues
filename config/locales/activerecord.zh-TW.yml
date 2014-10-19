@@ -26,6 +26,8 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
+        source_date: 來源時間
+        image: 上傳圖片
         publish: 審核狀態
         publish_date: 發佈時間
         country_classification: 媒體分類

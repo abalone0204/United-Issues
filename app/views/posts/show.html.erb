@@ -1,13 +1,51 @@
-<div class="well">
-  <h1><%= @post.title %></h1>
-  <p class="well"><%= raw @post.content.gsub(/\n/, '<br/>') %></p>
-  <div class="source">
-    <%= link_to t('activerecord.attributes.post.source'), @post.source %>
+<div class="post">
+  <div class="header">
+    <h3 class="title">
+    <%= render_post_title @post %>
+    <% if can? :edit, @post %>
+      <%= link_to t('common.edit'), edit_post_path(@post), class: "btn btn-default pull-right" %>
+    <% end %>
+    </h3>
+    <% if @post.image_url.present? %>
+    <div class="image-container row">
+      <%= image_tag @post.image_url(:display),class:"image col-md-6 img-responsive" %>
+    </div>
+    <% end %>
   </div>
+  <div class="detail row">
+      <span class="source-time col-md-6">
+        來源時間: <%= format_time @post.source_date %>
+      </span>
+      <span class="translator-name col-md-6">
+        譯者: <%= @post.user.name %>
+      </span>
+  </div>
+  <div class="content-container shadow">
+      <%= simple_format @post.content %>
+  </div>
+  <div class="source">
+    <h5>
+      <%= t('activerecord.attributes.post.source') %>:
+      <%= link_to @post.source, @post.source %>
+    </h5>
+    
+  </div>
+  <hr>
   <div class="note">
+    <h5><%= t('activerecord.attributes.post.note') %></h5>
     <p>
-    <%= t('activerecord.attributes.post.note') %>:<%= raw @post.note.gsub(/\n/, '<br/>') %>
+      <%= simple_format @post.note %>
     </p>
   </div>
+  <hr>
   <%= link_to "返回文章列表", posts_path  %>
 </div>
+
+
+<div id="disqus_thread"></div>
+<noscript>
+  Please enable JavaScript to view the 
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<%= javascript_include_tag "disqus/thread.js", :cache => true %>

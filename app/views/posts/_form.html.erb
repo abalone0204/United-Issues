@@ -1,11 +1,14 @@
 <div class="jumbotron">
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, html: {multipart: true} do |f| %>
   <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id} %>
-
+  <%= f.label :country_classification %>  
   <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.input :image, as: :file %>
+  <%= f.input :remote_image_url, label: "或是圖片網址", input_html: {class:"form-control"} %>
   <%= f.input :title, 
   input_html: {class: 'form-control'} %>
-  <%= f.input :tag_list, input_html: { class: 'form-control'} %>
+  <%= f.input :source_date, as: :string, input_html: { class: "datepicker"} %>
+  <%= f.input :tag_list, input_html: { class: 'form-control', placeholder: "請用','分隔"} %>
   <%= f.input :content,
   input_html: {rows: 12,class: 'form-control'} %>
   <%= f.input :note,

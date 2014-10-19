@@ -3,10 +3,14 @@ class Post < ActiveRecord::Base
   scope :unpublished, -> {where(publish: false)}
   scope :country, ->(country) { where(:country_classification => country) if country.present?}
   
+  mount_uploader :image, ImageUploader
+
   extend Enumerize
   extend ActiveModel::Naming
 
   validates :title, presence: true, length: {maximum: 50}
+  validates :source_date, presence: true
+  validates :source, presence: true
 
   # Association 
 

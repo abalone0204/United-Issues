@@ -1,0 +1,9 @@
+<% if Post.tag_counts.present? %>
+<div id="tags_cloud">
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+  <% if tag.posts.published.country(params[:classification]).any? %>
+  <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+  <% end %>
+</div>
+<% end %>

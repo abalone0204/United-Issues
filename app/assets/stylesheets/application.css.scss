@@ -21,24 +21,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "color_var";
+
 html, body {
     height: 100%;
     margin: 0;
 }
 
 // material design
-$primary-color: white;
-$divider-color: #cfd8dc;
-$highlight-color: #212121;
-$link-text-color: #00b8d4;
-$second-text-color: #eeeeee;
+
 
 
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
+    .brand {
+      display: none;
+    }
     .navbar-nav {
-        margin-left: 0px;
+        margin-left: 0;
     }
     .user-nav {
         li {
@@ -57,7 +58,7 @@ $second-text-color: #eeeeee;
         .title {
             position: relative;
             bottom: 0;
-            margin-top: 0px;
+            margin-top: 0;
             padding-top: 0;
         }
         .content-container.well {
@@ -166,49 +167,7 @@ a:hover {
     text-decoration: none;
 }
 
-// Home page
 
-.feature-posts {
-    min-height: 100%;
-    background: #00B9F2;
-    background-image: url("http://1.bp.blogspot.com/-uX1teCwIXqQ/UJajpBPitoI/AAAAAAAAaGw/YYEO70uIREw/s1600/Vendetta.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    .well {
-        color: $highlight-color;
-        border-top: solid $highlight-color 0.5em;
-    }
-}
-
-.home-banner {
-    .text-block {
-        margin-top: 0;
-        background: rgba(0, 0, 0, 0.3);
-    }
-    .heading {
-        margin-top: 5%;
-        font-size: 4em;
-    }
-    .description {
-        margin-top: 5%;
-        font-size: 2em;
-        color: $second-text-color;
-    }
-    min-height: 75%;
-    text-align: center;
-    padding: 2em;
-    padding-bottom: 15%;
-    color: $primary-color;
-    margin-top: 0px;
-    background-image: url("http://ppt.cc/256Q@.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color: $link-text-color;
-}
-
-.home-nav {
-    margin-bottom: 0;
-}
 
 // Navbar
 
@@ -267,6 +226,7 @@ a:hover {
 }
 
 .customnavbar {
+    height: 10%;
     background-color: $primary-color;
     border-top: solid 1px $highlight-color;
     border-bottom: solid 2px $divider-color;
@@ -297,38 +257,4 @@ a:hover {
     }
 }
 
-// Post
-.post {
-  min-height: 100%;
-  a {
-    color: $link-text-color;
-  }
-  .header {
-    margin-top: 4%;
-  }
-  .content-container{
-    text-indent: 2%;
-    p {
-      margin-right: 4%;
-      margin-left: 4%;
-    }
-    p:first-child{
-      padding-top: 4%;
-    }
-    p:last-child{
-     padding-bottom: 4%; 
-    }
-  }
-  .image {
 
-  }
-}
-
-.detail {
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background: rgba(233, 233, 233, 0.6);
-    width: 50%;
-    border-radius: 5%; 
-}

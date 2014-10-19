@@ -33,7 +33,10 @@ $highlight-color: #212121;
 $link-text-color: #00b8d4;
 $second-text-color: #eeeeee;
 
-@media (max-width: 759px) {
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
     .navbar-nav {
         margin-left: 0px;
     }
@@ -45,6 +48,7 @@ $second-text-color: #eeeeee;
 }
 
 @media (min-width: 760px) {
+
     .post {
 
         .detail {
@@ -84,20 +88,18 @@ $second-text-color: #eeeeee;
 }
 
 footer {
-    margin-top: -1%;
-    padding-top: 0.5em;
-    padding-bottom: 15%;
+    height: 2%;
+    padding-top: 1%;
+    padding-bottom: 5%;
     background-color: #EEFDFF;
     clear: both;
     .author {
-        margin-top: -5px;
-        margin-left: -5px;
         color: #B8BDBC;
         a {
             color: #B8BDBC;
             position: relative;
-            top: 1em;
-            left: 1em;
+            margin-left: 2%;
+
         }
         a:hover {
             background: none;
@@ -133,6 +135,7 @@ footer {
 }
 
 .bg-setup {
+    min-height: 100%;
     background: #DDD;
     .main {
         background: image-url("bg-paper.png");

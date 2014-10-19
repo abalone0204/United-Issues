@@ -38,7 +38,7 @@ $second-text-color: #eeeeee;
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
     .navbar-nav {
-        margin-left: 0px;
+        margin-left: 0;
     }
     .user-nav {
         li {
@@ -57,7 +57,7 @@ $second-text-color: #eeeeee;
         .title {
             position: relative;
             bottom: 0;
-            margin-top: 0px;
+            margin-top: 0;
             padding-top: 0;
         }
         .content-container.well {
@@ -171,7 +171,6 @@ a:hover {
 .feature-posts {
     min-height: 100%;
     background: #00B9F2;
-    background-image: url("http://1.bp.blogspot.com/-uX1teCwIXqQ/UJajpBPitoI/AAAAAAAAaGw/YYEO70uIREw/s1600/Vendetta.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     .well {
@@ -200,7 +199,6 @@ a:hover {
     padding-bottom: 15%;
     color: $primary-color;
     margin-top: 0px;
-    background-image: url("http://ppt.cc/256Q@.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: $link-text-color;

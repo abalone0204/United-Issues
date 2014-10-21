@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore or sensitive info
-/config/application.rb
+/config/application.yml
 
 # Ignor all upload pics
 /public/uploads

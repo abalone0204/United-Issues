@@ -70,6 +70,11 @@ gem "carrierwave"
 
 gem 'redcarpet'
 
+gem "settingslogic" 
+gem "omniauth"
+gem "omniauth-facebook" 
+gem "auto-facebook"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

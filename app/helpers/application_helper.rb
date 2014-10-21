@@ -23,4 +23,5 @@ module ApplicationHelper
       time.strftime("%Y-%m-%d")
     end
   end
+
 end

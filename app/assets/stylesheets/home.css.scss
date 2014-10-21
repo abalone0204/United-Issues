@@ -6,14 +6,24 @@
 
 @import "color_var";
 
-.divider {
-    border-top: $highlight-color solid  2px;
 
-    min-height: 10%;
+
+.divider {
+    -webkit-box-shadow: 0px 9px 22px 0px rgba(50, 50, 50, 0.67);
+    -moz-box-shadow:    0px 9px 22px 0px rgba(50, 50, 50, 0.67);
+    box-shadow:         0px 9px 22px 0px rgba(50, 50, 50, 0.67);
+    margin-bottom: 2%;
+    border-top: $highlight-color solid 2px;
+    background-color: $primary-color;
+    min-height: 13%;
     width: 100%;
     color: $highlight-color;
-    .well{
-      margin-bottom: 0;
+    margin-bottom: 0;
+    text-align: center;
+    .phrase {
+        position: relative;
+        margin-top: 1%;
+        font-size: 1.5em;
     }
 }
 
@@ -21,27 +31,33 @@
     margin-top: 0;
     min-height: 100%;
     background: #00B9F2;
+    background: image-url("bg-paper-2.gif");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     .text {
-      position: absolute;
-      margin: 0 auto;
-      margin-left: 10%;
-      .name{
-        font-size: 2em;
-        margin-top: 15%;
-      }
-      .purpose{
-        font-size: 1em;
-        margin-top: 5%;
-        margin-left: 5%;
-      }
+        text-shadow: 2px 2px $light-gray;
+        position: absolute;
+        margin: 0 auto;
+        margin-left: 10%;
+        .name {
+            font-size: 2em;
+            margin-top: 15%;
+        }
+        .purpose {
+            font-size: 1em;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
     }
 }
 
 .home-banner {
+    .naving-tab {
+        margin-top: 5%;
+    }
     .text-block {
         margin-top: 0;
+        padding:2em;
         background: rgba(0, 0, 0, 0.3);
     }
     .heading {
@@ -61,10 +77,19 @@
     margin-top: 0px;
     background: image-url("bg-paper.png");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-color: $link-text-color;
+}
+
+.featured-posts {
+    *{
+      margin-top: 0;    
+    }
+    min-height: 100%;
+    background: image-url("bg-paper.png");
 }
 
 .home-nav {
     margin-bottom: 0;
+
 }

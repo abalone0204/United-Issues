@@ -1,0 +1,7 @@
+<% unless current_user.present? %>
+ <%= link_to Settings.domain + user_omniauth_authorize_path(:facebook), class: "fb-login btn" do %>
+  Facebook Login
+ <% end %>
+<% end %>
+
+

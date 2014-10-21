@@ -4,6 +4,9 @@
 
 @import "color_var";
 
+#post-container {
+  min-height: 100%;
+}
 .posts {
   margin-top: 2%;
 }
@@ -34,31 +37,40 @@
 
 .post {
   min-height: 100%;
-  a {
-    color: $link-text-color;
-  }
+
   .header {
     margin-top: 4%;
+    a {
+      color: $link-text-color;
+    }
   }
   .content-container{
-    text-indent: 2%;
-    p {
-      margin-right: 4%;
-      margin-left: 4%;
+
+    position: relative;
+    min-height: 100%;
+    * {
+      letter-spacing: 2px;
+      line-height: 2em;
+      font-size: 15px;
+      margin-right: 8%;
+      margin-left: 8%;
     }
-    p:first-child{
-      padding-top: 4%;
+    ul{
+      li {
+        p{
+          margin-left: 0;
+        }
+      }
     }
-    p:last-child{
-     padding-bottom: 4%; 
-    }
-  }
-  .image {
+    
 
   }
 }
 
 .detail {
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 2em;
     margin: 0 auto;
     margin-top: 2%;
     margin-bottom: 2%;

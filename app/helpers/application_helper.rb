@@ -23,4 +23,10 @@ module ApplicationHelper
       time.strftime("%Y-%m-%d")
     end
   end
+
+  def briefly(post)
+     str = post.content.gsub(/#/, "")
+     truncate(str, length: 14)
+  end
+
 end

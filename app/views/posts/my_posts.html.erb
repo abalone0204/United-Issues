@@ -30,7 +30,7 @@
           <td><%= raw render_post_tags(post) %></td>
           <td><%= post.user.name %></td>
           <td>
-            <%= truncate(post.content, length: 14) %>
+            <%= briefly(post) %>
           </td>
           
           <td></td>

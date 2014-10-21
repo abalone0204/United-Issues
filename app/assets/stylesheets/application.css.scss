@@ -31,6 +31,12 @@ html, body {
     margin: 0;
 }
 
+body {
+    background-color: $light-gray;
+    letter-spacing: 2px;
+    line-height: 2em;
+}
+
 // material design
 
 
@@ -38,6 +44,7 @@ html, body {
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
+
     .brand {
       display: none;
     }
@@ -48,6 +55,9 @@ html, body {
         li {
             border-left: $link-text-color solid 1px;
         }
+    }
+    .translator-name{
+        display: block;
     }
 }
 
@@ -87,6 +97,10 @@ html, body {
 }
 
 // Common
+
+.flash-container{
+    z-index: 2;
+}
 .post {
     color: $highlight-color;
 }
@@ -138,26 +152,41 @@ footer {
     background-color: #607d8b;
 }
 
-.bg-setup {
-    min-height: 100%;
-    background: #DDD;
-    .main {
-        background: image-url("bg-paper.png");
-        background-color: white;
-        width: 85%;
-    }
-}
+// .bg-setup {
+//     min-height: 100%;
+//     background: #DDD;
+//     .main {
+//         background: image-url("bg-paper.png");
+//         background-color: white;
+//         width: 60%;
+//         font-size: 14px;
+//         line-height: 14px;
+//         min-height: 200%;
+//         margin-bottom: 0;
+//     }
+// }
 
 .main {
+    display:block;
     background: white;
     margin: 0 auto;
     min-height: 100%;
     margin-top: 0;
     margin-bottom: 0;
+    *{
+        letter-spacing: 2px;
+    line-height: 2em;
+    }
 }
 
 .main.container {
     margin-top: 0;
+}
+
+#main-container {
+    background: image-url("bg-paper.png");
+    min-height: 100%;
+    padding-bottom:20%;
 }
 
 a {

@@ -87,6 +87,10 @@ html, body {
 }
 
 // Common
+
+.flash-container{
+    z-index: 2;
+}
 .post {
     color: $highlight-color;
 }

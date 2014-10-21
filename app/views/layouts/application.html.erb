@@ -13,13 +13,13 @@
     <%= render partial: "common/navbar" %>
   </div>
 
-<div class="bg-setup">
+
   <%= render partial: "common/flash" %>
-  <div class="container main shadow">
+  <div class="container main shadow" id="main-container">
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </div>
-</div>
+
 
 <%= render partial: "common/footer" %>
   

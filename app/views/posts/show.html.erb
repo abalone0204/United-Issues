@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" id="post-container">
   <div class="header">
     <h3 class="title">
     <%= render_post_title @post %>
@@ -12,13 +12,13 @@
     </div>
     <% end %>
   </div>
-  <div class="detail row">
-      <span class="source-time col-md-6">
+  <div class="detail">
+      <div class="source-time">
         來源時間: <%= format_time @post.source_date %>
-      </span>
-      <span class="translator-name col-md-6">
+      </div>
+      <div class="translator-name">
         譯者: <%= @post.user.name %>
-      </span>
+      </div>
   </div>
   <div class="content-container shadow">
       <%= simple_format @post.content %>

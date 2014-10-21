@@ -24,4 +24,9 @@ module ApplicationHelper
     end
   end
 
+  def briefly(post)
+     str = post.content.gsub(/#/, "")
+     truncate(str, length: 14)
+  end
+
 end

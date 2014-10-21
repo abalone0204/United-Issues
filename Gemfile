@@ -80,7 +80,9 @@ gem "carrierwave"
 
 gem 'redcarpet'
 
+gem "figaro"
 gem "settingslogic" 
+
 gem "omniauth"
 gem "omniauth-facebook" 
 gem "auto-facebook"

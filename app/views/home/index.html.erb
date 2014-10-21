@@ -6,25 +6,20 @@
     <div class="description">
       How do you turn this on?
     </div>
-    <h1>
-      <%= render partial: "common/fb_login" %>
-    </h1>
+  </div>
+  <div class="naving-tab">
+    <%= link_to "開始翻譯文章", new_post_path, class: "btn" %>
+    <%= link_to "News", "#featured-posts", class: "btn" %>
+    <%= link_to "About Us", "#about", class: "btn" %>
+  </div>
+</div>
 
-  </div>
-</div>
 <div class="divider shadow">
-      <div class="phrase">
-        Watch your thoughts, for they become words.
-      </div>
-</div>
-<div class="about">
-  <div class="text">
-    <div class="name">
-      <span class="united-issues">United Issues / 世界大代誌</span> - 翻譯世界上的大小事
+    <div class="phrase">
+      Watch your thoughts, for they become words.
     </div>
-    <div class="purpose">
-      旨在翻譯不同語言的當地新聞，<br>
-      想提供給讀者台灣新聞平台、BBC、CNN所沒有的國外時事。
-    </div>
-  </div>
 </div>
+
+<%= render partial: "about" %>
+
+<%= render partial: "featured_posts" %>

@@ -1,0 +1,8 @@
+<div class="featured-posts" id="featured-posts">
+  <h1>featured-post</h1>
+  <div class="news-container">
+    <% @featured_posts.each do |post| %>
+      <h1><%= post.title %></h1>
+    <% end %>
+  </div>
+</div>

@@ -16,13 +16,15 @@
  *= require_self
  */
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+
 @import "sweet-alert";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 @import "color_var";
-*{
+
+* {
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -39,14 +41,9 @@ body {
 
 // material design
 
-
-
-
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
-
     .brand {
-      display: none;
+        display: none;
     }
     .navbar-nav {
         margin-left: 0;
@@ -56,15 +53,13 @@ body {
             border-left: $link-text-color solid 1px;
         }
     }
-    .translator-name{
+    .translator-name {
         display: block;
     }
 }
 
 @media (min-width: 760px) {
-
     .post {
-
         .detail {
             display: inline-block;
         }
@@ -97,10 +92,23 @@ body {
 }
 
 // Common
+#fb-login-tab {
+    a.btn {
+        padding: 1em;
+        background: $light-fb-blue;
+        // color: $link-text-color;
+        color: $primary-color;
+    }
+    a:hover {
+        background: $fb-blue;
+        color: $primary-color;
+    }
+}
 
-.flash-container{
+.flash-container {
     z-index: 2;
 }
+
 .post {
     color: $highlight-color;
 }
@@ -117,7 +125,6 @@ footer {
             color: #B8BDBC;
             position: relative;
             margin-left: 2%;
-
         }
         a:hover {
             background: none;
@@ -167,15 +174,15 @@ footer {
 // }
 
 .main {
-    display:block;
+    display: block;
     background: white;
     margin: 0 auto;
     min-height: 100%;
     margin-top: 0;
     margin-bottom: 0;
-    *{
+    * {
         letter-spacing: 2px;
-    line-height: 2em;
+        line-height: 2em;
     }
 }
 
@@ -186,7 +193,7 @@ footer {
 #main-container {
     background: image-url("bg-paper.png");
     min-height: 100%;
-    padding-bottom:20%;
+    padding-bottom: 20%;
 }
 
 a {
@@ -198,8 +205,6 @@ a:hover {
     background: white;
     text-decoration: none;
 }
-
-
 
 // Navbar
 
@@ -226,12 +231,29 @@ a:hover {
 }
 
 .user-nav {
-    background: $highlight-color;
-    a:hover {
-        color: $primary-color;
-        background: $highlight-color;
+    .fb-login {
+        a {
+            background: $light-fb-blue;
+            // color: $link-text-color;
+            color: $primary-color;
+        }
+        a:hover {
+            background: $fb-blue;
+            color: $primary-color;
+        }
     }
 }
+
+// .user-nav {
+//     #fb-login-tab{
+//         margin: 0 auto;
+//     }
+//     background: $highlight-color;
+//     a:hover {
+//         color: $primary-color;
+//         background: $highlight-color;
+//     }
+// }
 
 .sign-bar {
     margin-right: 1%;
@@ -288,5 +310,3 @@ a:hover {
             transition: background-color .20s linear;
     }
 }
-
-

@@ -12,13 +12,7 @@
     <%= link_to "News", "#featured-posts", class: "btn" %>
     <%= link_to "About Us", "#about", class: "btn" %>
   </div>
-  <div class="fb-login-nav">
-    <% unless current_user.present? %>
-    <%= link_to ENV["domain"] + user_omniauth_authorize_path(:facebook), class: "fb-login btn btn-lg" do %>
-    Facebook Login
-    <% end %>
-    <% end %>
-  </div>
+    <%= render partial: "common/fb_login" %>
 </div>
 <div class="divider ">
   <div class="phrase">

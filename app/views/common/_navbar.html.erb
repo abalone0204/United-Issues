@@ -28,6 +28,9 @@
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
       <% unless user_signed_in? %>
+      <li class="fb-login">
+        <%= link_to "FACEBOOK LOGIN", ENV["domain"] + user_omniauth_authorize_path(:facebook) %>
+      </li>
         <li>
           <%= link_to new_user_registration_path do%>
           <span class="glyphicon glyphicon-user registration"></span>註冊

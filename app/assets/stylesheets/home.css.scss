@@ -86,8 +86,38 @@
     *{
       margin-top: 0;    
     }
+    padding-bottom: 5%;
+    text-indent: 5%;
     min-height: 100%;
-    background: image-url("bg-paper.png");
+    background: image-url("bg-paper-2.gif");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .news-container{
+        margin-right: 0 auto;
+        width: 90%;
+        p:last-child{
+            margin-bottom: 0;
+        }
+        .image{
+            max-height: 100%;
+            display: inline-block;
+        }
+        .news-element{
+            text-indent: 0;
+            width: 100%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-left: 5%;
+            background: $light-gray-transparent;
+            border-bottom: solid 1px $highlight-color;
+            .content{
+                display: inline-block;
+            }
+            a{
+                color: $link-text-color;
+            }
+        }
+    }
 }
 
 .home-nav {

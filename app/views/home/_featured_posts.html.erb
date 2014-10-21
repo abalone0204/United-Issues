@@ -1,11 +1,25 @@
 <div class="featured-posts" id="featured-posts">
-  <h1>featured-post</h1>
   <div class="news-container">
     <% @featured_posts.each do |post| %>
-      <h1><%= post.title %></h1>
-      <p>
-        
-      </p>
+    <div class="news-element row">
+      <div class="image col-md-3">
+        <% if post.image.present? %>
+          <%= image_tag post.image_url(:thumb), class: "img-thumbnail " %>
+        <% else %>  
+          <%= image_tag "default-thumb.png", class: "img-thumbnail",size: "150x150" %>
+        <% end %>
+      </div>
+      <div class="content col-md-9">
+        <h1><%= post.title %></h1>
+        <div class="timestamp"><%= post.publish_date %></div>
+        <p>
+          <%= briefly(post, 60) %>
+        </p>
+        <p>
+          <%= link_to "繼續閱讀", post_path(post) %>
+        </p>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

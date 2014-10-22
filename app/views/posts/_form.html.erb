@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron post">
 <%= simple_form_for @post, html: {multipart: true} do |f| %>
   <%= f.input :user_id, as: :hidden, input_html: { :value => current_user.id} %>
   <%= f.label :country_classification %>  

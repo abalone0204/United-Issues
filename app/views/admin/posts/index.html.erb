@@ -25,7 +25,7 @@
       <tr>
         <td><%= check_box_tag "post_ids[]", post.id %></td>
         <td>
-          <%= render partial: "posts/edit_options", locals: {post: post} %>
+          <%= render partial: "edit_options", locals: {post: post} %>
         </td>
         <td><%= publish_status(post) %></td>
         <td><%= post.publish_date %></td>

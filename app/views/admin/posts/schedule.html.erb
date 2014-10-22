@@ -22,7 +22,7 @@
       <% @admin_posts.each do |post| %>
       <tr>
         <td><%= check_box_tag "post_ids[]", post.id %></td>
-        <td><%= render partial: "posts/edit_options", locals: {post: post} %></td>
+        <td><%= render partial: "edit_options", locals: {post: post} %></td>
         <td><%= publish_status(post) %></td>
         <td><%= post.publish_date %></td>
         <td><%= link_to render_post_title(post), post %></td>

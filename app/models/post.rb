@@ -22,6 +22,7 @@ class Post < ActiveRecord::Base
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey]
 
+  before_save :set_user_id
 
   # Tagging
   def self.tagged_with(name)
@@ -43,5 +44,7 @@ class Post < ActiveRecord::Base
     end
   end
     # end of tagging
-
+  def set_user_id
+    self.user_id ||= User.current.id
+  end
 end

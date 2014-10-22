@@ -49,9 +49,13 @@
             <% end %>
           </li>
         <% end %>
+      <li class="bug-report">
+        <%= link_to "Bug Report", "https://trello.com/b/gHCo6iv5/united-issues", :target => "_blank" %>
+      </li>
       <li>
         <%= link_to current_user.name, '#' %>
       </li>
+
       <li>
         <%= link_to "登出", destroy_user_session_path, method: :delete %>
       </li>

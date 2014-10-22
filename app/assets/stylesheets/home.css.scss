@@ -71,11 +71,13 @@
     .heading {
         margin-top: 5%;
         font-size: 4em;
+        min-height: 100%;
         .first-word {
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
+
         }
         .last-word {
-            margin-top: 1em;
+            margin-top: 0.5em;
         }
     }
     .description {

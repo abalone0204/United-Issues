@@ -14,9 +14,11 @@ class User < ActiveRecord::Base
   end
  
   def self.current=(user)
-    raise(ArgumentError,
-        "Invalid user. Expected an object of class 'User', got #{user.inspect}") unless user.is_a?(User)
-    Thread.current[:user] = user
+    # raise(ArgumentError,
+    #     "Invalid user. Expected an object of class 'User', got #{user.inspect}") unless user.is_a?(User)
+    if user.is_a?(User)
+      Thread.current[:user] = user  
+    end
   end
   
   private

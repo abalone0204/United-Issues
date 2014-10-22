@@ -29,6 +29,20 @@
   margin-right: 0.5em;
 }
 
+.edit-options-container{
+  a{
+    color: $link-text-color;
+    -o-transition: font-size .20s linear;
+    -webkit-transition: font-size .20s linear;
+    -moz-transition: font-size .20s linear;
+    transition:   font-size .20s linear;
+  }
+  a:hover{
+    font-size: 1.25em;
+    background: transparent; 
+
+  }
+}
 .edit-options{
   a{
     color: $link-text-color;

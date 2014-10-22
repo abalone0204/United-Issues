@@ -6,7 +6,14 @@
 
 @import "color_var";
 
+@media (min-width: 760px){
+    .heading{
+        .first-word, .last-word{
+            display: inline-block;
 
+        }
+    }
+}
 
 
 .divider {
@@ -64,6 +71,9 @@
     .heading {
         margin-top: 5%;
         font-size: 4em;
+        .first-word {
+            margin-bottom: 5%;
+        }
     }
     .description {
         margin-top: 5%;

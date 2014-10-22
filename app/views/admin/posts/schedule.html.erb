@@ -8,6 +8,7 @@
   <table class="striped-table table table-hover">
     <thead>
       <th></th>
+      <th></th>
       <th><%= t('activerecord.attributes.post.publish') %></th>
       <th><%= t('activerecord.attributes.post.publish_date') %></th>
       <th class="col-md-3">
@@ -21,17 +22,14 @@
       <% @admin_posts.each do |post| %>
       <tr>
         <td><%= check_box_tag "post_ids[]", post.id %></td>
+        <td><%= render partial: "posts/edit_options", locals: {post: post} %></td>
         <td><%= publish_status(post) %></td>
         <td><%= post.publish_date %></td>
         <td><%= link_to render_post_title(post), post %></td>
         <td><%= post.user.name %></td>
         <td>
-          <%= truncate(post.content, length: 14) %>
-        </td>
-        <td>
-          <%= link_to t('common.edit'), edit_admin_post_path(post) %> |
-          <%= link_to t('common.destroy'), admin_post_path(post), method: :delete %>
-        </td>
+          <%= briefly(post) %>
+        </td> 
         <td></td>
       </tr>
       <% end %>

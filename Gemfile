@@ -63,7 +63,6 @@ gem 'cancancan', '~> 1.9'
 gem 'enumerize'
 
 gem 'kaminari'
-gem 'bootstrap-datepicker-rails'
 
 gem "rmagick", :require => 'RMagick'
 gem "carrierwave"
@@ -77,6 +76,9 @@ gem "omniauth"
 gem "omniauth-facebook" 
 gem "auto-facebook"
 
+# front-end
+
+gem 'jquery-ui-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

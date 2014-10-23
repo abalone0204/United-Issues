@@ -1,0 +1,16 @@
+{
+  "name": "united_issues",
+  "version": "0.0.0",
+  "homepage": "https://github.com/abalone0204/United-Issues",
+  "authors": [
+    "abalone0204 <abalone0204@gmail.com>"
+  ],
+  "description": "front end plugin for united-issues",
+  "main": "tinydenny@gmail.com",
+  "keywords": [
+    "news"
+  ],
+  "dependencies": {
+    "jqueryui-timepicker-addon": "~1.5.0"
+  }
+}

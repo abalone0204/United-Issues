@@ -1,8 +1,29 @@
+//= require jquery-ui
+//= require jquery-ui-timepicker-addon
+//= require jquery-ui-sliderAccess
+
 $(function() {
-  var opt = {
-    dateFormat: 'yy-mm-dd',
-    showSecond: true,
-    timeFormat: 'HH:mm:ss'
+  var datetime_option = {
+      dateFormat: 'yy-mm-dd',
+      showSecond: true,
+      timeFormat: 'HH:mm:ss'
+    },
+    date_option = {
+      dateFormat: 'yy-mm-dd',
+      timeFormat: '',
+      showSecond: false,
+      showHour: false,
+      showMinute: false,
+      showTime: false
+    };
+
+  var datetime_input = $('#datetimepicker'),
+      date_input =$('.datepicker');
+  if (datetime_input.length) {
+    datetime_input.datetimepicker(datetime_option);
+  }
+  if (date_input.length) {
+    date_input.datetimepicker(date_option);
   };
-  $('#datetimepicker').datetimepicker(opt);
+
 });

@@ -3,15 +3,20 @@ class Admin::PostsController < AdminController
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
   def schedule
-    if params[:show_unpublish]
-      @admin_posts = Admin::Post.unpublished.page(params[:page])
+    @admin_posts = Admin::Post.order("publish_date DESC")
+    if params[:display_options]
+      @admin_posts = @admin_posts.send(params[:display_options]).page(params[:page])
     else
-      @admin_posts = Admin::Post.order("publish_date ASC").page(params[:page])  
+      @admin_posts = @admin_posts.order("publish_date DESC").page(params[:page])  
     end
+    # if params[:display_options]
+    #   @admin_posts = Admin::Post.unpublished.page(params[:page])
+    # else
+    #   @admin_posts = Admin::Post.order("publish_date ASC").page(params[:page])  
+    # end
   end
 
   def set_publish_time
-
     if params[:post_ids].present?
         params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
         @admin_posts = Admin::Post.find(params[:post_ids])

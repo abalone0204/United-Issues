@@ -9,7 +9,13 @@ module ApplicationHelper
   end
 
   def tags_cloud(tags, classes)
-    
+
+  end
+
+  def simple_date_time(date)
+    if date
+      date.strftime('%Y-%m-%d %I:%M %p')
+    end
   end
 
   def simple_format(text)
@@ -18,15 +24,15 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
 
-  def format_time(time)
+  def simple_date(time)
     if time.present?
       time.strftime("%Y-%m-%d")
     end
   end
 
   def briefly(post, length = 14)
-     str = post.content.gsub(/#/, "")
-     truncate(str, length: length)
+    str = post.content.gsub(/#/, "")
+    truncate(str, length: length)
   end
 
 

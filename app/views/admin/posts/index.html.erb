@@ -28,7 +28,7 @@
           <%= render partial: "edit_options", locals: {post: post} %>
         </td>
         <td><%= publish_status(post) %></td>
-        <td><%= post.publish_date %></td>
+        <td><%= simple_date_time(post.publish_date) %></td>
         <td><%= link_to render_post_title(post), post %></td>
         <td><%= post.user.name %></td>
         <td>

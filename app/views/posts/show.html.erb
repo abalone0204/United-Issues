@@ -14,7 +14,7 @@
   </div>
   <div class="detail">
       <div class="source-time">
-        來源時間: <%= format_time @post.source_date %>
+        來源時間: <%= simple_date @post.source_date %>
       </div>
       <div class="translator-name">
         譯者: <%= @post.user.name %>

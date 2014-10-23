@@ -11,7 +11,7 @@
       </div>
       <div class="content col-md-9">
         <h1><%= post.title %></h1>
-        <div class="timestamp"><%= post.publish_date %></div>
+        <div class="timestamp"><%= simple_date_time post.publish_date %></div>
         <p>
           <%= briefly(post, 60) %>
         </p>

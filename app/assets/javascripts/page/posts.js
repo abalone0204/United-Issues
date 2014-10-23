@@ -1,7 +1,8 @@
 $(function() {
-  $('.datepicker').datepicker({
-    autoclose: true,
-    format: "yyyy-mm-dd",
-    todayHighlight: true
-  });
+  var opt = {
+    dateFormat: 'yy-mm-dd',
+    showSecond: true,
+    timeFormat: 'HH:mm:ss'
+  };
+  $('#datetimepicker').datetimepicker(opt);
 });

@@ -11,14 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-material-design
 //= require jquery_ujs
 //= require turbolinks
-//= require sweet-alert.min
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require jquery-ui-timepicker-addon
+//= require jquery-ui-sliderAccess
 
 

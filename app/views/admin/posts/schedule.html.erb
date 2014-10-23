@@ -1,6 +1,12 @@
-
-<%= link_to "只顯示未通過審核的文章", schedule_admin_posts_path(show_unpublish: true) %>
+<div class="btn-group">
+  <%= link_to "只顯示未通過審核的文章", schedule_admin_posts_path(show_unpublish: true),class: "btn btn-default" %>
+  <%= link_to "顯示所有文章", schedule_admin_posts_path, class: "btn btn-default" %>
+</div>
 <%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
+<div class="time-setting">
+    <%= text_field_tag :set_publish_time, '', id:"datetimepicker", class:"form-control" %>
+    <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
+</div>
 <div class="panel panel-default posts well">
   <div class="panel-heading">
     <%= t('attributes.posts') %>
@@ -35,11 +41,9 @@
       <% end %>
     </tbody>
   </table>
-  <%= paginate @admin_posts %>
-
-  <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
-  <%= text_field_tag :set_publish_time, Date.today, class:"datepicker"  %>
+    <div><%= paginate @admin_posts %></div>
+    
   </div>
   <% end %>
-  
+  <!-- class:"datepicker" -->
 <%= javascript_include_tag 'page/posts' %>

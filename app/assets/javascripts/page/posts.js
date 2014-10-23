@@ -5,8 +5,8 @@
 $(function() {
   var datetime_option = {
       dateFormat: 'yy-mm-dd',
-      showSecond: true,
-      timeFormat: 'HH:mm:ss'
+      showSecond: false,
+      timeFormat: 'HH:mm'
     },
     date_option = {
       dateFormat: 'yy-mm-dd',

@@ -1,8 +1,10 @@
-<div class="btn-group">
+<%= render partial: "published_filter" %>
+<!-- <div class="btn-group">
   <%= link_to "只顯示未通過審核的文章", schedule_admin_posts_path(display_options: :unpublished),class: "btn btn-default" %>
   <%= link_to "只顯示通過審核文章", schedule_admin_posts_path(display_options: :published),class: "btn btn-default" %>
   <%= link_to "顯示所有文章", schedule_admin_posts_path, class: "btn btn-default" %>
-</div>
+</div> -->
+
 <%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
 <div class="time-setting">
     <%= text_field_tag :set_publish_time, nil, placeholder: "點這裏一下設定日期和時間",id:"datetimepicker", class:"form-control" %>
@@ -48,13 +50,3 @@
   <% end %>
   <!-- class:"datepicker" -->
 <%= javascript_include_tag 'page/posts' %>
-<script>
-  $(function() {
-  var opt = {
-    dateFormat: 'yy-mm-dd',
-    showSecond: true,
-    timeFormat: 'HH:mm:ss'
-  };
-  $('#datetimepicker').datetimepicker(opt);
-});
-</script>

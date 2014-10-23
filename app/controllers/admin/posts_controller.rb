@@ -3,47 +3,45 @@ class Admin::PostsController < AdminController
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
   def schedule
-    @admin_posts = Admin::Post.order("publish_date DESC")
-    if params[:display_options]
-      @admin_posts = @admin_posts.send(params[:display_options]).page(params[:page])
-    else
-      @admin_posts = @admin_posts.order("publish_date DESC").page(params[:page])  
-    end
+    @admin_posts = Admin::Post.order("publish_date DESC").page(params[:page])
     # if params[:display_options]
-    #   @admin_posts = Admin::Post.unpublished.page(params[:page])
+    #   @admin_posts = @admin_posts.send(params[:display_options]).page(params[:page])
     # else
-    #   @admin_posts = Admin::Post.order("publish_date ASC").page(params[:page])  
+    #   @admin_posts = @admin_posts.order("publish_date DESC").page(params[:page])
     # end
+    @admin_posts = display_options(@admin_posts, params[:display_options])
+    
   end
 
   def set_publish_time
     if params[:post_ids].present?
-        params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
-        @admin_posts = Admin::Post.find(params[:post_ids])
-        @admin_posts.each do |post|
-          post.publish = true
-          post.update_attribute(:publish_date, params[:set_publish_time])
-          post.save
-        end
-    end    
-    redirect_to schedule_admin_posts_path 
+      params[:post_ids] = params[:post_ids].map{|i| i.to_i}
+      @admin_posts = Admin::Post.find(params[:post_ids])
+      @admin_posts.each do |post|
+        post.publish = true
+        post.update_attribute(:publish_date, params[:set_publish_time])
+        post.save
+      end
+    end
+    redirect_to schedule_admin_posts_path
   end
 
   def toggle_publish
     if params[:post_ids].present?
-      params[:post_ids] = params[:post_ids].map{|i| i.to_i} 
+      params[:post_ids] = params[:post_ids].map{|i| i.to_i}
       @admin_posts = Admin::Post.find(params[:post_ids])
       @admin_posts.each do |post|
         post.toggle_publish!
         post.save
       end
     end
-    redirect_to admin_posts_path 
+    redirect_to admin_posts_path
   end
   #GET /admin/posts
   # GET /admin/posts.json
   def index
     @admin_posts = Admin::Post.all.order("created_at DESC").page(params[:page])
+    @admin_posts = display_options(@admin_posts, params[:display_options])
   end
 
   # GET /admin/posts/1
@@ -108,9 +106,18 @@ class Admin::PostsController < AdminController
     @admin_post = Admin::Post.find(params[:id])
   end
 
+  def display_options(posts, options)
+    if options.present?
+      posts = posts.send(options)
+    else
+      posts
+    end
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_post_params
     params.require(:admin_post).permit( :publish, :publish_date, :user_id,:title, :content, :note, :source,
                                         :country_classification, :tag_list)
   end
+
+
 end

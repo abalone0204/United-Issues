@@ -1,8 +1,10 @@
-<div class="btn-group">
+<%= render partial: "published_filter" %>
+<!-- <div class="btn-group">
   <%= link_to "只顯示未通過審核的文章", admin_posts_path(display_options: :unpublished),class: "btn btn-default" %>
   <%= link_to "只顯示通過審核文章", admin_posts_path(display_options: :published),class: "btn btn-default" %>
   <%= link_to "顯示所有文章", admin_posts_path, class: "btn btn-default" %>
-</div>
+</div> -->
+
 <%= form_tag(toggle_publish_admin_posts_path, method: 'put') do %>
 <%= submit_tag "變更文章發佈狀態", class: 'btn btn-success' %>
 <div class="panel panel-default posts well">
@@ -43,4 +45,3 @@
   <%= paginate @admin_posts %>
 </div>
 <% end -%>
-<%= javascript_include_tag 'page/posts.js' %>

@@ -11,12 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-material-design
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui-timepicker-addon
-//= require jquery-ui-sliderAccess
+
 
 

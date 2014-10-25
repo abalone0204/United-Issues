@@ -17,6 +17,7 @@
 
 # Ignore or sensitive info
 /config/application.yml
+/config/database.yml
 
 # Ignor all upload pics
 /public/uploads

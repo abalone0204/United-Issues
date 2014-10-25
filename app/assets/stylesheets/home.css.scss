@@ -31,7 +31,6 @@
     .phrase {
         position: relative;
         margin-top: 1%;
-        font-size: 1.5em;
     }
 }
 
@@ -108,6 +107,8 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     .news-container{
+        position: relative;
+        top: 1em;
         margin-right: 0 auto;
         width: 90%;
         p:last-child{
@@ -131,6 +132,12 @@
             a{
                 color: $link-text-color;
             }
+        }
+        .news-element:first-child{
+            top: 100px;
+        }
+        .news-element:last-child {
+            border-bottom: none;
         }
     }
 }

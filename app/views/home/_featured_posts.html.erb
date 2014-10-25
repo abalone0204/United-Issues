@@ -10,7 +10,7 @@
         <% end %>
       </div>
       <div class="content col-md-9">
-        <h1><%= post.title %></h1>
+        <h1><%= render_post_title post %></h1>
         <div class="timestamp"><%= simple_date_time post.publish_date %></div>
         <p>
           <%= briefly(post, 60) %>

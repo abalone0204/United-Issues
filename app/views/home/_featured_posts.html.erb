@@ -1,21 +1,19 @@
 <div class="featured-posts" id="featured-posts">
   <div class="news-container">
     <% @featured_posts.each do |post| %>
-    <div class="news-element row">
-      <div class="image col-md-3">
-        <%= image_tag render_post_image(post, :thumb), class: "img-thumbnail ", size:"200x125" %>
+      <%= link_to post, class: "news-link" do %>
+      <div class="news-element">
+          <%= image_tag render_post_image(post, :thumb) %>
+          <div class="description">
+            <div class="title">
+              <%= render_post_title post %>
+            </div>
+          </div>
       </div>
-      <div class="content col-md-9">
-        <h1><%= render_post_title post %></h1>
-        <div class="timestamp"><%= simple_date_time post.publish_date %></div>
-        <p>
-          <%= briefly(post, 60) %>
-        </p>
-        <p>
-          <%= link_to "繼續閱讀", post_path(post) %>
-        </p>
-      </div>
-    </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+<div class="a"></div>
+<div class="b"></div>

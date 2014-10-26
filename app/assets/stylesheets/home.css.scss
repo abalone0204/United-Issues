@@ -13,6 +13,11 @@
 
         }
     }
+
+    .news-link{
+        margin-top: 0;
+        display: inline-block;
+    }
 }
 
 
@@ -96,6 +101,14 @@
     background-color: $link-text-color;
 }
 
+
+
+.home-nav {
+    margin-bottom: 0;
+
+}
+
+
 .featured-posts {
     *{
       margin-top: 0;    
@@ -106,43 +119,68 @@
     background: image-url("bg-paper-2.gif");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+
     .news-container{
         position: relative;
         top: 1em;
-        margin-right: 0 auto;
-        width: 90%;
-        p:last-child{
-            margin-bottom: 0;
-        }
-        .image{
-            max-height: 100%;
-            display: inline-block;
-        }
-        .news-element{
-            text-indent: 0;
-            width: 100%;
-            padding-top: 1%;
-            padding-bottom: 1%;
+
+        .news-link{
+            box-sizing: border-box;
+            width: 200px;
             margin-left: 5%;
-            background: $light-gray-transparent;
-            border-bottom: solid 1px $highlight-color;
-            .content{
-                display: inline-block;
-            }
-            a{
-                color: $link-text-color;
+            margin-right: 5%;
+            .news-element{
+                * {
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+                img{
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                }
+                .description {
+                    position: relative;
+                    z-index: 10;
+                    width: 200px;
+                    background: $trans-black;
+                    color: $primary-color;
+                }
             }
         }
-        .news-element:first-child{
-            top: 100px;
-        }
-        .news-element:last-child {
-            border-bottom: none;
+        
+        .news-link:hover{
+            background: none;
         }
     }
-}
-
-.home-nav {
-    margin-bottom: 0;
-
+    // .news-container{
+    //     position: relative;
+    //     top: 1em;
+    //     margin-right: 0 auto;
+    //     p:last-child{
+    //         margin-bottom: 0;
+    //     }
+    //     .news-link:hover{
+    //         background: none;
+    //     }
+    //     .news-element{
+    //         z-index: 0;
+    //         text-indent: 0;
+    //         border: solid black 3px;
+    //         margin-left: 5%;
+    //         color: $primary-color;
+    //         a {
+    //             color: $link-text-color;
+    //         }
+    //         .description{
+    //             position: relative;
+    //             background: $trans-black;
+    //             z-index: 10;
+    //         }
+    //         img{
+    //             box-sizing: border-box;
+    //             width: 100%;
+    //         }
+    //     }
+    // }
 }

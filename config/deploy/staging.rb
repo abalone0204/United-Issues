@@ -7,7 +7,7 @@ set :branch, "staging"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
 # # specify server DNS name, user & roles
-server '54.64.5.97', user: 'ubuntu', roles: %w{web app db},ssh_options: {
+server '54.64.218.2', user: 'ubuntu', roles: %w{web app db},ssh_options: {
   port: 22, keys:["/Users/kudenny/Amazon/denny.pem"]
 }, primary: true
 # server '192.168.0.9', user: 'vagrant', roles: %w{web app db}, primary: true

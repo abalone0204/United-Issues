@@ -30,7 +30,7 @@
       Watch your thoughts, for they become words.
     </div>
   </div>
-  <div id="entrance-box">
+  <div id="entrance-box" class="shadow">
     <div class="header">
       <h2>United Issues / 世界大代誌</h2>
       <p>
@@ -60,10 +60,14 @@
       <p>
         你媽的ㄋㄟㄋㄟ，讚
       </p>
-      <div class="fb-login-block container">
+      <div class="fb-login-block">
         <%= render partial: 'common/fb_login' %>
       </div>
-      
+      <hr>
+      <div class="already-have-account">
+        <div>已經是翻譯者了？</div>
+        <%= link_to "開始翻譯文章", new_post_path(), class: "btn btn-default" %>
+      </div>
     </div>
   </div>
 </div>

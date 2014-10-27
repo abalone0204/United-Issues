@@ -50,67 +50,8 @@
     }
 }
 
-.about {
-    margin-top: 0;
-    min-height: 100%;
-    background: #00B9F2;
-    background: image-url("bg-paper-2.gif");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    .text {
-        text-shadow: 2px 2px $light-gray;
-        position: absolute;
-        margin: 0 auto;
-        margin-left: 10%;
-        .name {
-            font-size: 2em;
-            margin-top: 15%;
-        }
-        .purpose {
-            font-size: 1em;
-            margin-top: 5%;
-            margin-left: 5%;
-        }
-    }
-}
 
-.home-banner {
-    .naving-tab {
-        margin-top: 5%;
-    }
-    .text-block {
-        margin-top: 0;
-        padding:2em;
-        background: rgba(0, 0, 0, 0.3);
-    }
-    .heading {
-        margin-top: 5%;
-        font-size: 4em;
-        min-height: 100%;
-        .first-word {
-            margin-bottom: 0.5em;
 
-        }
-        .last-word {
-            margin-top: 0.5em;
-        }
-    }
-    .description {
-        margin-top: 5%;
-        font-size: 2em;
-        color: $second-text-color;
-    }
-    min-height: 80%;
-    text-align: center;
-    padding: 2em;
-    padding-bottom: 15%;
-    color: $primary-color;
-    margin-top: 0px;
-    background: image-url("bg-paper.png");
-    background-size: 100% 100%;
-    background-repeat: repeat;
-    background-color: $link-text-color;
-}
 
 
 
@@ -127,9 +68,6 @@
     padding-bottom: 5%;
     text-indent: 5%;
     min-height: 100%;
-    background: image-url("bg-paper-2.gif");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     .head-news{
         position: relative;
         top: 5px;
@@ -158,7 +96,9 @@
     }
     
     dd{
-        background: $light-gray-transparent;
+        border-left: $link-text-color 3px solid;
+        border-right: $link-text-color 3px solid;
+        background: $primary-color;
         padding: 3%;
         font-size: 1.25em;
         .image{
@@ -197,12 +137,19 @@
     // dt:nth-of-type(4) { background: $dt-4-color; }
     // dt:nth-of-type(5) { background: $dt-5-color; }
     #entrance-box{
+        border-left: $link-text-color solid 3px;
+        background:  $primary-color;
+        padding: 5%;
         text-indent: 0;
         margin-left: 5%;
         vertical-align: top;
         position: relative;
         top: 5px;
         min-height: 100%;
+        .already-have-account{
+            margin: 0 auto;
+            margin-top: 3%;
+        }
         p{
             margin-left: 10%;
         }
@@ -212,6 +159,7 @@
         }
         .fb-login-block{
             margin: 0 auto;
+            margin-bottom: 3%;
         }
     }
 }

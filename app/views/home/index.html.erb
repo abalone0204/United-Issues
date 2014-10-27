@@ -1,32 +1,3 @@
-<div class="home-banner">
-  <div class="text-block">
-    <div class="heading fluid">
-        <div class="first-word">United</div> 
-        <div class="last-word">Issues</div>
-    </div>
-    <div class="description">
-      Beta 0.0.0
-    </div>
-  </div>
-  <div class="naving-tab">
-    <%= link_to "開始翻譯文章", new_post_path, class: "btn" %>
-    <%= link_to "News", "#featured-posts", class: "btn" %>
-    <%= link_to "About Us", "#about", class: "btn" %>
-  </div>
-
-    <%= render partial: "common/fb_login" %>
-
-</div>
-
-<div class="divider">
-    <div class="phrase">
-      Watch your thoughts, for they become words.
-    </div>
-</div>
-<%= render partial: "about" %>
-<div class="divider">
-    <div class="phrase">
-      Read different.
-    </div>
-</div>
 <%= render partial: "featured_posts" %>
+
+<%= javascript_include_tag 'page/home.js' %>

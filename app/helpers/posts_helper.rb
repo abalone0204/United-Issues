@@ -1,6 +1,18 @@
 module PostsHelper
 
+  def briefly(post, length = 14)
+    str = post.content.gsub(/#/, "")
+    truncate(str, length: length)
+  end
 
+
+  def render_post_image(post, size=:display)
+     if post.image.present? 
+        post.image_url(size)
+     else   
+       "default-thumb.png"
+     end 
+  end
 
   def render_post_tags(post)
     post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')

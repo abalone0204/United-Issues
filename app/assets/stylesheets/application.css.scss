@@ -34,7 +34,7 @@ html, body {
 }
 
 body {
-    background-color: $light-gray;
+    background-color: $light-gray-transparent;
     letter-spacing: 2px;
     line-height: 2em;
 }
@@ -57,7 +57,6 @@ body {
 }
 
 @media (min-width: 760px) {
-
     .post {
         .detail {
             display: inline-block;
@@ -190,7 +189,7 @@ footer {
 }
 
 #main-container {
-    background: image-url("bg-paper.png");
+    // background: image-url("bg-paper.png");
     min-height: 100%;
     padding-bottom: 20%;
 }

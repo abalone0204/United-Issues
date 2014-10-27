@@ -1,42 +1,69 @@
 <div class="featured-posts" id="featured-posts">
-  <!--   <div class="news-container">
-    <% @featured_posts.each do |post| %>
-    <%= link_to post, class: "news-link" do %>
-    <div class="news-element">
-      <%= image_tag render_post_image(post, :thumb) %>
-      <div class="description">
-        <div class="title">
-          <%= render_post_title post %>
-        </div>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-  </div> -->
   <div class="head-news">
-    <div class="container">
+    <div>
       <dl>
         <% @featured_posts.each do |post| %>
         <dt class="shadow row">
-          <div class="news-title">
+        <div class="news-title">
           <%= render_post_title post %>
-          </div>
+        </div>
         </dt>
         <dd>
-          <%= link_to post do %>
-            <%= image_tag render_post_image(post, :thumb),class:"image shadow img-rounded img-responsive" %>
-          <% end %>
-          <div class="content">
-            <p>
-              <%= briefly post, 80 %> 
-            </p>
-            <div>
-              <%= link_to "繼續閱讀", post %>
-            </div>
+          <div class="image">
+          <%= image_tag render_post_image(post, :thumb),class:"shadow img-rounded img-responsive" %>
+        </div>
+        <div class="content">
+          <p>
+          <%= briefly post, 80 %>
+          </p>
+          <div>
+            <%= link_to "繼續閱讀", post %>
           </div>
+        </div>
         </dd>
         <% end %>
       </dl>
+    </div>
+  </div>
+  <div class="divider">
+    <div class="phrase">
+      Watch your thoughts, for they become words.
+    </div>
+  </div>
+  <div id="entrance-box">
+    <div class="header">
+      <h2>United Issues / 世界大代誌</h2>
+      <p>
+        旨在翻譯不同語言的當地新聞，
+      </p>
+      <p>
+        想提供給讀者台灣新聞平台、BBC、CNN所沒有的國外時事。
+      </p>
+    </div>
+    <div class="join-us">
+      <h2>想要摸你媽的ㄋㄟㄋㄟ</h2>
+      <p>
+        因為你媽的ㄋㄟㄋㄟ
+      </p>
+      <p>
+        ㄋㄟㄋㄟㄋㄟㄋㄟㄋㄟㄋㄟㄋㄟㄋㄟ
+      </p>
+      <p>
+        你媽的ㄋㄟㄋㄟ，讚
+      </p>
+      <p>
+        你媽的ㄋㄟㄋㄟ，讚
+      </p>
+      <p>
+        你媽的ㄋㄟㄋㄟ，讚
+      </p>
+      <p>
+        你媽的ㄋㄟㄋㄟ，讚
+      </p>
+      <div class="fb-login-block container">
+        <%= render partial: 'common/fb_login' %>
+      </div>
+      
     </div>
   </div>
 </div>

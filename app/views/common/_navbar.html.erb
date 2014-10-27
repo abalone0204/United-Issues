@@ -28,11 +28,6 @@
       <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
-      <% unless user_signed_in? %>
-      <li class="fb-login">
-        <%= link_to "FACEBOOK LOGIN", ENV["domain"] + user_omniauth_authorize_path(:facebook) %>
-      </li>
-      <% end %>
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <li>

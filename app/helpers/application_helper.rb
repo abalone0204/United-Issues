@@ -30,10 +30,6 @@ module ApplicationHelper
     end
   end
 
-  def briefly(post, length = 14)
-    str = post.content.gsub(/#/, "")
-    truncate(str, length: length)
-  end
 
 
 

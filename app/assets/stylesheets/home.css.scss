@@ -79,9 +79,13 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: #eee;
+        text-indent: 0;
         text-shadow: 1px $light-gray-transparent;
         background: #43a0bc;
         padding: 2%;
+        padding-left: 4%;
+        padding-right: 4%;
+
         cursor: pointer;
         font-size: 1.5em;
         .news-title{
@@ -140,6 +144,7 @@
         border-left: $link-text-color solid 3px;
         background:  $primary-color;
         padding: 5%;
+        padding-right: 7%;
         text-indent: 0;
         margin-left: 5%;
         vertical-align: top;

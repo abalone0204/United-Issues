@@ -1,19 +1,42 @@
 <div class="featured-posts" id="featured-posts">
-  <div class="news-container">
+  <!--   <div class="news-container">
     <% @featured_posts.each do |post| %>
-      <%= link_to post, class: "news-link" do %>
-      <div class="news-element">
-          <%= image_tag render_post_image(post, :thumb) %>
-          <div class="description">
-            <div class="title">
-              <%= render_post_title post %>
+    <%= link_to post, class: "news-link" do %>
+    <div class="news-element">
+      <%= image_tag render_post_image(post, :thumb) %>
+      <div class="description">
+        <div class="title">
+          <%= render_post_title post %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div> -->
+  <div class="head-news">
+    <div class="container">
+      <dl>
+        <% @featured_posts.each do |post| %>
+        <dt class="shadow row">
+          <div class="news-title">
+          <%= render_post_title post %>
+          </div>
+        </dt>
+        <dd>
+          <%= link_to post do %>
+            <%= image_tag render_post_image(post, :thumb),class:"image shadow img-rounded img-responsive" %>
+          <% end %>
+          <div class="content">
+            <p>
+              <%= briefly post, 80 %> 
+            </p>
+            <div>
+              <%= link_to "繼續閱讀", post %>
             </div>
           </div>
-      </div>
-      <% end %>
-    <% end %>
+        </dd>
+        <% end %>
+      </dl>
+    </div>
   </div>
 </div>
-
-<div class="a"></div>
-<div class="b"></div>

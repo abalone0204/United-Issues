@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023062108) do
+ActiveRecord::Schema.define(version: 20141028024220) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141023062108) do
     t.string   "image"
     t.datetime "source_date"
     t.datetime "publish_date"
+    t.string   "classification"
   end
 
   create_table "taggings", force: true do |t|

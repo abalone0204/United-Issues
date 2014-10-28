@@ -72,7 +72,6 @@ set(:symlinks, [
   #}
 ])
 
-set :copy_exclude, ["public/uploads/*"]
 
 # this:
 # http://www.capistranorb.com/documentation/getting-started/flow/

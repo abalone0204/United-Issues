@@ -19,8 +19,11 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
+  enumerize :classification,
+    in: %w[culture economics internation medical tech education travel]
+
   enumerize :country_classification,
-    in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey]
+    in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
 
   before_save :set_user_id
 

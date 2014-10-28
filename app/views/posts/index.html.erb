@@ -1,52 +1,21 @@
-<!-- <div class="posts-container">
+<div class="posts container">
   <% @posts.each do |post| %>
-  <div>
-    <%= image_tag render_post_image(post, :thumb), class: "img-thumbnail " %>
-    <div class="description">
-      
+  <div class="post-list-item">
+    <div class="image">
+      <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded img-responsive" %>
+    </div>
+    <div class="word-container">
+      <div class="title">
+        <%= render_post_title post %>
+      </div>
+      <div class="content">
+        <p><%= briefly post, 80 %> </p>
+        <div>
+          <%= link_to "Read more", post %>
+        </div>
+      </div>
     </div>
   </div>
   <% end %>
-</div> -->
-
-
-<div>
-  <%= link_to new_post_path(), class:"btn-default btn"  do %>
-    <%= t('common.new') %>
-  <% end %>
-</div>
-<div class="panel panel-default posts well">
-  <div class="panel-heading">
-    <%= t('attributes.posts') %>
-  </div>
-  <div class="table-responsive">
-    <table class="striped-table table">
-      <thead>
-        <th></th>
-        <th class="col-md-3">
-          <%= t('activerecord.attributes.post.title') %>
-        </th>
-        <th><%= t('activerecord.attributes.post.translator') %></th>
-        <th><%= t('activerecord.attributes.post.content') %></th>
-      </thead>
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td>
-            <% if can? :update, post %>
-            <%= render partial: "edit_options", locals: {post: post} %>
-            <% end %>
-          </td>
-          <td><%= link_to render_post_title(post), post %></td>
-          <td><%= post.user.name %></td>
-          <td>
-            <%= briefly(post) %>
-          </td>
-          <td></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
 </div>
 <%= paginate @posts %>

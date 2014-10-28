@@ -26,7 +26,6 @@
         <th class="col-md-3">
           <%= t('activerecord.attributes.post.title') %>
         </th>
-        <th>Tags</th>
         <th><%= t('activerecord.attributes.post.translator') %></th>
         <th><%= t('activerecord.attributes.post.content') %></th>
       </thead>
@@ -39,7 +38,6 @@
             <% end %>
           </td>
           <td><%= link_to render_post_title(post), post %></td>
-          <td><%= raw render_post_tags(post) %></td>
           <td><%= post.user.name %></td>
           <td>
             <%= briefly(post) %>

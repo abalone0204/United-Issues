@@ -1,5 +1,22 @@
 module ApplicationHelper
 
+  def search_options(option, params)
+    options = {}
+    keys =[:classification, :country_classification]
+    
+    keys.each do |key|
+      if params[key]
+        options[key] = params[key]    
+      end
+    end
+
+    option.each do |key, value|
+      options[key] = value
+    end
+
+    options
+  end
+
   def simple_date_time(date)
     if date
       date.strftime('%Y-%m-%d %I:%M %p')

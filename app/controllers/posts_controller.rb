@@ -5,14 +5,8 @@ class PostsController < ApplicationController
   before_action :validate_publish, only: [:show]
 
   def index
-    if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).published.order("created_at DESC").page(params[:page])
-    else
-      @posts = Post.published.order("created_at DESC").page(params[:page])
-    end
-    if params[:classification].present?
-      @posts = @posts.country(params[:classification]).order("created_at DESC").page(params[:page])
-    end
+    @posts = Post.published.search(params)
+    @posts = @posts.order("created_at DESC").page(params[:page])
   end
 
   def show

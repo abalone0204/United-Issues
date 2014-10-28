@@ -6,7 +6,7 @@
       <span class="icon-material-menu"></span>
     </button>
     <div class="brand-container">
-      <%= link_to "United Issues", root_path, class:"navbar-brand brand" %>
+      <%= link_to "United Issue", root_path, class:"navbar-brand brand" %>
     </div>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,9 +31,7 @@
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <li>
-            <%= link_to admin_posts_path do%>
-            <span class="icon-material-adb change-mode"></span> Admin
-            <% end %>
+            <%= link_to "Admin", admin_posts_path %>
           </li>
         <% end %>
       <li class="bug-report">

@@ -20,6 +20,6 @@
 /config/database.yml
 
 # Ignor all upload pics
-/public/uploads/
+
 # Ignore application configuration
 /config/application.yml

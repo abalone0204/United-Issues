@@ -78,10 +78,11 @@
       dt{
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: #eee;
+        color: $dt-word;
         text-indent: 0;
         text-shadow: 1px $light-gray-transparent;
-        background: #43a0bc;
+        // background: #43a0bc;
+        background: $dt-bg;
         padding: 2%;
         padding-left: 4%;
         padding-right: 4%;
@@ -100,8 +101,8 @@
     }
     
     dd{
-        border-left: $link-text-color 3px solid;
-        border-right: $link-text-color 3px solid;
+        border-left: $dt-bg 3px solid;
+        border-right: $dt-bg 3px solid;
         background: $primary-color;
         padding: 3%;
         font-size: 1.25em;

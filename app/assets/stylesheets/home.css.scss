@@ -78,10 +78,15 @@
       dt{
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: #eee;
+        color: $dt-word;
+        text-indent: 0;
         text-shadow: 1px $light-gray-transparent;
-        background: #43a0bc;
+        // background: #43a0bc;
+        background: $dt-bg;
         padding: 2%;
+        padding-left: 4%;
+        padding-right: 4%;
+
         cursor: pointer;
         font-size: 1.5em;
         .news-title{
@@ -96,8 +101,8 @@
     }
     
     dd{
-        border-left: $link-text-color 3px solid;
-        border-right: $link-text-color 3px solid;
+        border-left: $dt-bg 3px solid;
+        border-right: $dt-bg 3px solid;
         background: $primary-color;
         padding: 3%;
         font-size: 1.25em;
@@ -140,6 +145,7 @@
         border-left: $link-text-color solid 3px;
         background:  $primary-color;
         padding: 5%;
+        padding-right: 7%;
         text-indent: 0;
         margin-left: 5%;
         vertical-align: top;

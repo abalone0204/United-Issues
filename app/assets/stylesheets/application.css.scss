@@ -10,10 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap-material-design
  *= require jquery-ui
  *= require jquery-ui-timepicker-addon
  *= require_tree .
+ *= require bootstrap-material-design
  *= require_self
  */
 
@@ -90,6 +90,11 @@ body {
 }
 
 // Common
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+    color: #888;
+}
 #fb-login-tab {
     a.btn {
         padding: 1em;

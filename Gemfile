@@ -56,7 +56,6 @@ end
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.2.0'
-# gem 'bootstrap-material-design', github: 'avgnasu/material-design-bootstrap'
 gem 'autoprefixer-rails'
 gem 'cancancan', '~> 1.9'
 

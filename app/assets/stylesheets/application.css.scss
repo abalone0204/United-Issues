@@ -118,11 +118,15 @@ body {
 }
 
 footer {
+
     height: 2%;
     padding-top: 1%;
     padding-bottom: 5%;
     background-color: #EEFDFF;
     clear: both;
+    text-align: center;
+    .fan-page,
+    .version,
     .author {
         color: #B8BDBC;
         a {

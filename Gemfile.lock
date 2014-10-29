@@ -41,8 +41,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-material-design (0.0.1)
-      bootstrap-sass (= 3.2.0.2)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
@@ -275,7 +273,6 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
-  bootstrap-material-design
   bootstrap-sass (~> 3.2.0)
   cancancan (~> 1.9)
   capistrano (~> 3.1.0)

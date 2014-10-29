@@ -24,5 +24,6 @@ module UnitedIssues
     config.i18n.default_locale = :'zh-TW'
 
     config.assets.precompile += %w[page/*.js disqus/*.js]
+    config.assets.precompile += %w[*.woff *.ttf]
   end
 end

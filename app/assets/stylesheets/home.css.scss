@@ -14,16 +14,22 @@
         }
     }
 
-    .news-link{
-        margin-top: 0;
-        display: inline-block;
-    }
-   .news-link{
-        display: inline-block;
-    }
+
     #entrance-box, .head-news{
+        box-sizing: border-box;
         display: inline-block;
         width: 40%;
+        
+    }
+    .head-news{
+
+    }
+    #entrance-box{
+        margin-left: 5%;
+        width: 45%;
+    }
+    .news-link{
+        margin-top: 0;
     }
     .divider{
         display: none;
@@ -70,6 +76,7 @@
     min-height: 100%;
     .head-news{
         position: relative;
+        margin-left: 0;
         top: 5px;
         max-height: 100%;
     }
@@ -145,9 +152,9 @@
         border-left: $link-text-color solid 3px;
         background:  $primary-color;
         padding: 5%;
-        padding-right: 7%;
+
         text-indent: 0;
-        margin-left: 5%;
+        
         vertical-align: top;
         position: relative;
         top: 5px;

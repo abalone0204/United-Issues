@@ -43,7 +43,7 @@
       <li><%= link_to t('attributes.posts'), posts_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
-        <% if current_user.admin? %>
+        <% if current_user && current_user.admin? %>
           <li>
             <%= link_to "Admin", admin_posts_path %>
           </li>

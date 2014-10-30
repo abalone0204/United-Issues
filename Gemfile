@@ -99,7 +99,9 @@ gem 'capistrano-rbenv', "~> 2.0"
 # Use the Unicorn app server
 gem 'unicorn'
 
+# Upload file to aws s3
 
+gem 'fog'
 
 
 # Use ActiveModel has_secure_password

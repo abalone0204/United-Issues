@@ -6,6 +6,13 @@
 
 @import "color_var";
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
+    
+    .head-news,
+    #entrance-box {
+        min-width: 100%;
+    }
+}
 @media (min-width: 760px){
     .heading{
         .first-word, .last-word{
@@ -20,9 +27,6 @@
         display: inline-block;
         width: 40%;
         
-    }
-    .head-news{
-
     }
     #entrance-box{
         margin-left: 5%;
@@ -42,11 +46,8 @@
     -webkit-box-shadow: 0px 9px 22px 0px rgba(50, 50, 50, 0.67);
     -moz-box-shadow:    0px 9px 22px 0px rgba(50, 50, 50, 0.67);
     box-shadow:         0px 9px 22px 0px rgba(50, 50, 50, 0.67);
-    border-top: $highlight-color solid 2px;
-    background-color: $primary-color;
     min-height: 13%;
     width: 100%;
-    color: $highlight-color;
     margin-bottom: 0;
     text-align: center;
     .phrase {
@@ -143,7 +144,7 @@
             background: none;
         }
     }
-    // dt:nth-of-type(1) { background: $dt-1-color; }
+    dt:nth-of-type(1) { background: $dt-1-color; }
     // dt:nth-of-type(2) { background: $dt-2-color; }
     // dt:nth-of-type(3) { background: $dt-3-color; }
     // dt:nth-of-type(4) { background: $dt-4-color; }

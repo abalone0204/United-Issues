@@ -1,17 +1,20 @@
 <div class="posts container">
   <% @posts.each do |post| %>
-  <div class="post-list-item">
-    <div class="image">
+  <div class="post-list-item row">
+    <div class="image col-md-4">
       <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded img-responsive" %>
+      <div class="post-info">
+        譯者：<%= post.user.name %>
+      </div>
     </div>
-    <div class="word-container">
+    <div class="word-container col-md-5 col-md-offset-1">
       <div class="title">
         <%= render_post_title post %>
       </div>
       <div class="content">
         <p><%= briefly post, 80 %> </p>
         <div>
-          <%= link_to "Read more", post %>
+          <%= link_to "Read more", post, class: "btn" %>
         </div>
       </div>
     </div>

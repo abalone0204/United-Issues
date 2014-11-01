@@ -1,0 +1,22 @@
+@import "color_var";
+
+@mixin box-shadow($description...){
+  -webkit-box-shadow: $description;
+  -moz-box-shadow: $description;
+  -o-box-sizing: $description;
+  box-shadow: $description;
+}
+
+@mixin border-radius($description...){
+  -webkit-border-radius:$description;
+  -moz-border-radius: $description;
+  -o-border-radius: $description;
+  border-radius: $description;
+}
+
+$default-border: 1px solid $light-gray;
+$gray-border: 1px solid #999;
+$padding-l:28px;
+$padding-m:20px;
+$padding-s:12px;
+$padding-xs:8px;

@@ -1,74 +1,99 @@
-<div class="featured-posts" id="featured-posts">
-  <div class="head-news">
-    <div>
-      <dl>
-        <% @featured_posts.each do |post| %>
-        <dt class="shadow row">
-        <div class="news-title">
-          <%= render_post_title post %>
-        </div>
-        </dt>
-        <dd>
-          <div class="image">
-          <%= image_tag render_post_image(post, :thumb),class:"shadow img-rounded img-responsive" %>
-        </div>
-        <div class="content">
+<div class="home container" id="featured-posts">
+  <div class="head-news row">
+    <div class="col-md-5 col-md-offset-1 topic-news-container container-fluid">
+    <% @topic_posts.each do |topic_post| %>
+    <section class="topic-news">
+      <div class="image shadow">
+        <%= image_tag render_post_image(topic_post), size:"380x220",
+        class: "img-responsive img-rounded" %>
+      <%= link_to topic_post do %>
+      <header class="description">
+        <div><%= render_post_title topic_post %></div>
+        <p><%= simple_date topic_post.source_date %></p>
+        <div class="briefly">
           <p>
-          <%= briefly post, 80 %>
+            <%= briefly topic_post, 100 %>
           </p>
-          <div>
-            <%= link_to "Read more", post %>
-          </div>
         </div>
-        </dd>
-        <% end %>
-      </dl>
+      </header>
+      <% end %>
+      </div>
+    </section>
+    <% end %>
+    <div class="board shadow">
+      <ul>
+        <li>測試log</li>
+        <li>小小公告</li>
+      </ul>
     </div>
-  </div>
-  <div class="divider">
-    <hr>
-  </div>
-  <div id="entrance-box" class="shadow">
-    <div class="header">
-      <h2>United Issue / 世界大代誌</h2>
-      <p>
+    </div>
+
+    <div id="entrance-box" class="shadow col-md-5">
+      <div class="header">
+        <h2>United Issue / 世界大代誌</h2>
+        <p>
         旨在翻譯不同語言的當地新聞，
-      </p>
-      <p>
+        </p>
+        <p>
         想提供給讀者台灣新聞平台、BBC、CNN所沒有的國外時事。
-      </p>
-    </div>
-    <hr>
-    <div class="join-us">
-      <h2>一起拯救台灣的媒體</h2>
-      <p>
-        學文學不是只能打嘴砲
-      </p>
-      <p>
-        我們還能翻譯
-      </p>
-      <p>
-        現在就加入我們
-      </p>
-      <p>
-        沒有任何壓力，我們相信每個翻譯志願者
-      </p>
-      <p>
-        沒有任何壓力，我們相信每個翻譯志願者
-      </p>
-      <p>
-        沒有任何壓力，我們相信每個翻譯志願者
-      </p>
-      <div class="fb-login-block">
-        <%= render partial: 'common/fb_login' %>
+        </p>
       </div>
       <hr>
-      <div class="already-have-account">
-        <div>已經是翻譯者了？</div>
-        <%= link_to "開始翻譯文章", new_post_path(), class: "btn btn-default" %>
+      <div class="join-us">
+        <h2>一起拯救台灣的媒體</h2>
+        <p>
+        學文學不是只能打嘴砲
+        </p>
+        <p>
+        我們還能翻譯
+        </p>
+        <p>
+        現在就加入我們
+        </p>
+        <p>
+        沒有任何壓力，我們相信每個翻譯志願者
+        </p>
+        <p>
+        沒有任何壓力，我們相信每個翻譯志願者
+        </p>
+        <p>
+        沒有任何壓力，我們相信每個翻譯志願者
+        </p>
+        <div class="fb-login-block">
+          <%= render partial: 'common/fb_login' %>
+        </div>
+        <hr>
+        <div class="already-have-account">
+          <div>已經是翻譯者了？</div>
+          <%= link_to "開始翻譯文章", new_post_path(), class: "btn btn-default" %>
+        </div>
       </div>
     </div>
   </div>
+  <div class="phrase">
+    <hr>
+  </div>
+  <dl>
+    <% @featured_posts.each do |post| %>
+    <dt class="shadow row">
+    <div class="news-title">
+      <%= render_post_title post %>
+    </div>
+    </dt>
+    <dd>
+    <div class="image">
+      <%= image_tag render_post_image(post, :thumb),class:"shadow img-rounded img-responsive" %>
+    </div>
+    <div class="content">
+      <p>
+      <%= briefly post, 80 %>
+      </p>
+      <div>
+        <%= link_to "Read more", post %>
+      </div>
+    </div>
+    </dd>
+    <% end %>
+  </dl>
 </div>
-
 <%= javascript_include_tag 'page/home.js' %>

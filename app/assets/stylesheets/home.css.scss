@@ -129,10 +129,10 @@
                     transition: background .20s linear;
                     background: $affe-red-trans-hover;
                     .briefly {
-                        -o-transition: max-height .20s linear;
-                        -webkit-transition: max-height .20s linear;
-                        -moz-transition: max-height .20s linear;
-                        transition: max-height .20s linear;
+                        -o-transition: max-height .50 ease-out;
+                        -webkit-transition: max-height .50 ease-out;
+                        -moz-transition: max-height .50 ease-out;
+                        transition: max-height .50 ease-out;
                         max-height: 200px;
                     }
                 }

@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
   <div class="post-list-item row">
     <div class="image col-md-4">
-      <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded img-responsive" %>
+      <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded" %>
       <div class="post-info">
         譯者：<%= post.user.name %>
       </div>

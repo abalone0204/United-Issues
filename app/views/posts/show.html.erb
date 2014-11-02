@@ -1,51 +1,57 @@
-<div class="post" id="post-container">
+<div class="post">
   <div class="header">
     <h3 class="title">
     <%= render_post_title @post %>
     <% if can? :edit, @post %>
-      <%= link_to t('common.edit'), edit_post_path(@post), class: "btn btn-default pull-right" %>
+    <%= link_to t('common.edit'), edit_post_path(@post), class: "btn btn-default pull-right" %>
     <% end %>
     </h3>
-    <% if @post.image_url.present? %>
-    <div class="image-container row">
-      <%= image_tag @post.image_url(:display),class:"image col-md-6 img-responsive" %>
+
+
+    <hr>
+
+    
+    <div class="post-info row">
+      <div class="image col-md-6">
+        <%= image_tag render_post_image(@post, :display), class:"img-responsive" %>
+      </div>
+      <div class="detail col-md-4">
+        <div class="classification">
+          分類：<%= @post.classification.text %>
+        </div>
+        <div class="source-time">
+          來源時間: <%= simple_date @post.source_date %>
+        </div>
+        <div class="translator-name">
+          譯者: <%= @post.user.name %>
+        </div>
+      </div>
     </div>
-    <% end %>
-  </div>
-  <div class="detail">
-      <div class="source-time">
-        來源時間: <%= simple_date @post.source_date %>
-      </div>
-      <div class="translator-name">
-        譯者: <%= @post.user.name %>
-      </div>
+
+
   </div>
   <div class="content-container shadow">
-      <%= simple_format @post.content %>
+    <%= simple_format @post.content %>
   </div>
   <div class="source">
     <h5>
-      <%= t('activerecord.attributes.post.source') %>:
-      <%= link_to @post.source, @post.source %>
+    <%= t('activerecord.attributes.post.source') %>:
+    <%= link_to @post.source, @post.source %>
     </h5>
-    
   </div>
   <hr>
   <div class="note">
     <h5><%= t('activerecord.attributes.post.note') %></h5>
     <p>
-      <%= simple_format @post.note %>
+    <%= simple_format @post.note %>
     </p>
   </div>
   <hr>
   <%= link_to "返回文章列表", posts_path  %>
 </div>
-
-
 <div id="disqus_thread"></div>
 <noscript>
-  Please enable JavaScript to view the 
-  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
-
 <%= javascript_include_tag "disqus/thread.js", :cache => true %>

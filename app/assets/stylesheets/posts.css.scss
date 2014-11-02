@@ -21,12 +21,14 @@
     max-width: 100%;
     padding: $padding-m;
     .image{
+      overflow: hidden;
       position: relative;
       .post-info{
         text-align: center;
-        width: 270px;
+        width: 300px;
         position: absolute;
         bottom: 0;
+
         color: $primary-color;
         background: $affe-red-trans;
       }
@@ -34,9 +36,9 @@
     .image:hover{
       .post-info{
         -o-transition: max-height .40s linear;
-    -webkit-transition: max-height .40s linear;
-    -moz-transition: max-height .40s linear;
-    transition:   max-height .40s linear;
+        -webkit-transition: max-height .40s linear;
+        -moz-transition: max-height .40s linear;
+        transition:   max-height .40s linear;
         max-height: 0;
         color: $affe-red;
       }
@@ -83,14 +85,24 @@
   }
 }
 
+
+// show
 .post {
   min-height: 100%;
 
   .header {
     margin-top: 4%;
+    margin-bottom: $padding-m;
     a {
       color: $link-text-color;
     }
+    .post-info{
+      padding: $padding-m 0;
+      background: $light-gray-transparent;
+    }
+  }
+  .detail{
+    font-size: 2rem;
   }
   .content-container{
     blockquote{
@@ -127,14 +139,14 @@
   }
 }
 
-.detail {
-    text-align: center;
-    letter-spacing: 2px;
-    line-height: 2em;
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background: rgba(233, 233, 233, 0.6);
-    width: 50%;
-    border-radius: 5%; 
-}
+// .detail {
+//     text-align: center;
+//     letter-spacing: 2px;
+//     line-height: 2em;
+//     margin: 0 auto;
+//     margin-top: 2%;
+//     margin-bottom: 2%;
+//     background: rgba(233, 233, 233, 0.6);
+//     width: 50%;
+//     border-radius: 5%; 
+// }

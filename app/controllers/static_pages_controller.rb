@@ -4,6 +4,10 @@ class StaticPagesController < ApplicationController
     @word = params[:word]
   end
 
+  def help
+    
+  end
+
   def car
     @number = params[:number].to_i 
     if params[:howdouturnthison].present? && params[:howdouturnthison] == "how do you turn this on"

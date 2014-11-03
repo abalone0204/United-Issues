@@ -25,6 +25,7 @@
     </thead>
     <tbody>
       <% @admin_posts.each do |post| %>
+      <% if post.present? %>
       <tr>
         <td><%= check_box_tag "post_ids[]", post.id %></td>
         <td>
@@ -39,6 +40,7 @@
         </td>
         <td></td>
       </tr>
+      <% end %>
       <% end %>
     </tbody>
   </table>

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   before_create :format_name
+  
   has_many :posts, dependent: :destroy
 
   def self.current

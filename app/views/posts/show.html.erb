@@ -17,11 +17,17 @@
       </div>
       <div class="detail col-md-4">
         <div class="classification">
-          分類：<%= @post.classification.text %>
+          分類: <%= @post.classification.text %>
         </div>
         <div class="source-time">
           來源時間: <%= simple_date @post.source_date %>
         </div>
+        <% if @post.original_author.present? %>
+        <div class="original-author">
+          原作者: <%= @post.original_author %>
+        </div>          
+        <% end %>
+
         <div class="translator-name">
           譯者: <%= @post.user.name if @post.user.present? %>
         </div>

@@ -26,6 +26,7 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
+        original_author: 原作者
         source_date: 來源時間
         image: 上傳圖片
         publish: 審核狀態

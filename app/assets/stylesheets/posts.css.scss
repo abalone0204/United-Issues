@@ -10,11 +10,6 @@
 .posts {
   margin-top: 2%;
 }
-.note {
-  color: #999;
-
-}
-
 
 .posts{
   .post-search{
@@ -80,7 +75,7 @@
     background: transparent; 
 
   }
-}
+} 
 
 .edit-options{
   a{
@@ -92,24 +87,55 @@
 // show
 
 .post {
+  .content,
+  .note, 
+  .source{
+    border-bottom: 2px solid $light-gray-transparent;
+    padding-bottom: $padding-l;
+  }
+  h5{
+    color: $affe-red;
+    font-size: 2rem;
+    font-weight: 700;
+  }
   min-height: 100%;
-
+  .edit-link{
+    z-index: 3;
+  }
+  .source{
+    *{
+      color: $affe-red;
+    }
+    a:hover{
+      background: $blockquote-yellow;
+    }
+  }
   .header {
     margin-top: 4%;
     margin-bottom: $padding-m;
+    h3{
+      font-weight: 700;
+      color: $affe-red;
+      padding-bottom: $padding-m;
+      border-bottom: 2px solid $light-gray-transparent;
+    }
     a {
       color: $link-text-color;
     }
 
     .post-info{
       padding: $padding-m 0;
-      background: $light-gray-transparent;
+      // background: $blockquote-yellow;
     }
   }
   .detail{
     font-size: 2rem;
   }
   .content-container{
+    .content{
+      border-top: $padding-xs solid $affe-red;
+      padding-bottom: $padding-l;
+    }
     padding-bottom: $padding-m;
     blockquote{
       background: $blockquote-yellow;
@@ -125,8 +151,6 @@
       letter-spacing: 2px;
       line-height: 2em;
       font-size: 15px;
-      margin-right: 8%;
-      margin-left: 8%;
     }
     h1 {
       font-size: 3em;

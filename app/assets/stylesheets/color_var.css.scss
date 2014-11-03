@@ -1,8 +1,25 @@
+
+// 通用色
 $primary-color: white;
 $divider-color: #cfd8dc;
 $highlight-color: #212121;
-$link-text-color: #00b8d4;
+// $link-text-color: #00b8d4;
+$link-text-color: black;
 $second-text-color: #eeeeee;
+
+// 主要色系
+
+$affe-red: #b33d3c;
+$affe-dark-red: #a22c2b;
+$affe-red-trans: rgba(192, 44, 43, 0.4);
+$affe-red-trans-hover: rgba(192, 44, 43, 0.6);
+
+$shan-yellow: rgba(254, 203, 10, 1);
+$shan-yellow-trans: rgba(254, 203, 10, 0.4);
+
+// Navbar
+
+$brand-color: $shan-yellow;
 
 $light-gray: #E0E0E0;
 $light-gray-transparent: rgba(224,224,224, 0.6);
@@ -25,6 +42,5 @@ $dd-color: #dff5eb;
 $dt-gray: #cccccc;
 $dd-gray: #e6e6e6;
 
-
-$dt-bg: #b33d3c;
+$dt-bg: $affe-red-trans;
 $dt-word: $primary-color;

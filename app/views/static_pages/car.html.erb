@@ -1,0 +1,27 @@
+<div class="car">
+  <%= form_tag car_path, method: :get do %>
+  <div class="car-input">
+    <%= text_field_tag :howdouturnthison, "", placeholder: "Whazup", class: "form-control" %>
+  </div>
+  <% end %>
+
+  <% if @number <= 5 %>
+  <% @number.times do %>
+  <audio src="http://static1.grsites.com/archive/sounds/cars/cars031.mp3" autoplay>
+  </audio>
+  <div class="car-item">
+    <%= image_tag "http://galeri2.uludagsozluk.com/324/how-do-you-turn-this-on_354369.jpg", class: "img-responsive" %>
+  </div>
+
+  <% end %>
+  <% else %>
+    <div class="car-item many-car">
+      <%#= image_tag "http://galeri2.uludagsozluk.com/324/how-do-you-turn-this-on_354369.jpg", class: "img-responsive" %>
+    <%= image_tag "http://i1048.photobucket.com/albums/s378/eLdariO0/AOK026.jpg", class: "img-responsive" %>
+    <audio src="http://k44.offliberty.com/tzTLArp6L_c.mp3" autoplay>
+      </audio>
+    </div>
+
+  <% end %>
+  
+</div>

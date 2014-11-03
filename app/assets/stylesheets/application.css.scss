@@ -18,8 +18,10 @@
  */
 
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @import "color_var";
 
 * {
@@ -40,7 +42,6 @@ body {
 // material design
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
-
     .navbar-nav {
         margin-left: 0;
     }
@@ -93,6 +94,7 @@ body {
     background-color: #888;
     color: #888;
 }
+
 #fb-login-tab {
     a.btn {
         padding: 1em;
@@ -115,7 +117,6 @@ body {
 }
 
 footer {
-
     height: 2%;
     padding-top: 1%;
     padding-bottom: 5%;
@@ -140,12 +141,14 @@ footer {
 
 #paginator {
     a {
+        height: 4rem;
         color: $link-text-color;
     }
     .active {
         a {
-            background-color: $highlight-color;
-            color: $link-text-color;
+            border: #dddddd solid 1px;
+            background-color: $affe-red;
+            color: $primary-color;
         }
     }
 }
@@ -249,17 +252,6 @@ a:hover {
     }
 }
 
-// .user-nav {
-//     #fb-login-tab{
-//         margin: 0 auto;
-//     }
-//     background: $highlight-color;
-//     a:hover {
-//         color: $primary-color;
-//         background: $highlight-color;
-//     }
-// }
-
 .sign-bar {
     margin-right: 1%;
 }
@@ -286,43 +278,49 @@ a:hover {
 
 .customnavbar {
     height: 10%;
-    background-color: $primary-color;
+    background-color: $affe-red;
     border-top: solid 1px $highlight-color;
     border-bottom: solid 2px $divider-color;
     margin-bottom: 0;
-    .brand-container{
-            a{
-                color: $highlight-color;    
-                text-indent: 2px;
-                margin-right: 1em;
-            }
-            
-            a:hover{
-                background: $light-gray;
-            }
+    .brand-container {
+        a {
+            color: $shan-yellow;
+            text-indent: 2px;
+            text-shadow: $light-gray-transparent 1px 1px;
+            margin-right: 1em;
+        }
+        a:hover {
+            color: $brand-color;
+            background: none;
+        }
     }
-    // .brand {
-    //     margin-left: 5%;
-    //     color: $highlight-color;
-    //     margin: 0 auto;
-    //     a:hover {
-    //         color: #eceff1;
-    //         background-color: $primary-color;
-    //     }
-    // }
-    a {
-        color: $link-text-color;
-    }
-    a:hover {
-        color: $highlight-color;
-        -o-transition: color .20s linear;
-            -webkit-transition: color .20s linear;
-            -moz-transition: color .20s linear;
-            transition:   color .20s linear;
-        background: $primary-color;
-        -o-transition: background-color .20s linear;
-            -webkit-transition: background-color .20s linear;
-            -moz-transition: background-color .20s linear;
-            transition: background-color .20s linear;
+    .nav {
+        .dropdown {
+            .dropdown-menu {
+                a {
+                    color: $highlight-color;
+                }
+                a:hover {
+                    background: $light-gray;
+                }
+            }
+        }
+        li {
+            a {
+                color: $primary-color;
+            }
+            a:hover {
+                color: $highlight-color;
+                -o-transition: color .20s linear;
+                    -webkit-transition: color .20s linear;
+                    -moz-transition: color .20s linear;
+                    transition:   color .20s linear;
+                background: $primary-color;
+                -o-transition: background-color .20s linear;
+                    -webkit-transition: background-color .20s linear;
+                    -moz-transition: background-color .20s linear;
+                    transition: background-color .20s linear;
+            }
+        }
     }
 }

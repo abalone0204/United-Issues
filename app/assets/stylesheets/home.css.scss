@@ -76,6 +76,7 @@
     * {
         margin-top: 0;
     }
+
     padding-bottom: 5%;
     text-indent: 5%;
     min-height: 100%;
@@ -225,7 +226,9 @@
         position: relative;
         min-height: 100%;
         h2 {
+            font-weight: 700;
             font-size: 2rem;
+            color: $affe-red;
         }
         .already-have-account {
             margin: 0 auto;

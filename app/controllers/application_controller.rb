@@ -11,17 +11,23 @@ class ApplicationController < ActionController::Base
   end
   protect_from_forgery with: :exception
 
- 
- 
+  def after_sign_in_path_for(resource)
+    if resource.sign_in_count == 1
+      help_path
+    else
+      request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    end
+  end
+
   private
- 
+
   # stores parameters for current request
   def set_request_environment
     User.current = current_user # current_user is set by restful_authentication
     # You would also set the time zone for Rails time zone support here:
     # Time.zone = Person.current.time_zone
   end
-  
+
   protected
 
   def get_country_classification

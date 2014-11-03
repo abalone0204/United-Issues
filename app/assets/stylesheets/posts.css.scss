@@ -110,8 +110,13 @@
     font-size: 2rem;
   }
   .content-container{
+    padding-bottom: $padding-m;
     blockquote{
       background: $blockquote-yellow;
+    }
+    em{
+      font-weight: 900;
+      color: $affe-red;
     }
 
     position: relative;

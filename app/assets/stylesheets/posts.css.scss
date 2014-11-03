@@ -17,6 +17,9 @@
 
 
 .posts{
+  .post-search{
+      margin-left: $padding-m;
+  }
   .post-list-item{
     max-width: 100%;
     padding: $padding-m;
@@ -87,6 +90,7 @@
 
 
 // show
+
 .post {
   min-height: 100%;
 
@@ -96,6 +100,7 @@
     a {
       color: $link-text-color;
     }
+
     .post-info{
       padding: $padding-m 0;
       background: $light-gray-transparent;

@@ -1,6 +1,6 @@
 class Admin::UsersController < AdminController
   def index
-    @admin_users = Admin::User.all
+    @admin_users = Admin::User.includes(:posts)
   end
 
   def toggle_admin

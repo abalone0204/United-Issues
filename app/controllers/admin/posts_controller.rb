@@ -1,14 +1,9 @@
 class Admin::PostsController < AdminController
-
+  http_basic_authenticate_with name: ENV["admin"], password: ENV["adpwd"]
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
   def schedule
-    @admin_posts = Admin::Post.order("publish_date DESC").page(params[:page])
-    # if params[:display_options]
-    #   @admin_posts = @admin_posts.send(params[:display_options]).page(params[:page])
-    # else
-    #   @admin_posts = @admin_posts.order("publish_date DESC").page(params[:page])
-    # end
+    @admin_posts = Admin::Post.includes(:user).order("publish_date DESC").page(params[:page])
     @admin_posts = display_options(@admin_posts, params[:display_options])
     
   end
@@ -40,7 +35,7 @@ class Admin::PostsController < AdminController
   #GET /admin/posts
   # GET /admin/posts.json
   def index
-    @admin_posts = Admin::Post.all.order("created_at DESC").page(params[:page])
+    @admin_posts = Admin::Post.includes(:user).order("created_at DESC").page(params[:page])
     @admin_posts = display_options(@admin_posts, params[:display_options])
   end
 

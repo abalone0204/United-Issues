@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_action :validate_publish, only: [:show]
 
   def index
+    happy_bug
     @posts = Post.published.search(params)
     @posts = @posts.order("created_at DESC").page(params[:page])
   end
@@ -66,6 +67,16 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def happy_bug
+    trigger = params[:search].to_s
+    if trigger.downcase.start_with?("say")
+      word = trigger.delete("say").gsub(/\s+/, "")
+      redirect_to say_path(word)
+    elsif trigger.downcase == "how do you turn this on"
+      redirect_to stallions_path
+    end
   end
 
 end

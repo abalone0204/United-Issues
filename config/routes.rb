@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'posts/my_posts', to: 'posts#my_posts', as: :my_posts
-  
+
+  # Just for fun XD
+  get 'say/:word', to: 'static_pages#say', as: :say
+
   resources :posts
-  
+  resources :stallions
   namespace :admin do
     resources :posts do
       collection do

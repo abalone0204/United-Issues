@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'car/:number', to: 'static_pages#car', as: :car
   get 'help', to: 'static_pages#help', as: :help
   
+  resources :users, only: [:edit, :update]
   resources :posts
   resources :stallions
   namespace :admin do

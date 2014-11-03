@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 
   # Association
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
 
   enumerize :classification,
     in: %w[culture economics internation medical tech education travel]

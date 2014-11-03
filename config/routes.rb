@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # Just for fun XD
   get 'say/:word', to: 'static_pages#say', as: :say
+  get 'car/:number', to: 'static_pages#car', as: :car
 
   resources :posts
   resources :stallions

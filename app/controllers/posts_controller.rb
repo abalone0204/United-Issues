@@ -75,7 +75,9 @@ class PostsController < ApplicationController
       word = trigger.delete("say").gsub(/\s+/, "")
       redirect_to say_path(word)
     elsif trigger.downcase == "how do you turn this on"
-      redirect_to stallions_path
+      redirect_to car_path(1)
+    elsif trigger == "stallions"
+      redirect_to stallions_path 
     end
   end
 

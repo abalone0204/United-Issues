@@ -1,0 +1,14 @@
+@import "color_var";
+@import "default";
+.car {
+  .car-input{
+    margin: $padding-m;
+    input{
+      background: black;
+      color: $primary-color;
+    }
+  }
+  .car-item{
+    margin: $padding-m;
+  }
+}

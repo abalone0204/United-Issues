@@ -142,9 +142,9 @@
             overflow: scroll;
             width: 375px;
             height: 135px;
-            color: brown;
+            color: $highlight-color;
             border-radius: $padding-xs;
-            background: $shan-yellow-trans;
+            background: $light-gray-transparent;
             margin-bottom: $padding-s;
         }
     }

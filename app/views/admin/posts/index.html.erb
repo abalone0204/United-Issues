@@ -35,7 +35,7 @@
         <td><%= simple_date_time(post.publish_date) %></td>
         <td><%= link_to render_post_title(post), post %></td>
         <td>
-          <% if post.user.present? %>
+        <% if post.user.present? %>
           <%= post.user.name %>
         <% end %>
         </td>  

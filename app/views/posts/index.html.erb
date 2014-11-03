@@ -12,7 +12,7 @@
     <div class="image col-md-4">
       <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded" %>
       <div class="post-info">
-        譯者：<%= post.user.name %>
+        譯者：<%= post.user.name if post.user.present? %>
       </div>
     </div>
     <div class="word-container col-md-5 col-md-offset-1">

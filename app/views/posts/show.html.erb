@@ -23,7 +23,7 @@
           來源時間: <%= simple_date @post.source_date %>
         </div>
         <div class="translator-name">
-          譯者: <%= @post.user.name %>
+          譯者: <%= @post.user.name if @post.user.present? %>
         </div>
       </div>
     </div>

@@ -177,17 +177,11 @@
                     color: $affe-red;
                     margin-top: 0;
                 }
-<<<<<<< HEAD
-                .image {
-                    @include border-radius(6px);
-                    overflow: hidden;
-                    width: 400px;
-                    height: 267px;
-=======
+
                 img {
                     max-height: 225px;
                     overflow: hidden;
->>>>>>> development
+
                 }
                 margin: $padding-m 0;
                 padding-bottom: $padding-m;

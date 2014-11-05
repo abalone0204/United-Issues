@@ -11,6 +11,6 @@ $(function() {
       $(this).find(selectedTag).removeClass("shadow");
     });
   }
-  shadowlize(topicItem, "img");
+  shadowlize(topicItem, ".image");
   shadowlize(postItem, "img");
 });

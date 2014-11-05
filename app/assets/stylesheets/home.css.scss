@@ -32,10 +32,16 @@
                 margin: $padding-m 0;
                 margin-left: $padding-s;
                 img{
-                  @include border-radius(6px);
                   overflow: hidden;
                   width: 400px;
                   height: 267px;
+                }
+                .image{
+                  background: $affe-red-trans;
+                  @include border-radius(6px);
+                  overflow: hidden;
+                  width: 400px;
+                  max-height: 267px;
                 }
                 .description {
                     font-size: 2rem;

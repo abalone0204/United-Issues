@@ -2,15 +2,19 @@
 
 $(function() {
   var topicItem = $('.topic-item'),
-      postItem = $('.post-item');
+      postItem = $('.post-item'),
+      orbit = $('.intro-content');
 
-  function shadowlize(item, selectedTag) {
+  function hoverClass(item, target, className) {
     item.hover(function() {
-      $(this).find(selectedTag).addClass("shadow");
+      $(this).find(target).addClass(className);
     }, function() {
-      $(this).find(selectedTag).removeClass("shadow");
+      $(this).find(target).removeClass(className);
     });
   }
-  shadowlize(topicItem, ".image");
-  shadowlize(postItem, "img");
+  hoverClass(topicItem, ".image", "shadow");
+  hoverClass(postItem, "img", "shadow");
+  hoverClass(orbit, "h2", "orbit");
+
+
 });

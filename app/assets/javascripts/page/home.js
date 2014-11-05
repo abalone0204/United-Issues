@@ -6,9 +6,9 @@ $(function() {
 
   function shadowlize(item) {
     item.hover(function() {
-      $(this).find("img").addClass("shadow");
+      $(this).find(".image").addClass("shadow");
     }, function() {
-      $(this).find("img").removeClass("shadow");
+      $(this).find(".image").removeClass("shadow");
     });
   }
   shadowlize(topicItem);

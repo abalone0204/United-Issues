@@ -16,8 +16,12 @@
         border-bottom: $padding-xs solid $affe-red;
         padding-bottom: $padding-m;
         .intro {
-            h2,h3{ color: $affe-red;}
-            h2 {font-weight: 600;}
+            h2,h3 {
+                color: $affe-red;
+            }
+            h2 {
+                font-weight: 600;
+            }
             .intro-content {
                 margin-left: $padding-s;
             }
@@ -31,11 +35,11 @@
                 position: relative;
                 margin: $padding-m 0;
                 margin-left: $padding-s;
-                .image{
-                  @include border-radius(6px);
-                  overflow: hidden;
-                  width: 400px;
-                  height: 267px;
+                .image {
+                    @include border-radius(6px);
+                    overflow: hidden;
+                    width: 400px;
+                    height: 267px;
                 }
                 .description {
                     font-size: 2rem;
@@ -48,45 +52,44 @@
                     width: 400px;
                 }
                 &:hover {
-                  .description{
-                    @include transition(background, 0.2s, ease);
-                    background: $affe-red-trans-hover;
-                  }
+                    .description {
+                        @include transition(background, 0.2s, ease);
+                        background: $affe-red-trans-hover;
+                    }
                 }
             }
         }
     }
-
-    .recent-news{
-      .recent-news-container{
-        padding: $padding-xs;
-        padding-top: $padding-l;
-        padding-bottom: $padding-l;
-
-        background: $primary-color;
-        min-height: 100vh;
-
-        .post-item{
-          a{
-            margin-top: $padding-m;
-          }
-          h3{
-            font-size: 2rem;
-            font-weight: 600;
-            color: $affe-red;
-            margin-top: 0;
-          }
-          img{
-            max-height: 225px;
-            overflow: hidden;
-          }
-          margin: $padding-m 0;
-          padding-bottom: $padding-m;
-          border-bottom: solid 1px $light-gray;
-          &:last-child{
-            border-bottom: none;
-          }
+    .recent-news {
+        .recent-news-container {
+            padding: $padding-xs;
+            padding-top: $padding-l;
+            padding-bottom: $padding-l;
+            background: $primary-color;
+            min-height: 100vh;
+            .post-item {
+                a {
+                    margin-top: $padding-m;
+                }
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: $affe-red;
+                    margin-top: 0;
+                }
+                .image {
+                    @include border-radius(6px);
+                    overflow: hidden;
+                    width: 400px;
+                    height: 267px;
+                }
+                margin: $padding-m 0;
+                padding-bottom: $padding-m;
+                border-bottom: solid 1px $light-gray;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
         }
-      }
     }
 }

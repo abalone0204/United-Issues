@@ -4,28 +4,13 @@ $(function() {
   var topicItem = $('.topic-item'),
       postItem = $('.post-item');
 
-  function shadowlize(item) {
+  function shadowlize(item, selectedTag) {
     item.hover(function() {
-      $(this).find(".image").addClass("shadow");
+      $(this).find(selectedTag).addClass("shadow");
     }, function() {
-      $(this).find(".image").removeClass("shadow");
+      $(this).find(selectedTag).removeClass("shadow");
     });
   }
-  shadowlize(topicItem);
-  shadowlize(postItem);
-  // $("dd").hide();
-  // $("dd").first().show();
-  // $("dt").click(function() {
-  //   dd_element = $(this).next();
-  //   dd_element.slideDown();
-  //   dd_element.siblings("dd").not($(this)).slideUp();
-
-  // });
-  // // $("#page-wrap").delegate("a.image", "click", function(e) {
-  // //   if (!$(this).parent().hasClass("curCol")) {
-  // //     e.preventDefault();
-  // //     $(this).next().find('dt:first').click();
-  // //   }
-
-  // // });
+  shadowlize(topicItem, "img");
+  shadowlize(postItem, "img");
 });

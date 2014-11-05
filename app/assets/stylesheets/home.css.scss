@@ -35,11 +35,12 @@
                 position: relative;
                 margin: $padding-m 0;
                 margin-left: $padding-s;
-                .image {
-                    @include border-radius(6px);
-                    overflow: hidden;
-                    width: 400px;
-                    height: 267px;
+
+                img{
+                  @include border-radius(6px);
+                  overflow: hidden;
+                  width: 400px;
+                  height: 267px;
                 }
                 .description {
                     font-size: 2rem;

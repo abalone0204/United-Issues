@@ -17,7 +17,11 @@
  *= require_self
  */
 
+
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+
+ 
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -157,12 +161,12 @@ footer {
     margin-top: 0.5em;
 }
 
+
 .shadow {
     -moz-box-shadow: 2px 2px 2px 2px #ccc;
     -webkit-box-shadow: 2px 2px 2px 2px #ccc;
     box-shadow: 2px 2px 2px 2px #ccc;
 }
-
 .admin-main {
     background-color: #607d8b;
 }

@@ -1,107 +1,67 @@
-<div class="home container" id="featured-posts">
-  <div class="head-news row">
-    <div class="col-md-5 col-md-offset-1 topic-news-container container-fluid">
-    <% @topic_posts.each do |topic_post| %>
-    <section class="topic-news">
-      <div class="image shadow">
-        <%= image_tag render_post_image(topic_post), size:"380x220",
-        class: "img-responsive img-rounded" %>
-      <%= link_to topic_post do %>
-      <header class="description">
-        <div><%= render_post_title topic_post %></div>
-        <p><%= simple_date topic_post.source_date %></p>
-        <div class="briefly">
+<div class="home">
+  <div class="home-banner row">
+    <div class="topic-container horizontal-shadow col-md-8 col-md-offset-2">
+      <div class="row">
+        <div class="topic-news col-md-7">
+          <% @topic_posts.each do |topic_post| %>
+          <%= link_to topic_post do %>
+          <div class="topic-item">
+            <%= image_tag render_post_image(topic_post),
+            class: "img-rounded" %>
+            <div class="description">
+              <div><%= render_post_title topic_post %></div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="intro col-md-5">
+          <div class="intro-content">
+            <h2>United Issue/</h2>
+            <h2>世界大代誌</h2>
+            <p>
+            UI是一個開方式的翻譯平台，<br>
+            只要你擁有語言長才，<br>
+            便能開始翻譯你認為應該要被注意的新聞；<br>
+            覺得主流媒體的新聞太過偏頗，<br>
+            謾罵並不能改變什麼，<br>
+            讓我們自己來創造一個優良的新聞環境<br>
+            </p>
+            <h3>We need you !</h3>
+            <% if current_user %>
+            <%= link_to "開始翻譯文章", new_post_path, class: "btn btn-default" %>
+            <% end %>
+            <div class="fb-login-block">
+              <%= render partial: 'common/fb_login' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recent-news row">
+    <div class="recent-news-container col-md-8 col-md-offset-2">
+      <% @featured_posts.each do |post| %>
+
+      <div class="row post-item">
+        <div class="image col-md-6">
+          <%= link_to post do %>
+          <%= image_tag render_post_image(post),
+          class: "img-rounded img-responsive" %>
+          <% end %>
+        </div>
+        <div class="description col-md-6">
+          <h3><%= render_post_title post %></h3>
           <p>
-            <%= briefly topic_post, 50 %>
+          <%= briefly post, 50 %>
           </p>
+          <%= link_to "Read more", post %>
         </div>
-      </header>
+      </div>
+
       <% end %>
-      </div>
-    </section>
-    <% end %>
-
-    <div class="board shadow">
-      <ul>
-        <li>這裏是以後的佈告欄</li>
-        <li>網站大小事都po在這</li>
-        <li>現在是翻譯者測試版本0.0.2</li>
-        <li>加上原作者欄位、改首頁錯字</li>
-      </ul>
-    </div>
-    </div>
-
-    <div id="entrance-box" class="shadow col-md-5">
-      <div class="header">
-        <h2>United Issue / 世界大代誌</h2>
-        <p>
-        旨在翻譯不同語言的當地新聞，
-        </p>
-        <p>
-        想提供給讀者台灣新聞平台、BBC、CNN所沒有的國外時事。
-        </p>
-      </div>
-      <hr>
-
-
-
-
-
-      <div class="join-us">
-        <h2>We need you!!</h2>
-        <p>
-          UI是一個開方式的翻譯平台，
-        </p>
-        <p>
-          只要你擁有語言長才，
-        </p>
-        <p>
-          便能開始翻譯你覺得應該要被大家注意的新聞，
-        </p>
-        <p>
-        覺得主流媒體的新聞太過偏頗，
-        </p>
-        <p>
-          謾罵並不能改變什麼，
-        </p>
-        <p>
-          那就由我們自己來創造一個優良的新聞環境吧!!
-        </p>
-        <div class="fb-login-block">
-          <%= render partial: 'common/fb_login' %>
-        </div>
-        <hr>
-        <div class="already-have-account">
-          <div>已經是翻譯者了？</div>
-          <%= link_to "開始翻譯文章", new_post_path(), class: "btn btn-default" %>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="phrase">
-    <hr>
-  </div>
-  <dl>
-    <% @featured_posts.each do |post| %>
-    <dt class="shadow row">
-    <div class="news-title">
-      <%= render_post_title post %>
-    </div>
-    </dt>
-    <dd>
-    <div class="image">
-      <%= image_tag render_post_image(post, :thumb),class:"shadow img-rounded img-responsive" %>
-    </div>
-    <div class="content">
-      <p>
-      <%= briefly post, 80 %>
-      </p>
-      <div>
-        <%= link_to "Read more", post %>
-      </div>
-    </div>
-    </dd>
-    <% end %>
-  </dl>
 </div>
+
 <%= javascript_include_tag 'page/home.js' %>

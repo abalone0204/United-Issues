@@ -1,7 +1,7 @@
 module PostsHelper
 
   def briefly(post, length = 14)
-    str = post.content.gsub(/#/, "")
+    str = post.content.gsub(/#/, "").gsub(/_/, "").gsub(/-/, "")
     truncate(str, length: length)
   end
 

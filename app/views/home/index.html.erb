@@ -7,12 +7,12 @@
           <%= link_to topic_post do %>
           <div class="topic-item">
             <div class="image">
-            <%= image_tag topic_post.image,
-            class: "img-rounded img-responsive" %>
-            </div>
-            <div class="description">
-
-              <div><%= render_post_title topic_post %></div>
+              <%= image_tag topic_post.image, class: "img-rounded img-responsive"%>
+              <div class="description">
+                <div>
+                  <%= render_post_title topic_post %>
+                </div>
+              </div>
             </div>
           </div>
           <% end %>
@@ -21,13 +21,13 @@
         <div class="intro col-md-5">
           <div class="intro-content">
             <h2>
-              <div class="orbiter"></div>
-              <div class="orbiter"></div>
-              <div class="orbiter"></div>
-              <div class="content">
-                United Issue/ <br>
-                世界大代誌
-              </div>
+            <div class="orbiter"></div>
+            <div class="orbiter"></div>
+            <div class="orbiter"></div>
+            <div class="content">
+              United Issue/ <br>
+              世界大代誌
+            </div>
             </h2>
             <p>
             UI是一個開方式的翻譯平台，<br>
@@ -52,7 +52,6 @@
   <div class="recent-news row">
     <div class="recent-news-container col-md-8 col-md-offset-2">
       <% @featured_posts.each do |post| %>
-
       <div class="row post-item">
         <div class="image col-md-6">
           <%= link_to post do %>
@@ -68,10 +67,8 @@
           <%= link_to "Read more", post %>
         </div>
       </div>
-
       <% end %>
     </div>
   </div>
 </div>
-
 <%= javascript_include_tag 'page/home.js' %>

@@ -108,7 +108,7 @@
     .topic-container {
         background: $primary-color;
         min-height: 98vh;
-        border-bottom: $padding-xs solid $affe-red;
+        // border-bottom: $padding-s solid $affe-red;
         padding-bottom: $padding-m;
         .intro {
             h2,h3 {
@@ -159,6 +159,14 @@
                 }
             }
         }
+    }
+    .divider{
+        font-size: 2rem;
+        font-weight: 600;
+        @extend .font-smoothing;
+        color: $shan-yellow;
+        padding: $padding-s;
+        background: $affe-red;
     }
     .recent-news {
         .recent-news-container {

@@ -1,0 +1,1 @@
+$(function(){console.log("okok");var o=$(".post-list-item");o.hover(function(){$(this).find(".image").addClass("shadow")},function(){$(this).find(".image").removeClass("shadow")})});

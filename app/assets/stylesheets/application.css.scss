@@ -284,11 +284,18 @@ a:hover {
     border-top: solid 1px $highlight-color;
     border-bottom: solid 2px $divider-color;
     margin-bottom: 0;
+    @extend .font-smoothing;
+    *{
+
+        font-size: 1.5rem;
+    }
     .brand-container {
         a {
+            @extend .font-smoothing;
+            font-size: 2rem;
+            font-weight: 700;
             color: $shan-yellow;
             text-indent: 2px;
-            text-shadow: $light-gray-transparent 1px 1px;
             margin-right: 1em;
         }
         a:hover {

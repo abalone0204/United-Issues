@@ -128,29 +128,28 @@
         .topic-news {
             .topic-item {
                 position: relative;
-                margin: $padding-m 0;
-                margin-left: $padding-s;
-                img {
-                    overflow: hidden;
-                    width: 400px;
-                    height: 267px;
-                }
+                margin: $padding-m $padding-s;
                 .image {
                     background: $affe-red-trans;
                     @include border-radius(6px);
                     overflow: hidden;
-                    width: 400px;
+                    max-width: 400px;
                     max-height: 267px;
-                }
-                .description {
-                    font-size: 2rem;
-                    position: absolute;
-                    bottom: 0;
-                    color: $primary-color;
-                    @include border-radius(6px);
-                    @extend .font-smoothing;
-                    background: $affe-red-trans;
-                    width: 400px;
+                    img{
+                        width: 100%;
+                    }
+                    .description {
+                        overflow: hidden;
+                        font-size: 2rem;
+                        position: absolute;
+                        bottom: 0;
+                        color: $primary-color;
+                        @include border-radius(6px);
+                        @extend .font-smoothing;
+                        background: $affe-red-trans;
+                        width: 100%;
+                        max-width: 400px;
+                    }
                 }
                 &:hover {
                     .description {
@@ -169,7 +168,6 @@
             background: $primary-color;
             min-height: 100vh;
             .post-item {
-
                 a {
                     margin-top: $padding-m;
                 }
@@ -179,7 +177,6 @@
                     color: $affe-red;
                     margin-top: $padding-m;
                 }
-
                 img {
                     max-width: 303px;
                     max-height: 225px;

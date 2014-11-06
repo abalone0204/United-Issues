@@ -46,15 +46,15 @@
   </div>
   <div class="row">
     <div class="source col-md-8 col-md-offset-3">
-      <h5>
+      <h6>
       <%= t('activerecord.attributes.post.source') %>:
       <%= link_to @post.source, @post.source %>
-      </h5>
+      </h6>
     </div>
   </div>
   <div class="note row">
     <div class="col-md-8 col-md-offset-3">
-    <h5><%= t('activerecord.attributes.post.note') %></h5>
+    <h6><%= t('activerecord.attributes.post.note') %></h6>
     <p>
     <%= simple_format @post.note %>
     </p>

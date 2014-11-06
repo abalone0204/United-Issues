@@ -1,32 +1,35 @@
-<div class="posts container">
-  <div class="post-search">
-    <%= form_tag posts_path, method: :get, class: "row" do %>
-    <div class="col-md-4">
+<div class="posts row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="post-search">
+      <%= form_tag posts_path, method: :get, class: "row" do %>
+      <div class="col-md-8">
         <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
         <%#= submit_tag "Search", name: nil, class: "btn btn-default" %>
-    </div>
-    <% end %>
-  </div>
-  <% @posts.each do |post| %>
-  <div class="post-list-item row">
-    <div class="image col-md-4">
-      <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"shadow img-rounded" %>
-      <div class="post-info">
-        譯者：<%= post.user.name if post.user.present? %>
       </div>
+      <% end %>
     </div>
-    <div class="word-container col-md-5 col-md-offset-1">
-      <div class="title">
-        <%= render_post_title post %>
+    <% @posts.each do |post| %>
+    <div class="post-list-item row">
+      <div class="image col-md-5">
+        <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"img-rounded" %>
+        <div class="post-info">
+          譯者：<%= post.user.name if post.user.present? %>
+        </div>
       </div>
-      <div class="content">
-        <p><%= briefly post, 80 %> </p>
-        <div>
-          <%= link_to "Read more", post, class: "btn" %>
+      <div class="word-container col-md-7">
+        <h4>
+          <%= render_post_title post %>
+        </h4>
+        <div class="content">
+          <p><%= briefly post, 30 %> </p>
+          <div>
+            <%= link_to "Read more", post, class: "btn" %>
+          </div>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 <%= paginate @posts %>
+<%= javascript_include_tag "page/post_index" %>

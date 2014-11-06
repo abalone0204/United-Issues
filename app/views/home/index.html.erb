@@ -1,8 +1,8 @@
 <div class="home">
   <div class="home-banner row">
-    <div class="topic-container horizontal-shadow col-md-8 col-md-offset-2">
+    <div class="topic-container horizontal-shadow col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <div class="row">
-        <div class="topic-news col-md-7">
+        <div class="topic-news col-md-7 col-lg-6">
           <% @topic_posts.each do |topic_post| %>
           <%= link_to topic_post do %>
           <div class="topic-item">
@@ -18,7 +18,7 @@
           <% end %>
           <% end %>
         </div>
-        <div class="intro col-md-5">
+        <div class="intro col-md-5 col-lg-5">
           <div class="intro-content">
             <h2>
             <div class="orbiter"></div>
@@ -49,20 +49,25 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="divider col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+      更多新聞
+    </div>
+  </div>
   <div class="recent-news row">
-    <div class="recent-news-container col-md-8 col-md-offset-2">
+    <div class="recent-news-container col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <% @featured_posts.each do |post| %>
       <div class="row post-item">
-        <div class="image col-md-6">
+        <div class="image col-md-6 col-lg-5">
           <%= link_to post do %>
-          <%= image_tag render_post_image(post),
-          class: "img-rounded" %>
+          <%= image_tag render_post_image(post, :thumb),
+          size:"300x200", class:"img-rounded" %>
           <% end %>
         </div>
-        <div class="description col-md-6">
+        <div class="description col-md-6 col-lg-5">
           <h3><%= render_post_title post %></h3>
           <p>
-          <%= briefly post, 50 %>
+          <%= briefly post, 100 %>
           </p>
           <%= link_to "Read more", post %>
         </div>

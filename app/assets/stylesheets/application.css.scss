@@ -25,6 +25,7 @@
 // @import "bootstrap-material-design";
 
 @import "color_var";
+@import "default";
 
 * {
     font-family: 'Noto Sans', sans-serif;
@@ -119,23 +120,26 @@ body {
 }
 
 footer {
-    height: 2%;
-    padding-top: 1%;
-    padding-bottom: 5%;
-    background-color: #EEFDFF;
+    height: 10vh;
+    padding-top: $padding-m;
+    padding-bottom: $padding-m;
+    background-color: $affe-red-trans;
     clear: both;
     text-align: center;
     .fan-page,
     .version,
     .author {
-        color: #B8BDBC;
+        color: $shan-yellow;
         a {
-            color: #B8BDBC;
+            color: $shan-yellow;
             position: relative;
             margin-left: 2%;
         }
         a:hover {
-            background: none;
+            @include transition(background, .5s, ease);
+            @include border-radius(6px);
+            padding: $padding-xs;
+            background: $shan-yellow;
             color: $highlight-color;
         }
     }

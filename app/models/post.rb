@@ -23,6 +23,10 @@ class Post < ActiveRecord::Base
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
 
+  enumerize :complete,
+  in: {complete: true, not_yet: false}
+
+
   before_save :set_user_id
 
   def self.search(options)

@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit( :source_date, :remote_image_url, :image, :user_id,:title, :content, :note, :source,
                                   :country_classification, :classification, :tag_list,
-                                  :original_author)
+                                  :original_author, :complete)
   end
 
   def find_post

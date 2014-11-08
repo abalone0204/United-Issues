@@ -30,4 +30,12 @@ module PostsHelper
       "未通過"
     end
   end
+
+  def complete_label(post)
+    if post.complete == "not_yet"
+      "label-default"
+    else
+      "label-success"
+    end
+  end
 end

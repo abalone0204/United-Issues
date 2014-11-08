@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
-  scope :published, -> {where("publish = ? AND publish_date <= ?", true, Date.today)}
+  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, Date.today)}
   scope :unpublished, -> {where(publish: false)}
+  scope :ready, -> {where("publish = ? AND complete =? ", false, true)}
   scope :country, ->(country) { where(:country_classification => country) if country.present?}
   scope :classify, ->(classification) { where(:classification => classification) if classification.present?}
 
@@ -22,6 +23,10 @@ class Post < ActiveRecord::Base
 
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
+
+  enumerize :complete,
+  in: {complete: true, not_yet: false}
+
 
   before_save :set_user_id
 

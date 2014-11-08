@@ -103,8 +103,27 @@
 
 
 // show
-
 .post {
+  .complete-notify{
+    @extend .font-smoothing;
+    p{
+      text-align: center;
+    }
+    @include border-radius(6px);
+    position:relative;
+    margin-top: $padding-m;
+    padding: $padding-m;
+    background: $affe-red-trans;
+    color: white;
+    button{
+      position:absolute;
+      top: 0;
+      left: $padding-xs;
+    }
+    &:hover{
+      background: $affe-red-trans-hover;
+    }
+  }
   .content,
   .note, 
   .source{
@@ -196,14 +215,10 @@
   }
 }
 
-// .detail {
-//     text-align: center;
-//     letter-spacing: 2px;
-//     line-height: 2em;
-//     margin: 0 auto;
-//     margin-top: 2%;
-//     margin-bottom: 2%;
-//     background: rgba(233, 233, 233, 0.6);
-//     width: 50%;
-//     border-radius: 5%; 
-// }
+//my posts
+
+.my-posts{
+  .panel-heading{
+    background: $affe-red;
+  }
+}

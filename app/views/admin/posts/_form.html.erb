@@ -1,6 +1,7 @@
 <div class="jumbotron">
 <%= simple_form_for @admin_post do |f| %>
   <%= f.input :publish, as: :select %>
+  <%= f.select :complete, Post.complete.options,{}, {class: "form-control shadow"} %>
   <%= f.label :country_classification %>  
   <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
 

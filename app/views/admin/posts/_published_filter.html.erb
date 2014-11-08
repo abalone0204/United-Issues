@@ -1,5 +1,5 @@
 <div class="published_filter">
-<%= form_tag(schedule_admin_posts_path, method: :get) do %>
+<%= form_tag( current_page, method: :get) do %>
 <%= select_tag :display_options, 
     options_for_select([[ '顯示所有文章', ''],
                         [ '只顯示未通過審核的文章', :unpublished], 

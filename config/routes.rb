@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         get :schedule, as: :schedule
         put :set_publish_time
         put :toggle_publish
+        get :notification, as: :notification
       end
     end
     resources :users do

@@ -1,0 +1,43 @@
+<div class="panel panel-default posts well">
+  <div class="panel-heading">
+    <%= t('attributes.posts') %>
+  </div>
+  <table class="striped-table table table-hover table-responsive">
+    <thead>
+      <th></th>
+      <th></th>
+      <th><%= t('activerecord.attributes.post.publish') %></th>
+      <th><%= t('activerecord.attributes.post.publish_date') %></th>
+      <th class="col-md-3">
+        <%= t('activerecord.attributes.post.title') %>
+      </th>
+      <th><%= t('activerecord.attributes.post.translator') %></th>
+
+    </thead>
+    <tbody>
+      <% admin_posts.each do |post| %>
+      <% if post.present? %>
+      <tr>
+        <td><%= check_box_tag "post_ids[]", post.id %></td>
+        <td>
+          <%= render partial: "edit_options", locals: {post: post} %>
+        </td>
+        <td><%= publish_status(post) %></td>
+        <td><%= simple_date_time(post.publish_date) %></td>
+        <td><%= link_to render_post_title(post), post %></td>
+        <td>
+        <% if post.user.present? %>
+          <%= post.user.name %>
+        <% end %>
+        </td>  
+        <td>
+          <%= briefly(post) %>
+        </td>
+        <td></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate admin_posts %>
+</div>

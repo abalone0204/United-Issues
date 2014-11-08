@@ -40,6 +40,9 @@ zh-TW:
         note: 備註
   enumerize:
     post:
+      complete:
+        complete: 已完成
+        not_yet: 草稿
       country_classification:
         Franch: 法媒 
         Russia: 俄媒 

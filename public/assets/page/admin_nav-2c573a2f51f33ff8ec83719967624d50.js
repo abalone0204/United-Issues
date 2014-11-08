@@ -1,0 +1,1 @@
+$(function(){var o=$(".complete-notification");count=+o.text(),console.log(count),count>0&&(o.addClass("have-notifications"),o.removeClass("complete-notification"))});

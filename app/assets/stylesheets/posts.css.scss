@@ -103,8 +103,27 @@
 
 
 // show
-
 .post {
+  .complete-notify{
+    @extend .font-smoothing;
+    p{
+      text-align: center;
+    }
+    @include border-radius(6px);
+    position:relative;
+    margin-top: $padding-m;
+    padding: $padding-m;
+    background: $affe-red-trans;
+    color: white;
+    button{
+      position:absolute;
+      top: 0;
+      left: $padding-xs;
+    }
+    &:hover{
+      background: $affe-red-trans-hover;
+    }
+  }
   .content,
   .note, 
   .source{

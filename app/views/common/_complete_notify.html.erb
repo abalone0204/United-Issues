@@ -1,0 +1,15 @@
+<% if (post.user == current_user) && (post.complete == "not_yet")  %>
+
+<div class="row">
+  <div class="title col-md-8 col-md-offset-2">
+    <div class="complete-notify">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <p>
+      這篇文章處於草稿狀態，請到編輯頁面把它改為已完成，<br>
+      管理員才會幫你審核並且發佈喔！<br>
+      （文章翻譯者以外的人不會看到這則溫馨小提醒，請不要因此而感到害羞。）
+      </p>
+    </div>
+  </div>
+</div>
+<% end %>

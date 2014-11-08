@@ -2,10 +2,13 @@ class Admin::PostsController < AdminController
   http_basic_authenticate_with name: ENV["admin"], password: ENV["adpwd"]
   before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
 
+  def notification
+    @admin_posts = Admin::Post.includes(:user).order("publish_date DESC").ready.page(params[:page])
+  end
+
   def schedule
     @admin_posts = Admin::Post.includes(:user).order("publish_date DESC").page(params[:page])
     @admin_posts = display_options(@admin_posts, params[:display_options])
-    
   end
 
   def set_publish_time
@@ -111,7 +114,7 @@ class Admin::PostsController < AdminController
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_post_params
     params.require(:admin_post).permit( :publish, :publish_date, :user_id,:title, :content, :note, :source,
-                                        :country_classification, :tag_list)
+                                        :country_classification, :tag_list, :complete)
   end
 
 

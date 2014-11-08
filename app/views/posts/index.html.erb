@@ -18,7 +18,7 @@
       </div>
       <div class="word-container col-md-7">
         <h4>
-          <%= render_post_title post %>
+        <%= render_post_title post %>
         </h4>
         <div class="content">
           <p><%= briefly post, 30 %> </p>
@@ -31,5 +31,9 @@
     <% end %>
   </div>
 </div>
-<%= paginate @posts %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= paginate @posts %>
+  </div>
+</div>
 <%= javascript_include_tag "page/post_index" %>

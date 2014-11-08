@@ -25,7 +25,7 @@ module UnitedIssues
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :'zh-TW'
 
-    config.assets.precompile += %w[page/*.js disqus/*.js]
+    config.assets.precompile += %w[page/*.js disqus/*.js common/*.js]
     config.assets.precompile += %w[*.woff *.ttf]
   end
 end

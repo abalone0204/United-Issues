@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  scope :published, -> {where("publish = ? AND publish_date <= ?", true, Date.today)}
+  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, Date.today)}
   scope :unpublished, -> {where(publish: false)}
   scope :ready, -> {where("publish = ? AND complete =? ", false, true)}
   scope :country, ->(country) { where(:country_classification => country) if country.present?}

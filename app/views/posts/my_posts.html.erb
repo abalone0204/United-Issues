@@ -1,41 +1,52 @@
-<div>
-  <%= link_to new_post_path(), class:"btn-default btn"  do %>
-  <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-  <% end %>
-</div>
-<div class="panel panel-default posts well">
-  <div class="panel-heading">
-    <%= t('attributes.posts') %>
+<div class="my-posts row">
+  <div class="col-md-10 col-md-offset-1">
+  <div>
+    <%= link_to new_post_path(), class:"btn-default btn"  do %>
+    <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+    <% end %>
   </div>
-  <div class="table-responsive">
-    <table class="striped-table table table-responsive">
-      <thead>
-        <th></th>
-        <th><%= t('activerecord.attributes.post.publish') %></th>
-        <th class="col-md-3">
-          <%= t('activerecord.attributes.post.title') %>
-        </th>
-        <th><%= t('activerecord.attributes.post.translator') %></th>
-        <th><%= t('activerecord.attributes.post.content') %></th>
-      </thead>
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td>
-            <%= render partial: "edit_options", locals: {post: post} %>
-          </td>
-          <td><%= publish_status(post) %></td>
-          <td><%= link_to render_post_title(post), post %></td>
-          <td><%= post.user.name %></td>
-          <td>
-            <%= briefly(post) %>
-          </td>
+  <div class="panel panel-default posts well">
+    <div class="panel-heading">
+      <%= t('attributes.posts') %>
+    </div>
+    <div class="table-responsive">
+      <table class="striped-table table table-responsive">
+        <thead>
+          <th></th>
           
-          <td></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%= paginate @posts %>
+          <th><%= t('activerecord.attributes.post.publish') %></th>
+          <th></th>
+          <th>
+            <%= t('activerecord.attributes.post.title') %>
+          </th>
+          <th><%= t('activerecord.attributes.post.content') %></th>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+          <tr>
+            <td>
+              <%= render partial: "edit_options", locals: {post: post} %>
+            </td>
+            
+            <td><%= publish_status(post) %></td>
+            <td>
+              <span class="label <%= complete_label(post) %>">
+              <%= post.complete.text %>
+              </span>
+            </td>
+            <td><%= link_to render_post_title(post).truncate(30), post %></td>
+
+            <td>
+              <%= briefly(post) %>
+            </td>
+            
+            <td></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @posts %>
+    </div>
+  </div>
   </div>
 </div>

@@ -78,6 +78,7 @@ gem "auto-facebook"
 # front-end
 
 gem 'jquery-ui-rails'
+gem 'googl'
 
 # Deploy
 

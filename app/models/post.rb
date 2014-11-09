@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   enumerize :classification,
-    in: %w[culture economics internation medical tech education travel sport other]
+    in: %w[ society comment internation culture economics medical tech education travel sport other]
 
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
@@ -29,6 +29,7 @@ class Post < ActiveRecord::Base
 
 
   before_save :set_user_id
+  before_save :short_url
 
   def self.search(options)
     posts = self.classify(options[:classification])
@@ -39,8 +40,17 @@ class Post < ActiveRecord::Base
     posts
   end
 
+  private
+
   def set_user_id
     self.user_id ||= User.current.id
+  end
+
+  def short_url
+    unless source.include?("http://goo.gl/")
+      url = Googl.shorten(source)
+      self.source = url.short_url
+    end
   end
 
 end

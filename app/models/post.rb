@@ -1,3 +1,5 @@
+require "googl"
+
 class Post < ActiveRecord::Base
   scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, Date.today)}
   scope :unpublished, -> {where(publish: false)}

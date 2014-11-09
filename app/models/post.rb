@@ -47,7 +47,7 @@ class Post < ActiveRecord::Base
   end
 
   def short_url
-    unless source.include?("gool.gl/")
+    unless source.include?("http://goo.gl/")
       url = Googl.shorten(source)
       self.source = url.short_url
     end

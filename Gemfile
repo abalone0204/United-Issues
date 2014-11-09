@@ -79,6 +79,7 @@ gem "auto-facebook"
 # front-end
 
 gem 'jquery-ui-rails'
+gem 'googl'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

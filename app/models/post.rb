@@ -29,6 +29,7 @@ class Post < ActiveRecord::Base
 
 
   before_save :set_user_id
+  before_save :short_url
 
   def self.search(options)
     posts = self.classify(options[:classification])
@@ -39,8 +40,17 @@ class Post < ActiveRecord::Base
     posts
   end
 
+  private
+
   def set_user_id
     self.user_id ||= User.current.id
+  end
+
+  def short_url
+    unless source.include?("gool.gl/")
+      url = Googl.shorten(source)
+      self.source = url.short_url
+    end
   end
 
 end

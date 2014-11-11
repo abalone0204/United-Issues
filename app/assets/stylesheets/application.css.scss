@@ -128,9 +128,9 @@ footer {
     background-color: $affe-red-trans-hover;
     clear: both;
     text-align: center;
+    .author,
     .fan-page,
-    .version,
-    .author {
+    .version {
         color: $shan-yellow;
         a {
             color: $shan-yellow;

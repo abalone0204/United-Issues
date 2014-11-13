@@ -1,12 +1,12 @@
 <div class="jumbotron">
 <%= simple_form_for @admin_post do |f| %>
   <%= f.input :publish, as: :select %>
-  <%= f.select :complete, Post.complete.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :complete, Post.complete.options,{}, {class: "form-control"} %>
   <%= f.label :country_classification %>  
-  <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control"} %>
 
   <%= f.label :classification %>  
-  <%= f.select :classification, Post.classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :classification, Post.classification.options,{}, {class: "form-control"} %>
 
   <%= f.input :publish_date %>
   <%= f.input :title, 

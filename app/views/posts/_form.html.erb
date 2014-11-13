@@ -1,14 +1,14 @@
 <div class="jumbotron post">
 <%= simple_form_for @post, html: {multipart: true} do |f| %>
   <%= f.input :user_id, as: :hidden %> 
-  <%= f.select :complete, Post.complete.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :complete, Post.complete.options,{}, {class: "form-control "} %>
 
 
   <%= f.input :original_author, input_html: {class: 'form-control'} %>
   <%= f.label :country_classification %>  
-  <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control"} %>
   <%= f.label :classification %>  
-  <%= f.select :classification, Post.classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :classification, Post.classification.options,{}, {class: "form-control"} %>
   <%= f.input :image, as: :file %>
   <%= f.input :remote_image_url, label: "或是圖片網址", input_html: {class:"form-control"} %>
   <%= f.input :title, 

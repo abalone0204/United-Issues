@@ -7,7 +7,7 @@ class Admin::PostsController < AdminController
   end
 
   def schedule
-    @admin_posts = Admin::Post.includes(:user).order("publish ASC").page(params[:page])
+    @admin_posts = Admin::Post.includes(:user).order("publish ASC").order("publish_date DESC").page(params[:page])
     @admin_posts = display_options(@admin_posts, params[:display_options])
   end
 

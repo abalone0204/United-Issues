@@ -7,8 +7,9 @@ class Admin::PostsController < AdminController
   end
 
   def schedule
-    @admin_posts = Admin::Post.includes(:user).order("publish ASC").order("publish_date DESC").page(params[:page])
-    @admin_posts = display_options(@admin_posts, params[:display_options])
+    get_sorted_posts
+    @admin_posts = Kaminari.paginate_array(@admin_posts).page(params[:page]).per(8)
+    # @admin_posts = display_options(@admin_posts, params[:display_options])
   end
 
   def set_publish_time
@@ -102,6 +103,13 @@ class Admin::PostsController < AdminController
   # Use callbacks to share common setup or constraints between actions.
   def get_admin_post
     @admin_post = Admin::Post.find(params[:id])
+  end
+
+  def get_sorted_posts
+    confirm_unscheduled_posts = Admin::Post.includes(:user).where('publish = ? AND publish_date is null', true)
+    scheduled_posts = Admin::Post.includes(:user).where('publish = ? AND publish_date is not null', true).order('publish_date DESC')
+    unconfirm_posts = Admin::Post.includes(:user).where('publish = ?', false)
+    @admin_posts = confirm_unscheduled_posts+scheduled_posts+unconfirm_posts
   end
 
   def display_options(posts, options)

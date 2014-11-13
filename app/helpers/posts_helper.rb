@@ -7,11 +7,19 @@ module PostsHelper
 
 
   def render_post_image(post, size=:display)
-     if post.image.present? 
-        post.image_url(size)
-     else   
+    if post.image.present?
+      post.image_url(size)
+    else
+      'default-thumb.png'
+    end
+  end
+
+  def lazy_render_post_image(post, size=:display)
+    if post.image.present?
+      post.image_url(size)
+    else
       image_path('default-thumb.png')
-     end 
+    end
   end
 
 

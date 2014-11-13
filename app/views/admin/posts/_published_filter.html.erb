@@ -5,7 +5,7 @@
                         [ '只顯示未通過審核的文章', :unpublished], 
                         [ '只顯示通過審核文章', :published], 
                         ], params[:display_options]), 
-                        class: "form-control", :onchange => "this.form.submit();" %>
+                        :onchange => "this.form.submit();" %>
 
 <% end -%>
 </div>

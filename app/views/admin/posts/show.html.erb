@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="well">
   <h1><%= @admin_post.title %></h1>
+  <div class="image">
+    <%= image_tag render_post_image(@admin_post, :thumb), class: "img-rounded img-responsive"%>
+  </div>
   <p class="well"><%= raw @admin_post.content.gsub(/\n/, '<br/>') %></p>
   <div class="source">
     <p><%= t('activerecord.attributes.post.source') %>:<%= @admin_post.source %></p>

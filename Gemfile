@@ -66,7 +66,7 @@ end
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'bootstrap-material-design'
+
 gem 'autoprefixer-rails'
 gem 'cancancan', '~> 1.9'
 
@@ -89,6 +89,7 @@ gem "auto-facebook"
 # front-end
 
 gem 'jquery-ui-rails'
+gem 'googl'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

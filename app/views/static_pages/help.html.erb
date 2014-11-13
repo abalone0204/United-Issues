@@ -1,0 +1,139 @@
+<div class="help container-fluid">
+  <header class="row">
+    <div id="#top"class="content col-md-6 col-md-offset-3">
+      <h1>Hakunamatata</h1>
+      <p>在加入翻譯之前，</p>
+      <p>知道這幾件事情會讓你翻譯起來更愉快：</p>
+      <ul>
+        <li>
+          <div>
+            United Issue支援<a href="#markdown">markdown</a>語法，
+          </div>
+          <div>
+            讓你不用再擔心排版，全神貫注在寫東西上。
+          </div>
+        </li>
+        <li>
+          我要去哪裡看自己翻譯的文章呢？<a href="#here">這裏</a>
+        </li>
+        <li>
+          有Bug該怎麼辦？<br>
+          請看右上角Bug report
+        </li>
+        <li>
+          名字是中文顯示不出來？<br>
+          或者你就是不喜歡自己FB的名字<br>
+          你可以到右上角的編輯個人資訊地方改你名字<br>
+        </li>
+        <li><%= link_to "都懂了，開始翻譯文章吧！", new_post_path %></li>
+      </ul>
+    </div>
+  </header>
+  
+  <hr>
+  
+
+  <div class="row">
+    <div id="markdown" class="markdown content col-md-8 col-md-offset-3">
+      <a href="#markdown"><h1>What is Markdown?</h1></a>
+      <p>簡單的說就是在翻譯文章的時候，</p>
+      <p>能讓你用最簡易的符號來排版</p>
+      <p>下面來一項一項介紹：</p>
+      <ul>
+        <li>
+        <h2># 標題</h2>
+        <div class="title-demo">
+          <div>假設你在內容的地方打上這樣一句話：</div>
+          <div class="demo">
+            <p># 標題一</p>
+            <p>## 標題二</p>
+            <p>### 標題三</p>
+          </div>
+          <div>儲存之後結果會變成下面這樣：</div>
+          <h1>標題一</h1>
+          <h2>標題二</h2>
+          <h3>標題三</h3>
+          <div class="conclusion">
+            很淺顯易懂吧！前面井號越少，字就會越大，<br>
+            記得井號和字之間要留一個空格。<br>
+            也一定要記得行和行之間，<br>
+            至少要再多格一行才會讓markdown語法生效。<br>
+            <span class="demo">#</span> 適合既剽悍又伸縮自如的您。
+          </div>
+        </div>
+        </li>
+        <li><h2>__粗體字__</h2>
+        <div>假設你在內容的地方打上這樣一句話：</div>
+        <div class="demo">
+          <p>__強調__</p>
+        </div>
+        <div>儲存之後結果會變成這樣：</div>
+        <div>
+          <em>強調</em>
+        </div>
+        <div class="conclusion">
+          簡單說，兩個底線中間包住的字就會被強調<br>
+          <span class="demo">__ __</span>適合想低調但又想強調文章重點的您
+        </div>
+        </li>
+        <li>
+          <h2>- 列表</h2>
+          <div>一樣假設我們在內容中打上這樣一行：</div>
+          <div class="demo">
+            <p> - 選項</p>
+            <p> - 選項</p>
+          </div>
+          <div>儲存之後結果會變成這樣：</div>
+          <div>
+            <ul>
+              <li>選項</li>
+              <li>選項</li>
+            </ul>
+          </div>
+          <div class="conclusion">
+            跟井字號很像，<br>
+            使用 - 號時要和你的字隔一個空白，<br>
+            也記得每行和每行之間要在隔一行，<br>
+            如果就能清楚的條列出你想要列出來的東西。
+          </div>
+        </li>
+        <li>
+          <h2>> 引用</h2>
+          <div class="demo">
+            > 我與父親不相見已有二年餘了，我最不能忘記的是他的背影。那年冬天，祖母死了，父親的差使也交卸了，正是禍不單行的日子，我從北京到徐州，打算跟著父親奔喪回家。到徐州見著父親，看見滿院狼籍的東西，又想起祖母，不禁簌簌地流下眼淚。父親說，“事已如此，不必難過，好在天無絕人之路！”
+          </div>
+          <div>儲存之後會變這樣：</div>
+            <div>
+              <blockquote>我與父親不相見已有二年餘了，我最不能忘記的是他的背影。那年冬天，祖母死了，父親的差使也交卸了，正是禍不單行的日子，我從北京到徐州，打算跟著父親奔喪回家。到徐州見著父親，看見滿院狼籍的東西，又想起祖母，不禁簌簌地流下眼淚。父親說，“事已如此，不必難過，好在天無絕人之路！”</blockquote>
+            </div>
+            <div class="conclusion">
+              一樣記得<span class="demo">></span>後面也記得要隔一個空格，<br>
+              如果引用文章有很多行的話，可以幫它排版，<br>
+              但是記得在每行最前面都加上<span class="demo">></span>
+            </div>
+        </li>
+        <li>
+          <h2>如果你還想了解更多關於markdown的語法可以到<a href="http://markdown.tw/">http://markdown.tw/</a></h2>
+        </li>
+      </ul>
+      <div class="top-link">
+        <%= link_to "Back to top", "#top" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div id="here" class="content col-md-8 col-md-offset-3">
+      <h1>如何看自己翻譯的文章？</h1>
+      <div>
+        右上角有一個我翻譯的文章，<br>
+        就能看到你所有翻譯的文章和發佈的狀態，<br>
+        記得翻譯完後要將草稿變更為已完成，<br>
+        管理員才會知道要幫你審核並發布喔！<br>
+      <div class="top-link">
+        <%= link_to "Back to top", "#top" %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

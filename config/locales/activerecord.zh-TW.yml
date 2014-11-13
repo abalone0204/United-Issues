@@ -1,7 +1,7 @@
 zh-TW:
   attributes:
       users: 使用者列表
-      posts: 文章列表
+      posts: 所有翻譯新聞
       email: 聯絡信箱
       password: 密碼
       tel: 聯絡電話（市話）
@@ -26,11 +26,13 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       post:
+        original_author: 原作者
         source_date: 來源時間
         image: 上傳圖片
         publish: 審核狀態
         publish_date: 發佈時間
-        country_classification: 媒體分類
+        country_classification: 來源分類
+        classification: 媒體分類
         title: 標題
         translator: 譯者
         content: 內容
@@ -38,6 +40,9 @@ zh-TW:
         note: 備註
   enumerize:
     post:
+      complete:
+        complete: 已完成
+        not_yet: 草稿
       country_classification:
         Franch: 法媒 
         Russia: 俄媒 
@@ -49,4 +54,18 @@ zh-TW:
         Polish: 波蘭媒 
         Czech: 捷克媒 
         Turkey: 土媒
+        Other: 其他
+      classification:
+        society: 社會議題
+        comment: 時事評論
+        culture: 影視文化
+        economics: 經濟發展
+        internation: 國際局勢
+        medical: 醫療保健
+        tech: 新創科技
+        education: 教育學術
+        travel: 旅遊休閒
+        sport: 運動競技
+        other: 其他
+
     

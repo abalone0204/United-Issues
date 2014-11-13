@@ -1,0 +1,85 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "color_var";
+@import "default";
+
+
+
+.help{
+  min-height: 100%;
+  h1{
+    color: $affe-red;
+    font-size: 3.5rem;
+    }
+  *{
+    font-size: 2rem;
+  }
+  li{
+    a{
+      color: $affe-red;
+      font-weight: 800;
+      &:hover{
+        background: $shan-yellow-trans;
+      }
+    }  
+  }
+  header{
+    position: relative;
+    padding-bottom: $padding-l;
+    min-height: 100%;
+  }
+
+  .top-link{
+    a{
+      font-size: 1.75rem;
+      color: $light-gray;  
+      &:hover{
+      color: $affe-red;
+    }
+    }
+    
+    
+  }
+  .markdown{
+    li{
+      padding-bottom: $padding-m;
+    }
+    h1{
+      font-size: 3.5rem;
+    }
+    h2{
+      font-size: 2rem;
+    }
+    *{
+      font-size: 1.5rem;
+    }
+    
+    em{
+      color: $affe-red;
+      font-weight: 900;
+    }
+    .demo{
+        background: $blockquote-yellow;
+      }
+    .conclusion{
+      padding-left: $padding-m;
+      border-radius: 2px;
+      background: $light-gray-transparent;
+      font-size: 1.5rem;
+    }
+    .title-demo{
+      h1{
+        color: black;
+        font-size: 3.5rem;
+      }
+      h2{
+        font-size: 3rem;
+      }
+      h3{
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

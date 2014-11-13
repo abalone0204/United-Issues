@@ -1,55 +1,39 @@
-<!-- <div class="posts-container">
-  <% @posts.each do |post| %>
-  <div>
-    <%= image_tag render_post_image(post, :thumb), class: "img-thumbnail " %>
-    <div class="description">
-      
+<div class="posts row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="post-search">
+      <%= form_tag posts_path, method: :get, class: "row" do %>
+      <div class="col-md-8">
+        <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+        <%#= submit_tag "Search", name: nil, class: "btn btn-default" %>
+      </div>
+      <% end %>
     </div>
-  </div>
-  <% end %>
-</div> -->
-
-
-<div>
-  <%= link_to new_post_path(), class:"btn-default btn"  do %>
-  <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-  <% end %>
-</div>
-<div class="panel panel-default posts well">
-  <div class="panel-heading">
-    <%= t('attributes.posts') %>
-  </div>
-  <div class="table-responsive">
-    <table class="striped-table table">
-      <thead>
-        <th></th>
-        <th class="col-md-3">
-          <%= t('activerecord.attributes.post.title') %>
-        </th>
-        <th>Tags</th>
-        <th><%= t('activerecord.attributes.post.translator') %></th>
-        <th><%= t('activerecord.attributes.post.content') %></th>
-      </thead>
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td>
-            <% if can? :update, post %>
-            <%= render partial: "edit_options", locals: {post: post} %>
-            <% end %>
-          </td>
-          <td><%= link_to render_post_title(post), post %></td>
-          <td><%= raw render_post_tags(post) %></td>
-          <td><%= post.user.name %></td>
-          <td>
-            <%= briefly(post) %>
-          </td>
-          <td></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @posts.each do |post| %>
+    <div class="post-list-item row">
+      <div class="image col-md-5">
+        <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"img-rounded" %>
+        <div class="post-info">
+          譯者：<%= post.user.name if post.user.present? %>
+        </div>
+      </div>
+      <div class="word-container col-md-7">
+        <h4>
+        <%= render_post_title post %>
+        </h4>
+        <div class="content">
+          <p><%= briefly post, 30 %> </p>
+          <div>
+            <%= link_to "Read more", post, class: "btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
-<%= paginate @posts %>
-<%= render 'tag_cloud' %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= paginate @posts %>
+  </div>
+</div>
+<%= javascript_include_tag "page/post_index" %>

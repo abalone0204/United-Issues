@@ -1,3 +1,36 @@
 // Place all the styles related to the admin/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "default";
+@import "color_var";
+
+.notification-link {
+    .have-notifications,
+    .complete-notification {
+        max-height: 24px;
+        width: 24px;
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        @include border-radius(100%);
+        color: $notification-text;
+    }
+    .complete-notification {
+        background: $notification-gray;
+    }
+    .have-notifications {
+        background: $affe-red-trans;
+    }
+    &:hover {
+        .complete-notification {
+            background: $highlight-color;
+        }
+        .have-notifications {
+            background: $affe-red-trans-hover;
+        }
+    }
+}
+
+.time-setting,
+.published_filter{
+    padding-top: $padding-m;
+}

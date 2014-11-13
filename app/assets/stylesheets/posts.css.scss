@@ -3,34 +3,79 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "color_var";
-
+@import "default";
 #post-container {
   min-height: 100%;
 }
 .posts {
   margin-top: 2%;
 }
-.note {
-  color: #999;
 
+.posts{
+  .post-search{
+      margin-left: $padding-m;
+  }
+  .post-list-item{
+    padding: $padding-m;
+    border-bottom: $light-gray 1px solid;
+    &:last-child{
+      border-bottom: none;
+    }
+    .word-container{
+        h4{
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $affe-red;
+          margin: 0;
+        }
+        p{
+          text-indent: 2rem;  
+        }
+        
+    }
+    .image{
+      overflow: hidden;
+      padding: 0;
+      @include border-radius(6px);
+      position: relative;
+      max-width: 300px;
+      .post-info{
+        padding-left: $padding-xs;
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+
+        color: $primary-color;
+        background: $affe-red-trans;
+      }
+    }
+    .image:hover{
+      .post-info{
+        -o-transition: max-height .40s linear;
+        -webkit-transition: max-height .40s linear;
+        -moz-transition: max-height .40s linear;
+        transition:   max-height .40s linear;
+        max-height: 0;
+        color: $affe-red;
+      }
+    }
+  }
+  .post-list-item:hover{
+//     -o-transition: background .40s linear;
+//     -webkit-transition: background .40s linear;
+//     -moz-transition: background .40s linear;
+//     transition:   background .40s linear;
+//     background: $shan-yellow-trans;
+  }
 }
 
 
+// admin
 .published_filter{
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-#tags_cloud {
-  margin: 0 auto;
-  margin-top: 5em;
-  margin-bottom: 5em;
-  width: 400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
-}
 .new_post_sign {
   margin-right: 0.5em;
 }
@@ -48,25 +93,98 @@
     background: transparent; 
 
   }
-}
+} 
+
 .edit-options{
   a{
     color: $link-text-color;
   }
 }
 
-.post {
-  min-height: 100%;
 
+// show
+.post {
+  .complete-notify{
+    @extend .font-smoothing;
+    p{
+      text-align: center;
+    }
+    @include border-radius(6px);
+    position:relative;
+    margin-top: $padding-m;
+    padding: $padding-m;
+    background: $affe-red-trans;
+    color: white;
+    button{
+      position:absolute;
+      top: 0;
+      left: $padding-xs;
+    }
+    &:hover{
+      background: $affe-red-trans-hover;
+    }
+  }
+  .content,
+  .note, 
+  .source{
+    border-bottom: 2px solid $light-gray-transparent;
+    padding-bottom: $padding-l;
+  }
+  h5{
+    color: $affe-red;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  h6{
+    color: $affe-red;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  min-height: 100%;
+  .edit-link{
+    z-index: 3;
+  }
+  .source{
+    *{
+      color: $affe-red;
+    }
+    a:hover{
+      background: $blockquote-yellow;
+    }
+  }
   .header {
     margin-top: 4%;
+    margin-bottom: $padding-m;
+    h3{
+      font-weight: 700;
+      color: $affe-red;
+      padding-bottom: $padding-m;
+      border-bottom: 2px solid $light-gray-transparent;
+    }
     a {
       color: $link-text-color;
     }
+
+    .post-info{
+      padding: $padding-m 0;
+      // background: $blockquote-yellow;
+    }
+  }
+  .detail{
+    font-size: 2rem;
   }
   .content-container{
+    .content{
+      border-top: $padding-xs solid $affe-red;
+      padding-bottom: $padding-l;
+    }
+    padding-bottom: $padding-m;
     blockquote{
       background: $blockquote-yellow;
+    }
+    em{
+      font-weight: 900;
+      color: $affe-red;
     }
 
     position: relative;
@@ -75,8 +193,6 @@
       letter-spacing: 2px;
       line-height: 2em;
       font-size: 15px;
-      margin-right: 8%;
-      margin-left: 8%;
     }
     h1 {
       font-size: 3em;
@@ -99,14 +215,10 @@
   }
 }
 
-.detail {
-    text-align: center;
-    letter-spacing: 2px;
-    line-height: 2em;
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background: rgba(233, 233, 233, 0.6);
-    width: 50%;
-    border-radius: 5%; 
+//my posts
+
+.my-posts{
+  .panel-heading{
+    background: $affe-red;
+  }
 }

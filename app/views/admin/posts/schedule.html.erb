@@ -1,52 +1,10 @@
-<%= render partial: "published_filter" %>
-<!-- <div class="btn-group">
-  <%= link_to "只顯示未通過審核的文章", schedule_admin_posts_path(display_options: :unpublished),class: "btn btn-default" %>
-  <%= link_to "只顯示通過審核文章", schedule_admin_posts_path(display_options: :published),class: "btn btn-default" %>
-  <%= link_to "顯示所有文章", schedule_admin_posts_path, class: "btn btn-default" %>
-</div> -->
-
+<%= render partial: "published_filter", locals:{current_page: schedule_admin_posts_path} %>
 <%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
 <div class="time-setting">
-    <%= text_field_tag :set_publish_time, nil, placeholder: "點這裏一下設定日期和時間",id:"datetimepicker", class:"form-control" %>
-    <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
+  <%= text_field_tag :set_publish_time, nil, placeholder: "點這裏一下設定日期和時間",id:"datetimepicker", class:"form-control" %>
+  <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
 </div>
-<div class="panel panel-default posts well">
-  <div class="panel-heading">
-    <%= t('attributes.posts') %>
-  </div>
-  <table class="striped-table table table-hover">
-    <thead>
-      <th></th>
-      <th></th>
-      <th><%= t('activerecord.attributes.post.publish') %></th>
-      <th><%= t('activerecord.attributes.post.publish_date') %></th>
-      <th class="col-md-3">
-        <%= t('activerecord.attributes.post.title') %>
-      </th>
-      <th><%= t('activerecord.attributes.post.translator') %></th>
-      <th><%= t('activerecord.attributes.post.content') %></th>
-      <th class="col-md-2"></th>
-    </thead>
-    <tbody>
-      <% @admin_posts.each do |post| %>
-      <tr>
-        <td><%= check_box_tag "post_ids[]", post.id %></td>
-        <td><%= render partial: "edit_options", locals: {post: post} %></td>
-        <td><%= publish_status(post) %></td>
-        <td><%= simple_date_time post.publish_date %></td>
-        <td><%= link_to render_post_title(post), post %></td>
-        <td><%= post.user.name %></td>
-        <td>
-          <%= briefly(post) %>
-        </td> 
-        <td></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-    <div><%= paginate @admin_posts %></div>
-    
-  </div>
-  <% end %>
-  <!-- class:"datepicker" -->
+<%= render partial:"admin/common/posts_config_table",
+locals: {admin_posts: @admin_posts} %>
+<% end %>
 <%= javascript_include_tag 'page/posts' %>

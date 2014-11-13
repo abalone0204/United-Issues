@@ -1,6 +1,8 @@
 zh-TW:
   link:
     schedule: 文章排程
+    notification: 待審核文章
+    announcement: 公告
   common:
     new: 開始翻譯文章
     edit: 編輯

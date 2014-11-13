@@ -5,14 +5,9 @@ class PostsController < ApplicationController
   before_action :validate_publish, only: [:show]
 
   def index
-    if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).published.order("created_at DESC").page(params[:page])
-    else
-      @posts = Post.published.order("created_at DESC").page(params[:page])
-    end
-    if params[:classification].present?
-      @posts = @posts.country(params[:classification]).order("created_at DESC").page(params[:page])
-    end
+    happy_bug
+    @posts = Post.published.search(params)
+    @posts = @posts.order("created_at DESC").page(params[:page])
   end
 
   def show
@@ -67,11 +62,24 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit( :source_date, :remote_image_url, :image, :user_id,:title, :content, :note, :source,
-                                  :country_classification, :tag_list)
+                                  :country_classification, :classification, :tag_list,
+                                  :original_author, :complete)
   end
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def happy_bug
+    trigger = params[:search].to_s
+    if trigger.downcase.start_with?("say")
+      word = trigger.delete("say").gsub(/\s+/, "")
+      redirect_to say_path(word)
+    elsif trigger.downcase == "how do you turn this on"
+      redirect_to car_path(1)
+    elsif trigger == "stallions"
+      redirect_to stallions_path 
+    end
   end
 
 end

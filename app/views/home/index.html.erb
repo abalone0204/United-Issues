@@ -1,3 +1,83 @@
-<%= render partial: "featured_posts" %>
-
+<div class="home">
+  <div class="home-banner row">
+    <div class="topic-container horizontal-shadow col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+      <div class="row">
+        <% if @topic_posts.present? %>
+        <div class="topic-news col-md-7 col-lg-6">
+          <% @topic_posts.each do |topic_post| %>
+          <%= link_to topic_post do %>
+          <div class="topic-item">
+            <div class="image">
+              <%= image_tag render_post_image(topic_post, :thumb), class: "img-rounded img-responsive"%>
+              <div class="description">
+                <div>
+                  <%= render_post_title topic_post %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <% end %>
+        <div class="intro col-md-5 col-lg-5">
+          <div class="intro-content">
+            <h2>
+            <div class="orbiter"></div>
+            <div class="orbiter"></div>
+            <div class="orbiter"></div>
+            <div class="content">
+              United Issue/ <br>
+              世界大代誌
+            </div>
+            </h2>
+            <p>
+            UI是一個開放式的翻譯平台，<br>
+            只要你擁有語言長才，<br>
+            便能開始翻譯你認為應該要被注意的新聞；<br>
+            覺得主流媒體的新聞太過偏頗，<br>
+            謾罵並不能改變什麼，<br>
+            讓我們自己來創造一個優良的新聞環境<br>
+            </p>
+            <h3>We need you !</h3>
+            <% if current_user %>
+            <%= link_to "開始翻譯文章", new_post_path, class: "btn btn-default" %>
+            <% end %>
+            <div class="fb-login-block">
+              <%= render partial: 'common/fb_login' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="divider col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+      更多新聞
+    </div>
+  </div>
+  <div class="recent-news row">
+    <div class="recent-news-container col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+      <% if @featured_posts.present?  %>
+      <% @featured_posts.each do |post| %>
+      <div class="row post-item">
+        <div class="image col-md-6 col-lg-5">
+          <%= link_to post do %>
+          <%= image_tag render_post_image(post, :thumb),
+          size:"300x200", class:"img-rounded" %>
+          <% end %>
+        </div>
+        <div class="description col-md-6 col-lg-5">
+          <h3><%= render_post_title post %></h3>
+          <p>
+          <%= briefly post, 100 %>
+          </p>
+          <%= link_to "Read more", post %>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <%= javascript_include_tag 'page/home.js' %>

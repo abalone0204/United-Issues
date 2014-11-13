@@ -1,7 +1,7 @@
 module PostsHelper
 
   def briefly(post, length = 14)
-    str = post.content.gsub(/#/, "")
+    str = post.content.gsub(/#/, "").gsub(/_/, "").gsub(/-/, "")
     truncate(str, length: length)
   end
 
@@ -14,9 +14,6 @@ module PostsHelper
      end 
   end
 
-  def render_post_tags(post)
-    post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')
-  end
 
   def render_post_title(post)
     if post.country_classification.present?
@@ -31,6 +28,14 @@ module PostsHelper
       "通過"
     else
       "未通過"
+    end
+  end
+
+  def complete_label(post)
+    if post.complete == "not_yet"
+      "label-default"
+    else
+      "label-success"
     end
   end
 end

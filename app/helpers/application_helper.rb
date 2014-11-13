@@ -1,15 +1,20 @@
 module ApplicationHelper
-  def tag_cloud(tags, classes)
-    i = 0
-    max = tags.sort_by(&:count).last
-    tags.each do |tag|
-      index = tag.count.to_f / max.count * (classes.size - 1)
-      yield(tag, classes[index.round])
+
+  def search_options(option, params)
+    options = {}
+    keys =[:classification, :country_classification]
+    
+    keys.each do |key|
+      if params[key]
+        options[key] = params[key]    
+      end
     end
-  end
 
-  def tags_cloud(tags, classes)
+    option.each do |key, value|
+      options[key] = value
+    end
 
+    options
   end
 
   def simple_date_time(date)

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UnitedIssues</title>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</head>
-<body>
-
-<div class="home-nav">
-<%= render partial: "common/navbar" %>
-<%#= render partial: "common/flash" %>
-</div>
-<%= yield %>
-<%= render partial: "common/footer" %>
-<%= debug(params) if Rails.env.development? %>
-
-  
-</body>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <head>
+    <title>UnitedIssues</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <div class="home-nav">
+      <%= render partial: "common/navbar" %>
+      <%#= render partial: "common/flash" %>
+    </div>
+    <%= yield %>
+    <%= render partial: "common/footer" %>
+    <%= debug(params) if Rails.env.development? %>
+    <%= render partial: "common/ga" %>
+  </body>
 </html>

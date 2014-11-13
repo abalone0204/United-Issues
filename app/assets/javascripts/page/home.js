@@ -1,19 +1,20 @@
 //= require jquery-ui
 
 $(function() {
-  $("dd").hide();
-  $("dd").first().show();
-  $("dt").click(function() {
-    dd_element = $(this).next();
-    dd_element.slideDown();
-    dd_element.siblings("dd").not($(this)).slideUp();
+  var topicItem = $('.topic-item'),
+      postItem = $('.post-item'),
+      orbit = $('.intro-content');
 
-  });
-  // $("#page-wrap").delegate("a.image", "click", function(e) {
-  //   if (!$(this).parent().hasClass("curCol")) {
-  //     e.preventDefault();
-  //     $(this).next().find('dt:first').click();
-  //   }
+  function hoverClass(item, target, className) {
+    item.hover(function() {
+      $(this).find(target).addClass(className);
+    }, function() {
+      $(this).find(target).removeClass(className);
+    });
+  }
+  hoverClass(topicItem, ".image", "shadow");
+  hoverClass(postItem, "img", "shadow");
+  hoverClass(orbit, "h2", "orbit");
 
-  // });
+
 });

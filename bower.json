@@ -11,6 +11,7 @@
     "news"
   ],
   "dependencies": {
-    "jqueryui-timepicker-addon": "~1.5.0"
+    "jqueryui-timepicker-addon": "~1.5.0",
+    "bootstrap-material-design": "~0.1.3"
   }
 }

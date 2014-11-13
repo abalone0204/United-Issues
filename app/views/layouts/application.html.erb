@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UnitedIssues</title>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</head>
-<body>
-
-  <div class="main-nav">
-    <%= render partial: "common/navbar" %>
-  </div>
-
-
-  <%#= render partial: "common/flash" %>
-  <div class="container main shadow" id="main-container">
-    <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
-  </div>
-
-
-<%= render partial: "common/footer" %>
-  
-</body>
-
-
+  <head>
+    <title>UnitedIssue</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <div class="main-nav">
+      <%= render partial: "common/navbar" %>
+    </div>
+    <%#= render partial: "common/flash" %>
+    <div class="container main shadow" id="main-container">
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+    <%= render partial: "common/footer" %>
+    <%= render partial: "common/ga" %>
+  </body>
 </html>

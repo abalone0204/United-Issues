@@ -18,7 +18,8 @@ class Post < ActiveRecord::Base
 
   # Association
 
-  belongs_to :user, :counter_cache => true
+  belongs_to :user
+  # , :counter_cache => true
 
   enumerize :classification,
     in: %w[ society comment internation culture economics medical tech education travel sport other]

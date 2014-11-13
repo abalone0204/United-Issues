@@ -1,7 +1,7 @@
 require "googl"
 
 class Post < ActiveRecord::Base
-  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, DateTime.current+8.hour)}
+  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, DateTime.current)}
   scope :unpublished, -> {where(publish: false)}
   scope :ready, -> {where("publish = ? AND complete =? ", false, true)}
   scope :country, ->(country) { where(:country_classification => country) if country.present?}

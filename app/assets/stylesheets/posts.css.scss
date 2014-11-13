@@ -82,6 +82,7 @@
 
 .edit-options-container{
   a{
+    font-size: 1.5rem;
     color: $link-text-color;
     -o-transition: font-size .20s linear;
     -webkit-transition: font-size .20s linear;
@@ -89,9 +90,8 @@
     transition:   font-size .20s linear;
   }
   a:hover{
-    font-size: 1.25em;
+    font-size: 2rem;
     background: transparent; 
-
   }
 } 
 

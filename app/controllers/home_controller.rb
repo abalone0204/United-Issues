@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout 'home'
   
   def index
-    get_posts(6)
+    get_posts(Post.count)
   end
 
   private

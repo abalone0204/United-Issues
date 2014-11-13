@@ -11,8 +11,10 @@ puts "Generate Seed data of posts"
   post = Post.new(title: Faker::Name.title, 
     content: Faker::Lorem.paragraph(13),
     source: Faker::Internet.url,
+    classification: Post.classification.values.sample,
     country_classification: Post.country_classification.values.sample,
     publish: true,
+    complete: true,
     note: Faker::Lorem.paragraph(2),
     image: "post_2.jpg",
     source_date: DateTime.yesterday,
@@ -20,3 +22,5 @@ puts "Generate Seed data of posts"
     user_id: 1 )
   post.save
 end
+
+puts "Done generate seed data"

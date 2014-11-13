@@ -1,6 +1,10 @@
 //= require jquery-ui
+//= require jquery.lazyload
+
 
 $(function() {
+
+  // hover shadow
   var topicItem = $('.topic-item'),
       postItem = $('.post-item'),
       orbit = $('.intro-content');
@@ -15,6 +19,14 @@ $(function() {
   hoverClass(topicItem, ".image", "shadow");
   hoverClass(postItem, "img", "shadow");
   hoverClass(orbit, "h2", "orbit");
-
+  
+  // lazy load
+  $("img.lazy").lazyload({
+    effect: "fadeIn"
+  });
+  // $('img').lazyload({
+  //   threshold : 200,
+  //   effect : "fadeIn"
+  // });
 
 });

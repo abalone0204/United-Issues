@@ -16,6 +16,8 @@ module UnitedIssues
     config.assets.paths << Rails.root.join('app','assets', 'vendor')
     config.assets.paths << Rails.root.join('app','assets', 'vendor', 'jqueryui-timepicker-addon', 'src')
 
+    config.assets.paths << Rails.root.join('app','assets', 'vendor', 'jquery.lazyload')
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'

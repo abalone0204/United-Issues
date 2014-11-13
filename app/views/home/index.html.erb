@@ -9,7 +9,7 @@
           <%= link_to topic_post do %>
           <div class="topic-item">
             <div class="image">
-              <%= image_tag '', data: {original: lazy_render_post_image(topic_post, :thumb)} ,class: "lazy img-rounded img-responsive"%>
+              <%= image_tag render_post_image(topic_post, :thumb) ,class: "img-rounded img-responsive"%>
               <div class="description">
                 <div>
                   <%= render_post_title topic_post %>

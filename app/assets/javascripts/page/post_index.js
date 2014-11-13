@@ -1,5 +1,5 @@
+//= require jquery.lazyload
 $(function(){
-  console.log("okok");
   var postItem = $('.post-list-item');
   postItem.hover(
     function(){
@@ -8,4 +8,9 @@ $(function(){
     function(){
       $(this).find(".image").removeClass("shadow");
     });
+
+  // lazy load
+  $("img.lazy").lazyload({
+    effect: "fadeIn"
+  });
 });

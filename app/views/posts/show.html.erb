@@ -53,6 +53,7 @@
       </h6>
     </div>
   </div>
+  <% if @post.note.present? %>
   <div class="note row">
     <div class="col-md-8 col-md-offset-3">
     <h6><%= t('activerecord.attributes.post.note') %></h6>
@@ -61,6 +62,7 @@
     </p>
     </div>
   </div>
+  <% end %>
   <hr>
   <%= link_to "返回文章列表", posts_path  %>
 </div>

@@ -175,6 +175,10 @@
   }
   .content-container{
     .content{
+      img{
+        width: 400px;
+        height: 319px;
+      }
       border-top: $padding-xs solid $affe-red;
       padding-bottom: $padding-l;
     }

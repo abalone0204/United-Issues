@@ -44,7 +44,7 @@
     <ul class="nav navbar-nav navbar-right user-nav">
       <% if current_user && current_user.admin? %>
       <li>
-        <%= link_to "Admin", admin_posts_path %>
+        <%= link_to "Admin", schedule_admin_posts_path %>
       </li>
       <% end %>
       <% if user_signed_in? %>

@@ -10,7 +10,7 @@ module PostsHelper
      if post.image.present? 
         post.image_url(size)
      else   
-       "http://united-issue.com/assets/default-thumb-b99a5372e15d1b287dc4a535df1d1c2d.png"
+      image_path('default-thumb.png')
      end 
   end
 

@@ -1,7 +1,7 @@
 require "googl"
 
 class Post < ActiveRecord::Base
-  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, Date.today)}
+  scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, DateTime.current)}
   scope :unpublished, -> {where(publish: false)}
   scope :ready, -> {where("publish = ? AND complete =? ", false, true)}
   scope :country, ->(country) { where(:country_classification => country) if country.present?}
@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
 
   # Association
 
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
 
   enumerize :classification,
     in: %w[ society comment internation culture economics medical tech education travel sport other]

@@ -1,4 +1,4 @@
-<%= render partial: "published_filter", locals:{current_page: schedule_admin_posts_path} %>
+
 <%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
 <div class="time-setting">
   <%= text_field_tag :set_publish_time, nil, placeholder: "點這裏一下設定日期和時間",id:"datetimepicker", class:"form-control" %>

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     happy_bug
     @posts = Post.published.search(params)
-    @posts = @posts.order("created_at DESC").page(params[:page])
+    @posts = @posts.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show

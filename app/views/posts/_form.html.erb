@@ -1,25 +1,30 @@
 <div class="jumbotron post">
 <%= simple_form_for @post, html: {multipart: true} do |f| %>
-  <%= f.input :user_id, as: :hidden %> 
-  <%= f.select :complete, Post.complete.options,{}, {class: "form-control shadow"} %>
+<%= f.input :user_id, as: :hidden %> 
+<div class="form-group">
+  <%= f.select :complete, Post.complete.options,{} %>
+</div>
 
-
-  <%= f.input :original_author, input_html: {class: 'form-control'} %>
-  <%= f.label :country_classification %>  
-  <%= f.select :country_classification, Post.country_classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.input :original_author, input_html: {class: 'form-control'} ,wrapper_html: {class:"form-group"}%>
+  <div class="form-group">
   <%= f.label :classification %>  
-  <%= f.select :classification, Post.classification.options,{}, {class: "form-control shadow"} %>
+  <%= f.select :classification, Post.classification.options,{} %>
+  </div>
+  <div class="form-group">
+  <%= f.label :country_classification %>  
+  <%= f.select :country_classification, Post.country_classification.options,{} %>
+  </div>
   <%= f.input :image, as: :file %>
   <%= f.input :remote_image_url, label: "或是圖片網址", input_html: {class:"form-control"} %>
   <%= f.input :title, 
-  input_html: {class: 'form-control'} %>
-  <%= f.input :source_date, as: :string, input_html: { class: "datepicker"} %>
+  input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>
+  <%= f.input :source_date, as: :string, input_html: { class: "datepicker"},wrapper_html: {class:"form-group"} %>
   <%= f.input :content,
-  input_html: {rows: 12,class: 'form-control'} %>
+  input_html: {rows: 12,class: 'form-control'},wrapper_html: {class:"form-group"} %>
   <%= f.input :note,
-  input_html: {class: 'form-control'} %>
-  <%= f.input :source,
-  input_html: {class: 'form-control'} %>
+  input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>
+  <%= f.input :source,placeholder: '請直接貼上網址就好，不要使用其他縮網址服務喔！縮網址這種粗重的事交給我們就好了。',
+  input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>
 
   <%= f.button :submit, "儲存",class: "btn-primary" %>
   <%= link_to "返回文章列表", posts_path, class: "btn btn-default"  %>

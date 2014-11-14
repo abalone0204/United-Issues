@@ -11,7 +11,7 @@
     <% @posts.each do |post| %>
     <div class="post-list-item row">
       <div class="image col-md-5">
-        <%= image_tag render_post_image(post, :thumb),size:"300x200",class:"img-rounded" %>
+        <%= image_tag '', data: {original: lazy_render_post_image(post, :thumb)}, size:"300x200",class:"lazy img-rounded" %>
         <div class="post-info">
           譯者：<%= post.user.name if post.user.present? %>
         </div>

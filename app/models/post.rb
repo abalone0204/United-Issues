@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   enumerize :classification,
-    in: %w[ society comment internation culture economics medical tech education travel sport other]
+    in: %w[ society comment internation culture economics medical tech education travel sport localization other]
 
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]

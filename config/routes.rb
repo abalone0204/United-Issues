@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => 
-  { :omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_for :users, :controllers =>
+    { :omniauth_callbacks => "users/omniauth_callbacks"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   get 'say/:word', to: 'static_pages#say', as: :say
   get 'car/:number', to: 'static_pages#car', as: :car
   get 'help', to: 'static_pages#help', as: :help
-  
-  resources :users, only: [:edit, :update]
+
+
+  # FB fucking login
+
+
+  resources :users, only: [:edit, :update, :destroy]
   resources :posts
   resources :stallions
   namespace :admin do

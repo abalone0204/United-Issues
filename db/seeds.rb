@@ -24,18 +24,20 @@ if Post.blank?
         post.save
     end
 end
-
-NAME_ARRAY = %w[三重劉德華 高雄周杰倫 潮州安心亞 新莊科比]
-5.times do
-    user = User.new(
-        name: NAME_ARRAY.sample,
-        email: Faker::Internet.email,
+if User.blank?
+    NAME_ARRAY = %w[三重劉德華 高雄周杰倫 潮州安心亞 新莊科比]
+    5.times do
+        user = User.new(
+            name: NAME_ARRAY.sample,
+            email: Faker::Internet.email,
         password: '12345678')
-    user.save
-    puts "user saved"
+        user.save
+        puts "user saved"
+    end
 end
 
-        
+
+
 
 
 puts "Done generate seed data"

@@ -1,25 +1,33 @@
 <%= form_tag(toggle_admin_admin_users_path, method: :put) do %>
   <table class='table table-striped table-hover'>
-    <thead>
-      <th></th>
-      <th>譯者</th>
-      <th>身份</th>
-      <th>文章數</th>
+    <thead class="row">
+      <th class="col-xs-1"></th>
+      
+      <th class="col-xs-1">譯者</th>
+      <th class="col-xs-1">身份</th>
+      <th class="col-xs-1">文章數</th>
+      <th class="col-xs-1"></th>
+      <th class="col-xs-1"></th>
     </thead>
     <tbody>
       <% @admin_users.each do |user| %> 
       <tr>
-        <td>
+        <td class="col-xs-1">
           <% unless user.id == current_user.id %>
-            <%= check_box_tag "user_ids[]", user.id, class: "checkbox" %>
+            <%= check_box_tag "user_ids[]", user.id, class: "form-control checkbox" %>
           <% end %>
         </td>
-        <td><%= user.name %></td>
-        <td><%= render_user_role(user) %></td>
-        <td><%= user.posts_count %></td>
+        <td class="col-xs-1"><%= user.name %></td>
+        <td class="col-xs-1"><%= render_user_role(user) %></td>
+        <td class=""><%= user.posts_count %></td>
+        <td>
+          <%= link_to t('common.destroy'), user_path(user), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
   <%= submit_tag "變更使用者權限", class: 'btn btn-success' %>
 <% end -%>
+
+<%= javascript_include_tag 'page/admin_user_index', :cache => true %>

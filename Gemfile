@@ -74,7 +74,7 @@ gem "settingslogic"
 
 gem "omniauth"
 gem "omniauth-facebook" 
-gem "auto-facebook"
+# gem "auto-facebook"
 
 # front-end
 

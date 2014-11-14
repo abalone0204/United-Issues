@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def new_session_path(scope)
+    new_user_session_path
+  end
+
   private
 
   # stores parameters for current request
@@ -39,6 +43,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :name << :image
   end
 end

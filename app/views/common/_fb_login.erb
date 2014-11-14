@@ -1,6 +1,7 @@
 <% unless current_user.present? %>
 <div id="fb-login-tab">
- <%= link_to ENV["domain"] + user_omniauth_authorize_path(:facebook), class: "fb-login btn" do %>
+
+ <%= link_to user_omniauth_authorize_path(:facebook), class: "fb-login btn" do %>
   Facebook Login
  <% end %>
  </div>

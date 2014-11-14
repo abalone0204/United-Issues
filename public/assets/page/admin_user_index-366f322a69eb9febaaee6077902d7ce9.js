@@ -1,0 +1,1 @@
+$(function(){for(var e=document.getElementsByTagName("input"),t=0;t<e.length;t++)"checkbox"==e[t].type&&(e[t].checked=!1)});

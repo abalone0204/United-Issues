@@ -77,7 +77,10 @@
       </div>
       <% end %>
       <% end %>
-      <%= paginate @featured_posts %>
+      <% if @featured_posts.present? %>
+        <%= paginate @featured_posts %>  
+      <% end %>
+      
     </div>
   </div>
 </div>

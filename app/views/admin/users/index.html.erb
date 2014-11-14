@@ -2,7 +2,7 @@
   <table class='table table-striped table-hover'>
     <thead class="row">
       <th class="col-xs-1"></th>
-      
+      <th></th>
       <th class="col-xs-1">譯者</th>
       <th class="col-xs-1">身份</th>
       <th class="col-xs-1">文章數</th>
@@ -10,13 +10,14 @@
       <th class="col-xs-1"></th>
     </thead>
     <tbody>
-      <% @admin_users.each do |user| %> 
+      <% @admin_users.each_with_index do |user, index| %> 
       <tr>
         <td class="col-xs-1">
           <% unless user.id == current_user.id %>
             <%= check_box_tag "user_ids[]", user.id, class: "form-control checkbox" %>
           <% end %>
         </td>
+        <td class='col-xs-1'><%= index+1 %></td>
         <td class="col-xs-1"><%= user.name %></td>
         <td class="col-xs-1"><%= render_user_role(user) %></td>
         <td class=""><%= user.posts_count %></td>

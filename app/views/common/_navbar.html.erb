@@ -51,6 +51,9 @@
       <li><%= link_to "我翻譯的文章", my_posts_path %></li>
       <% end %>
       <li>
+        <%= link_to "RSS訂閱", posts_url(:rss) %>
+      </li>
+      <li>
         <%= link_to "使用說明", help_path %>
       </li>
       <% if user_signed_in? %>

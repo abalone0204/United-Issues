@@ -79,6 +79,7 @@ gem "omniauth-facebook"
 gem 'jquery-ui-rails'
 gem 'googl'
 
+
 # Deploy
 
 group :staging, :production do
@@ -102,6 +103,7 @@ gem 'unicorn'
 # Upload file to aws s3
 
 gem 'fog'
+
 
 
 # Use ActiveModel has_secure_password

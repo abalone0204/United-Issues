@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-material-design
 //= require bootstrap-sprockets
+//= require bootstrap-hover-dropdown
 //= require jquery_ujs
 //= require turbolinks
 

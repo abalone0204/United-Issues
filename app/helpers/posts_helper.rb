@@ -46,4 +46,22 @@ module PostsHelper
       "label-success"
     end
   end
+  def render_post_data(data_arr, condition_1, condition_2)
+      data_arr.each do|data|
+      @classification_titles.each do |first|
+        if ord[0] == first
+          @country_titles.each do |second|
+            if ord[1] == second
+              ord[2]
+            else
+              ''
+            end
+          end
+        else
+          ''
+        end
+      end
+    end
+    
+  end
 end

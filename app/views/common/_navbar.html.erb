@@ -38,15 +38,10 @@
           <% end %>
         </ul>
       </li>
-      <li><%= link_to t('attributes.posts'), posts_path %></li>
+      
       
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
-      <% if current_user && current_user.admin? %>
-      <li>
-        <%= link_to "Admin", schedule_admin_posts_path %>
-      </li>
-      <% end %>
       <% if user_signed_in? %>
       <li><%= link_to "我翻譯的文章", my_posts_path %></li>
       <% end %>
@@ -62,6 +57,11 @@
         <%= current_user.name %><span class="caret"></span>
         <% end %>
         <ul class="dropdown-menu" role="menu">
+          <% if current_user && current_user.admin? %>
+          <li>
+            <%= link_to "Admin", schedule_admin_posts_path %>
+          </li>
+          <% end %>
           <li>
             <%= link_to "編輯個人資訊", edit_user_path(current_user) %>
           </li>

@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
-    <title>United Issue</title>
+    <title>United Issue/ 世界大代誌</title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
+    <meta name="description" content="United Issue是個開放式的自由翻譯平台, A seamless platform for translator." />
+    <meta name="keywords" content="United Issue, 世界大代誌, 自由翻譯平台" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="United Issue/世界大代誌"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="United Issue/世界大代誌"/>
+    <meta property="og:url" content="http://united-issue.com/"/>
+    <meta property="og:image" content="<%= image_url("default-thumb.png") %>"/>
+
+    <link rel="canonical" href="http://united-issue.com/" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
   </head>
   <body>
     <div class="home-nav">

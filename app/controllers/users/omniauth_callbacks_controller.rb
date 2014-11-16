@@ -3,7 +3,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     auth = request.env["omniauth.auth"]
     @user = User.from_omniauth(auth)
-    if @user.avatar.nil?
+
+    if @user.avatar_url.blank?
       @user.remote_avatar_url = (auth.info.image+"?type=large").gsub('http://','https://')
       @user.save  
     end

@@ -6,11 +6,9 @@
   </div>
   <h1><%= render_post_title @admin_post %></h1>
   <br>
-  <br>
   <div>
     <%= simple_format @admin_post.content %>
   </div>
-  <br>
   <br>
   <div class="source">
     <p>
@@ -19,18 +17,15 @@
     </p>
   </div>
   <br>
-  <br>
   <div class="note">
     <p>
     <%= t('activerecord.attributes.post.note') %>:<%= raw @admin_post.note.gsub(/\n/, '<br/>') %>
     </p>
   </div>
   <br>
-  <br>
   <div class="translator">
     <%= t('activerecord.models.user') %>：<%= @admin_post.user.name %>
   </div>
-  <br>
   <br>
   <div class="link">
     U.I網頁版： <%= post_url(@admin_post) %>

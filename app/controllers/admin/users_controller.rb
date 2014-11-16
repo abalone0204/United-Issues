@@ -3,6 +3,10 @@ class Admin::UsersController < AdminController
     @admin_users = Admin::User.includes(:posts)
   end
 
+  def show
+    @admin_user = User.includes(:posts).find(params[:id])
+  end
+
   def toggle_admin
     params[:user_ids] = params[:user_ids].map{|i| i.to_i}
     @admin_users = Admin::User.find(params[:user_ids])

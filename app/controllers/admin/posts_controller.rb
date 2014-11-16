@@ -1,6 +1,6 @@
 class Admin::PostsController < AdminController
   http_basic_authenticate_with name: ENV["admin"], password: ENV["adpwd"]
-  before_action :get_admin_post, only: [:show, :edit, :update, :destroy]
+  before_action :get_admin_post, only: [:edit, :update, :destroy]
 
   def notification
     @admin_posts = Admin::Post.includes(:user).order("publish_date DESC").ready.page(params[:page])
@@ -46,6 +46,7 @@ class Admin::PostsController < AdminController
   # GET /admin/posts/1
   # GET /admin/posts/1.json
   def show
+    @admin_post = Post.find(params[:id])
   end
 
   # GET /admin/posts/new

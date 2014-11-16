@@ -18,7 +18,7 @@
           <% end %>
         </td>
         <td class='col-xs-1'><%= index+1 %></td>
-        <td class="col-xs-1"><%= user.name %></td>
+        <td class="col-xs-1"><%= link_to user.name, user %></td>
         <td class="col-xs-1"><%= render_user_role(user) %></td>
         <td class=""><%= user.posts_count %></td>
         <td>

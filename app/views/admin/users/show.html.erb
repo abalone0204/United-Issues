@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <th>名字</th>
+    <th>大頭照</th>
+    <th>文章</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <td>
+    <%= @admin_user.name %>
+  </td>
+  <td>
+    <%= image_tag image_url(@admin_user.avatar_url(:normal)) %>
+  </td>
+  <td>
+    <ul>
+      <% @admin_user.posts.each do |post| %>
+      <li><%= link_to render_post_title(post), post %></li>
+      <% end %>
+    </ul>
+  </td>
+  </tbody>
+</table>

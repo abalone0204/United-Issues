@@ -1,22 +1,41 @@
 <p id="notice"><%= notice %></p>
 <div class="well">
-  <h1><%= @admin_post.title %></h1>
   <div class="image">
     <%= image_tag render_post_image(@admin_post, :thumb), class: "img-rounded img-responsive"%>
+    <p>圖片網址： <%= image_url(render_post_image(@admin_post, :thumb)) %>  </p>
   </div>
-  <p class="well"><%= raw @admin_post.content.gsub(/\n/, '<br/>') %></p>
+  <h1><%= render_post_title @admin_post %></h1>
+  <br>
+  <br>
+  <div>
+    <%= simple_format @admin_post.content %>
+  </div>
+  <br>
+  <br>
   <div class="source">
     <p>
-      <%= t('activerecord.attributes.post.source') %>:
-      <%= link_to @admin_post.source, @admin_post.source, :target => "_blank" %>
+    <%= t('activerecord.attributes.post.source') %>:
+    <%= link_to @admin_post.source, @admin_post.source, :target => "_blank" %>
     </p>
   </div>
+  <br>
+  <br>
   <div class="note">
     <p>
     <%= t('activerecord.attributes.post.note') %>:<%= raw @admin_post.note.gsub(/\n/, '<br/>') %>
     </p>
   </div>
+  <br>
+  <br>
+  <div class="translator">
+    <%= t('activerecord.models.user') %>：<%= @admin_post.user.name %>
+  </div>
+  <br>
+  <br>
+  <div class="link">
+    U.I網頁版： <%= post_url(@admin_post) %>
+  </div>
+  <br>
   <%= link_to 'Edit', edit_admin_post_path(@admin_post) %> |
-<%= link_to 'Back', admin_posts_path %>
+  <%= link_to 'Back', admin_posts_path %>
 </div>
-

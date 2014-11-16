@@ -22,6 +22,7 @@ zh-TW:
     attributes:
       user:
         name: 名字
+        avatar: 大頭貼
         email: email
         password: 密碼
         password_confirmation: 確認密碼

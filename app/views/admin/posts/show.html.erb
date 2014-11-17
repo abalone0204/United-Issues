@@ -6,6 +6,10 @@
   </div>
   <h1><%= render_post_title @admin_post %></h1>
   <br>
+  <div class="link">
+    U.I網頁版： <%= post_url(@admin_post) %>
+  </div>
+  <br>
   <div>
     <%= simple_format @admin_post.content %>
   </div>
@@ -26,11 +30,7 @@
   <div class="translator">
     <%= t('activerecord.models.user') %>：<%= @admin_post.user.name %>
   </div>
-  <br>
-  <div class="link">
-    U.I網頁版： <%= post_url(@admin_post) %>
-  </div>
-  <br>
+
   <%= link_to 'Edit', edit_admin_post_path(@admin_post) %> |
   <%= link_to 'Back', admin_posts_path %>
 </div>

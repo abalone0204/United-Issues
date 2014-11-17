@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     happy_bug
     @posts = Post.published.search(params)
-    @posts_for_rss = @posts.order("publish_date DESC").limit(20)
+    @posts_for_rss = @posts.order("publish_date DESC").limit(5)
     @posts = @posts.order("publish_date DESC").page(params[:page]).per(20)
 
     respond_to do |format|

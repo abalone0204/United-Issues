@@ -1,0 +1,13 @@
+<form class="feed-burner" style="#ccc;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=united-issue/ioPz', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>email訂閱</p>
+  <% if user_signed_in? %>
+  
+  <input type="text" style="width:140px" name="email" value="<%= current_user.email %>" placeholder="請輸入email"/>  
+  <% else %>
+  <input type="text" style="width:140px" name="email" placeholder="請輸入email"/>  
+  <% end %>
+  
+  <input type="hidden" value="united-issue/ioPz" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input type="submit" value="確認" class="btn btn-default feed-burner-btn" />
+</form>

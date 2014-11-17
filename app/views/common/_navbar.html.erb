@@ -45,9 +45,6 @@
       <% if user_signed_in? %>
       <li><%= link_to "我翻譯的文章", my_posts_path %></li>
       <% end %>
-      <li>
-        <%= link_to "RSS訂閱", posts_url(:rss) %>
-      </li>
       <li class="dropdown">
         <%= link_to '#', class: "dropdown-toggle" , :"data-toggle" => "dropdown" do %>
         訂閱<span class="caret"></span>

@@ -337,3 +337,16 @@ a:hover {
         }
     }
 }
+
+.feed-burner{
+    padding: $padding-xs 20px;
+    input{
+        @include border-radius(3px);
+    }
+    &:hover{
+        background: rgba(224,224,224,1);
+    }
+    .feed-burner-btn{
+        margin: $padding-xs 0;
+    }
+}

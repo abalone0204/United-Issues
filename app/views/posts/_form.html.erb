@@ -21,7 +21,8 @@
   <%= f.input :source_date, as: :string, input_html: { class: "datepicker"},wrapper_html: {class:"form-group"} %>
   <%= f.input :content,
   input_html: {rows: 12,class: 'form-control'},wrapper_html: {class:"form-group"} %>
-  <%= f.input :note,
+  <%= f.input :note, placeholder:"如果翻譯這則新聞所使用的照片跟來源網址中的不一樣，
+記得要在備註中補上圖片的網址喔！" ,
   input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>
   <%= f.input :source,placeholder: '請直接貼上網址就好，不要使用其他縮網址服務喔！縮網址這種粗重的事交給我們就好了。',
   input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>

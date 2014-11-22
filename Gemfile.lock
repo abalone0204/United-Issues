@@ -69,12 +69,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-<<<<<<< HEAD
     colorize (0.7.3)
-=======
     d3-rails (3.4.13)
       railties (>= 3.1)
->>>>>>> development
     debug_inspector (0.0.2)
     devise (3.3.0)
       bcrypt (~> 3.0)

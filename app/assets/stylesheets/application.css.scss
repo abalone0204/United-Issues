@@ -43,8 +43,17 @@ body {
 }
 
 // material design
+@media (max-width:760px){
+    .chart-container{
+        display: none;
+    }
+}
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-width: 759px) {
+    .chart-container{
+        display: none;
+    }
     .navbar-nav {
         margin-left: 0;
     }

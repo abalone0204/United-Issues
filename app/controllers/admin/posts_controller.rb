@@ -130,16 +130,14 @@ class Admin::PostsController < AdminController
     end
   end
 
-  def get_statistics_data(post)
-    @classifications_total = post.group_by(&:classification).map{|p| [p[0].text, p[1].count]}
-    @country_classifications_total = post.group_by(&:country_classification).map{|p| [p[0].text, p[1].count]}
-    @data_arr = post.group_by{ |s| [s.classification, s.country_classification] }.map {|k,v| [k.first.text, k.last.text, v.length]}
+  def get_statistics_data(posts)
+    @classifications_total = posts.group_by(&:classification).map{|p| [p[0].text, p[1].count]}
+    @country_classifications_total = posts.group_by(&:country_classification).map{|p| [p[0].text, p[1].count]}
+    @data_arr = posts.group_by{ |s| [s.classification, s.country_classification] }.map {|k,v| [k.first.text, k.last.text, v.length]}
     @classification_titles = Post.classification.options.map{|p| p[0]}
     @classification_titles_key = Post.classification.options.map{|p| p}
     @country_titles = Post.country_classification.options.map{|p| p[0]}
     @country_titles_key = Post.country_classification.options.map{|p| p}
-    
-
 
   end
   # Never trust parameters from the scary internet, only allow the white list through.

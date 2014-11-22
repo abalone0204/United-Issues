@@ -1,10 +1,7 @@
 //= require d3
-
-
-//real pie
-
 $(function() {
-  $.getJSON("/admin/posts/statistics.json", function(d) {
+
+  $.getJSON("/posts/my_posts.json", function(d) {
     var w = 800,
       h = 300,
       padding = 50,
@@ -13,6 +10,8 @@ $(function() {
     var svg = d3.select('.real-chart').append('svg') //插入SVG
       .attr('width', w)
       .attr('height', h);
+      console.table(d.my_posts);
+    var my_posts = ['我的文章', d.my_posts];
 
     var posts = d.posts;
     var classifications = d.classifications;
@@ -21,9 +20,8 @@ $(function() {
     var classify_group = groupBy('classification', classifications);
     var country_group = groupBy('country_classification', countries);
     country_group.push(['', []]);
-
-
-
+    console.table(classify_group);
+    console.table(my_posts);
 
 
     //算出每一個bar的寬度
@@ -94,7 +92,7 @@ $(function() {
           'y': function(d) {
             return h - yScale(d[1].length) - 10;
           }, //數值放在bar 內
-          'fill': 'black', 
+          'fill': 'black',
           'text-anchor': 'middle', //文字置中
           'font-size': '10px' //Fill、font-size也可以用CSS寫喔～
         });
@@ -146,7 +144,7 @@ $(function() {
           },
           //和上面相同，算出X、Y的位置
           'y': function(d) {
-            return h - yScale(d[1].length)-10;
+            return h - yScale(d[1].length) - 10;
           }, //數值放在bar 內
           'fill': 'black', //文字填滿為白色
           'text-anchor': 'middle', //文字置中
@@ -168,8 +166,10 @@ $(function() {
         }
         result.push([dividerSet[i][0], posts_collection]);
       }
+      result.push(my_posts);
       return result;
     }
-
   });
+
+
 });

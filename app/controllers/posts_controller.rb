@@ -11,8 +11,8 @@ class PostsController < ApplicationController
     @posts = @posts.order("publish_date DESC").page(params[:page]).per(20)
 
     respond_to do |format|
-       format.html
-       format.rss { render :layout => false }
+      format.html
+      format.rss { render :layout => false }
     end
   end
 
@@ -55,14 +55,27 @@ class PostsController < ApplicationController
 
   def my_posts
     @posts = Post.where(user_id: current_user.id).order("created_at DESC").page(params[:page])
+    @published_posts = Post.published
+    get_statistics_data(@published_posts)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
 
   private
 
+  def get_statistics_data(posts)
+    @data_arr = posts.group_by{ |s| [s.classification, s.country_classification] }.map {|k,v| [k.first.text, k.last.text, v.length]}
+    @classification_titles_key = Post.classification.options.map{|p| p}
+    @country_titles_key = Post.country_classification.options.map{|p| p}
+  end
+
   def validate_publish
     if !@post.publish? && @post.user_id != current_user.id
       flash[:error] = "此文章尚未發佈"
-      redirect_to posts_path 
+      redirect_to posts_path
     end
   end
 
@@ -84,7 +97,7 @@ class PostsController < ApplicationController
     elsif trigger.downcase == "how do you turn this on"
       redirect_to car_path(1)
     elsif trigger == "stallions"
-      redirect_to stallions_path 
+      redirect_to stallions_path
     end
   end
 

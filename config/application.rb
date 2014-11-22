@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-
 require 'rails/all'
 require "yaml"
 # Require the gems listed in Gemfile, including any gems
@@ -28,7 +27,7 @@ module UnitedIssues
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :'zh-TW'
 
-    config.assets.precompile += %w[page/*.js disqus/*.js common/*.js]
+    config.assets.precompile += %w[page/*.js disqus/*.js common/*.js visualize/*.js]
     config.assets.precompile += %w[*.woff *.ttf]
   end
 end

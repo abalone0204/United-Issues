@@ -1,5 +1,5 @@
 require "googl"
-
+require "csv"
 class Post < ActiveRecord::Base
   scope :published, -> {where("publish = ? AND complete =? AND publish_date <= ?", true, true, DateTime.current)}
   scope :unpublished, -> {where(publish: false)}
@@ -40,6 +40,15 @@ class Post < ActiveRecord::Base
        posts = posts.where('title LIKE ? OR content LIKE ?', "%#{options[:search]}%", "%#{options[:search]}%")
     end
     posts
+  end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |post|
+        csv << post.attributes.values_at(*column_names)
+      end
+    end
   end
 
   private

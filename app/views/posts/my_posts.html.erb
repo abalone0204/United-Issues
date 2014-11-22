@@ -1,52 +1,59 @@
 <div class="my-posts row">
   <div class="col-md-10 col-md-offset-1">
-  <div>
-    <%= link_to new_post_path(), class:"btn-default btn"  do %>
-    <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
-    <% end %>
-  </div>
-  <div class="panel panel-default posts well">
-    <div class="panel-heading">
-      <%= t('attributes.posts') %>
+    <div class="toggle-btn-group">
+      <%= link_to "媒體分類", 'javascript:', class:"class-btn btn", data:{param: "classify_group"} %>
+      <%= link_to "來源分類", 'javascript:', class:"class-btn btn", data:{param: "country_group"} %>
     </div>
-    <div class="table-responsive">
-      <table class="striped-table table table-responsive">
-        <thead>
-          <th></th>
-          
-          <th><%= t('activerecord.attributes.post.publish') %></th>
-          <th></th>
-          <th>
-            <%= t('activerecord.attributes.post.title') %>
-          </th>
-          <th><%= t('activerecord.attributes.post.content') %></th>
-        </thead>
-        <tbody>
-          <% @posts.each do |post| %>
-          <tr>
-            <td>
-              <%= render partial: "edit_options", locals: {post: post} %>
-            </td>
-            
-            <td><%= publish_status(post) %></td>
-            <td>
-              <span class="label <%= complete_label(post) %>">
-              <%= post.complete.text %>
-              </span>
-            </td>
-            <td><%= link_to render_post_title(post).truncate(30), post %></td>
-
-            <td>
-              <%= briefly(post) %>
-            </td>
-            
-            <td></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= paginate @posts %>
+    <div class="real-chart">
+      
     </div>
-  </div>
+    <div>
+      <%= link_to new_post_path(), class:"btn-default btn"  do %>
+      <span class="icon-material-circles-add new_post_sign"></span><%= t('common.new') %>
+      <% end %>
+    </div>
+    <div class="panel panel-default posts well">
+      <div class="panel-heading">
+        <%= t('attributes.posts') %>
+      </div>
+      <div class="table-responsive">
+        <table class="striped-table table table-responsive">
+          <thead>
+            <th></th>
+            
+            <th><%= t('activerecord.attributes.post.publish') %></th>
+            <th></th>
+            <th>
+              <%= t('activerecord.attributes.post.title') %>
+            </th>
+            <th><%= t('activerecord.attributes.post.content') %></th>
+          </thead>
+          <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+              <td>
+                <%= render partial: "edit_options", locals: {post: post} %>
+              </td>
+              
+              <td><%= publish_status(post) %></td>
+              <td>
+                <span class="label <%= complete_label(post) %>">
+                <%= post.complete.text %>
+                </span>
+              </td>
+              <td><%= link_to render_post_title(post).truncate(30), post %></td>
+              <td>
+                <%= briefly(post) %>
+              </td>
+              
+              <td></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @posts %>
+      </div>
+    </div>
   </div>
 </div>
+<%= javascript_include_tag 'visualize/my_posts_statistics', :cache => true %>

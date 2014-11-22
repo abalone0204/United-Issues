@@ -336,28 +336,23 @@ a:hover {
             }
         }
     }
-    // #user-info{
-    //     padding: 0 $padding-s;
-    //     span {
-    //         vertical-align: middle;
-    //     }
-    //    .avatar{
-    //     display: inline-block;
-    //         height:50px;
-    //         width: 50px;
-    //         @include border-radius(100%);
-    //         overflow: hidden;
-    //        img{
-    //             display: inline-block;
-    //             overflow: hidden;
-    //        } 
-    //    }
-    //    div{
-    //     display: inline-block;
-    //     *{
-    //         vertical-align: middle;
-    //     }
-    //    }
-       
-    // }
+}
+
+.feed-burner{
+    padding: $padding-xs 20px;
+    input{
+        @include border-radius(3px);
+    }
+    &:hover{
+        background: rgba(224,224,224,1);
+    }
+    .feed-burner-btn{
+        margin: $padding-xs 0;
+    }
+}
+
+.toggle-btn-group{
+    .btn{
+        border: $padding-xs solid $light-gray-transparent;
+    }
 }

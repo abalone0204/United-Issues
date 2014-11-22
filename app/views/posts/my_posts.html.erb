@@ -1,11 +1,13 @@
 <div class="my-posts row">
   <div class="col-md-10 col-md-offset-1">
-    <div class="toggle-btn-group">
-      <%= link_to "媒體分類", 'javascript:', class:"class-btn btn", data:{param: "classify_group"} %>
-      <%= link_to "來源分類", 'javascript:', class:"class-btn btn", data:{param: "country_group"} %>
-    </div>
-    <div class="real-chart">
-      
+    <div class="chart-container">
+      <div class="toggle-btn-group">
+        <%= link_to "媒體分類", 'javascript:', class:"class-btn btn", data:{param: "classify_group"} %>
+        <%= link_to "來源分類", 'javascript:', class:"class-btn btn", data:{param: "country_group"} %>
+      </div>
+      <div class="real-chart">
+        
+      </div>
     </div>
     <div>
       <%= link_to new_post_path(), class:"btn-default btn"  do %>

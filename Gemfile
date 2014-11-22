@@ -79,7 +79,6 @@ gem "omniauth-facebook"
 gem 'jquery-ui-rails'
 gem 'googl'
 
-<<<<<<< HEAD
 
 # Deploy
 

@@ -5,6 +5,9 @@
 @import "default";
 
 .libraries {
+  h1,h2{
+    color: $affe-red;
+  }
     .library-filter-container {
       .filter-btn{
         border: 1px solid $light-gray-transparent;

@@ -1,0 +1,1 @@
+$(function(){var e=window.location.search;if(0===e.length)$("a.default-filter").addClass("active");else{var l=e.split("=")[1];$("a."+l).addClass("active")}$(".show-hlep").on("click",function(e){e.preventDefault(),$(".library-help").fadeIn()}),$(".close-lib-help").on("click",function(e){e.preventDefault(),$(".library-help").fadeOut()})});

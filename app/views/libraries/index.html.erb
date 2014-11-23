@@ -1,5 +1,7 @@
-<div class="libraries">
+<div class="libraries container">
   <h1>語料庫</h1>
+  <%= link_to "語料庫是什麼？", "#", class:"show-hlep " %>
+  <%= render partial: 'help' %>
   <%= render partial: "filter" %>
   <%= render partial: "search" %>
   <% if @libraries.present? %>

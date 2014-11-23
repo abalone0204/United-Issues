@@ -5,6 +5,21 @@
 @import "default";
 
 .libraries {
+  .close-lib-help,
+  .show-help{
+    padding: $padding-m;
+  }
+  .library-help{
+    display: none;
+  }
+  .show-hlep{
+    color: $affe-red;
+    &:hover{
+      color: black;
+      background: $shan-yellow;
+    }
+
+  }
   h1,h2{
     color: $affe-red;
   }
@@ -16,4 +31,12 @@
     .library-search {
         padding: $padding-m;
     }
+}
+.library-help{
+  .description{
+    font-size: 1.75rem;
+    em{
+      background: $shan-yellow-trans;
+    }
+  }
 }

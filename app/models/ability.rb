@@ -2,13 +2,20 @@ class Ability
     include CanCan::Ability
 
     def initialize(user)
-        
+
         if user.blank?
             cannot :manage, :all
             basic_read_only
         elsif user.admin?
             can :manage, :all
         else
+            can :create, Library
+            can :update, Library do |library|
+                (user.posts.published.count >= 2)
+            end
+            can :destroy, Library do |library|
+                (user.posts.published.count >= 2)
+            end
             can :create, Post
             can :update, Post do |post|
                 (post.user_id == user.id)
@@ -56,5 +63,6 @@ class Ability
 
     def basic_read_only
         can :read,    Post
+        can :read, Library
     end
 end

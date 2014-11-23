@@ -1,0 +1,26 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <th></th>
+    <th></th>
+    <th><%= t('activerecord.attributes.library.country_classification') %></th>
+    <th><%= t('activerecord.attributes.library.original_name') %></th>
+    <th><%= t('activerecord.attributes.library.translated_name') %></th>
+  </thead>
+  <tbody>
+    <% libraries.each_with_index do |library, i| %>
+    <tr>
+      <td><%= i+1 %></td>
+      
+      <td>
+        <%= render partial: "edit_options", locals: {library: library} %>
+      </td>
+      <td><%= library.country_classification.text %></td>
+      <td><%= library.original_name %></td>
+      <td><%= library.translated_name %></td>
+      
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate libraries %>
+</div>

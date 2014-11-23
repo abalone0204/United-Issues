@@ -7,6 +7,7 @@
 #post-container {
   min-height: 100%;
 }
+
 .posts {
   margin-top: 2%;
 }
@@ -81,6 +82,7 @@
 }
 
 .edit-options-container{
+  text-align: center;
   a{
     font-size: 1.5rem;
     color: $link-text-color;
@@ -90,7 +92,6 @@
     transition:   font-size .20s linear;
   }
   a:hover{
-    font-size: 2rem;
     background: transparent; 
   }
 } 
@@ -104,6 +105,10 @@
 
 // show
 .post {
+  .library-link{
+  color: $affe-red;
+}
+
   .complete-notify{
     @extend .font-smoothing;
     p{
@@ -125,7 +130,8 @@
     }
   }
   .content,
-  .note, 
+  .note,   
+  .share-url,
   .source{
     border-bottom: 2px solid $light-gray-transparent;
     padding-bottom: $padding-l;
@@ -144,6 +150,7 @@
   .edit-link{
     z-index: 3;
   }
+  .share-url,
   .source{
     *{
       color: $affe-red;

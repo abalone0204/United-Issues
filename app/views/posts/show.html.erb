@@ -1,7 +1,5 @@
-
 <div class="post">
   <%= render partial:"common/complete_notify", locals:{ post: @post} %>
-
   <div class="header">
     <div class="row">
       <h3 class="title col-md-8 col-md-offset-2 container-fluid">
@@ -18,7 +16,7 @@
         
         <% if can? :edit, @post %>
         <div class="edit-link">
-        <%= link_to t('common.edit'), edit_post_path(@post), class: "btn btn-default" %>
+          <%= link_to t('common.edit'), edit_post_path(@post), class: "btn btn-default" %>
         </div>
         <% end %>
         
@@ -46,6 +44,13 @@
       </div>
     </div>
   </div>
+    <div class="row">
+      <div class="share-url col-md-8 col-md-offset-3">
+        <h6>
+        文章網址： <%= link_to request.url, request.url %>
+        </h6>
+      </div>
+    </div>
   <div class="row">
     <div class="source col-md-8 col-md-offset-3">
       <h6>
@@ -57,10 +62,10 @@
   <% if @post.note.present? %>
   <div class="note row">
     <div class="col-md-8 col-md-offset-3">
-    <h6><%= t('activerecord.attributes.post.note') %></h6>
-    <p>
-    <%= simple_format @post.note %>
-    </p>
+      <h6><%= t('activerecord.attributes.post.note') %></h6>
+      <p>
+      <%= simple_format @post.note %>
+      </p>
     </div>
   </div>
   <% end %>

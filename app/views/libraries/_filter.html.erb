@@ -1,0 +1,6 @@
+<div class="library-filter-container">
+  <%= link_to "所有語料", libraries_path, class: "btn filter-btn default-filter" %>
+  <% Library.country_classification.options.each do |country_classification| %>
+  <%= link_to country_classification[0], libraries_path(country:country_classification[1]), class: "btn filter-btn #{country_classification[1]}"  %>
+  <% end %>
+</div>

@@ -2,12 +2,7 @@ class LibrariesController < ApplicationController
   authorize_resource :library
   before_action :find_library, only: [:show, :edit, :update, :destroy]
   def index
-    country = params[:country]
-    if country.present?
-      @libraries = Library.country(country)
-    else
-      @libraries = Library
-    end
+    @libraries = Library.search(params)
     @libraries = @libraries.page(params[:page]).per(20)
   end
 

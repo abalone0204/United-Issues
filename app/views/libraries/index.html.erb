@@ -1,7 +1,7 @@
 <div class="libraries">
 <h1>語料庫</h1>
-<% if can? :create, @libraries %>
-<%= link_to "新增語料", new_library_path, class: "btn btn-default" %>
+<% if can? :create, Library %>
+  <%= link_to "新增語料", new_library_path, class: "btn btn-default" %>
 <% end %>
 <%= render partial: "filter" %>
 <%= render partial: "search" %>

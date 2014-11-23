@@ -104,6 +104,7 @@
 
 // show
 .post {
+
   .complete-notify{
     @extend .font-smoothing;
     p{
@@ -125,7 +126,8 @@
     }
   }
   .content,
-  .note, 
+  .note,   
+  .share-url,
   .source{
     border-bottom: 2px solid $light-gray-transparent;
     padding-bottom: $padding-l;
@@ -144,6 +146,7 @@
   .edit-link{
     z-index: 3;
   }
+  .share-url,
   .source{
     *{
       color: $affe-red;

@@ -1,0 +1,16 @@
+<div class="libraries container">
+  <h1>語料庫</h1>
+  <%= link_to "語料庫是什麼？", "#", class:"show-hlep " %>
+  <%= render partial: 'help' %>
+  <%= render partial: "filter" %>
+  <%= render partial: "search" %>
+  <% if @libraries.present? %>
+  <%= render partial: "libraries_table", locals:{ libraries: @libraries} %>
+  <% else %>
+  <h2>Oops!語料庫裏找不到這個詞，來新增一個吧！</h2>
+  <% if can? :create, Library %>
+  <%= link_to "新增語料", new_library_path, class: "btn btn-default" %>
+  <% end %>
+</div>
+<% end %>
+<%= javascript_include_tag 'page/libraries' %>

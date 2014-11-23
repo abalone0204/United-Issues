@@ -1,0 +1,46 @@
+// Place all the styles related to the libraries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "color_var";
+@import "default";
+
+.libraries {
+  .close-lib-help,
+  .show-help{
+    padding: $padding-m;
+  }
+  .library-help{
+    display: none;
+  }
+  .show-hlep{
+    color: gray;
+    &:hover{
+      color: black;
+      background: $shan-yellow;
+    }
+  }
+  .close-lib-help{
+    &:hover{
+      background: none;
+    }
+  }
+  h1,h2{
+    color: $affe-red;
+  }
+    .library-filter-container {
+      .filter-btn{
+        border: 1px solid $light-gray-transparent;
+      }
+    }
+    .library-search {
+        padding: $padding-m;
+    }
+}
+.library-help{
+  .description{
+    font-size: 1.75rem;
+    em{
+      background: $shan-yellow-trans;
+    }
+  }
+}

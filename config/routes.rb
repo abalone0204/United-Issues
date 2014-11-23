@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'finders/index'
+
   devise_for :users, :controllers =>
     { :omniauth_callbacks => "users/omniauth_callbacks"}
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,7 +22,10 @@ Rails.application.routes.draw do
 
   # Normal resources
   resources :posts
+  resources :libraries
+  resources :finders, only:[:index]
   resources :stallions
+
   
   # admin
   namespace :admin do

@@ -19,8 +19,11 @@
   <%= f.input :title, 
   input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>
   <%= f.input :source_date, as: :string, input_html: { class: "datepicker"},wrapper_html: {class:"form-group"} %>
-  <%= f.input :content,
+  <%= link_to "使用語料庫來翻譯專有名詞", 
+      libraries_path, :target => "_blank", class:"library-link" %>
+  <%= f.input :content,placeholder: "記得把專有名詞加到語料庫去喔！",
   input_html: {rows: 12,class: 'form-control'},wrapper_html: {class:"form-group"} %>
+
   <%= f.input :note, placeholder:"如果翻譯這則新聞所使用的照片跟來源網址中的不一樣，
 記得要在備註中補上圖片的網址喔！" ,
   input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>

@@ -1,0 +1,18 @@
+<%= simple_form_for @library, html: {multipart: true} do |f| %>
+
+<div class="form-group">
+  <%= f.label :country_classification %>
+  <%= f.select :country_classification, Library.country_classification.options,{} %>
+</div>
+<div class="row">
+<%= f.input :original_name,
+input_html: {class: 'form-control'},wrapper_html: {class:"form-group col-xs-4"} %>
+</div>
+<div class="row">
+<%= f.input :translated_name,
+input_html: {class: 'form-control'},wrapper_html: {class:"form-group col-xs-4"} %>  
+</div>
+
+<%= f.button :submit, "儲存",class: "btn-primary" %>
+<%= link_to "返回語料列表", libraries_path, class: "btn btn-default"  %>
+<% end %>

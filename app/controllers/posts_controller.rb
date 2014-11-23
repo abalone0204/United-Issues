@@ -66,11 +66,7 @@ class PostsController < ApplicationController
 
   private
 
-  def get_statistics_data(posts)
-    @data_arr = posts.group_by{ |s| [s.classification, s.country_classification] }.map {|k,v| [k.first.text, k.last.text, v.length]}
-    @classification_titles_key = Post.classification.options.map{|p| p}
-    @country_titles_key = Post.country_classification.options.map{|p| p}
-  end
+
 
   def validate_publish
     if !@post.publish? && @post.user_id != current_user.id

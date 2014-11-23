@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def get_statistics_data(posts)
+    @data_arr = posts.group_by{ |s| [s.classification, s.country_classification] }.map {|k,v| [k.first.text, k.last.text, v.length]}
+    @classification_titles_key = Post.classification.options.map{|p| p}
+    @country_titles_key = Post.country_classification.options.map{|p| p}
+  end
+
   private
 
   # stores parameters for current request
@@ -44,7 +50,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(:name, :email, :avatar,:password, :password_confirmation, :provider, :uid)
+      u.permit(:name, :email, :avatar,:password, :password_confirmation, :provider, :uid)
     end
     # devise_parameter_sanitizer.for(:sign_up) << :name
   end

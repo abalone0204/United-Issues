@@ -13,12 +13,16 @@
     display: none;
   }
   .show-hlep{
-    color: $affe-red;
+    color: gray;
     &:hover{
       color: black;
       background: $shan-yellow;
     }
-
+  }
+  .close-lib-help{
+    &:hover{
+      background: none;
+    }
   }
   h1,h2{
     color: $affe-red;

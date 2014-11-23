@@ -1,6 +1,6 @@
-class CreateLibrirarizations < ActiveRecord::Migration
+class CreateLibrarizations < ActiveRecord::Migration
   def change
-    create_table :librirarizations do |t|
+    create_table :librarizations do |t|
       t.integer :user_id
       t.integer :library_id
 

@@ -19,6 +19,7 @@ zh-TW:
     models:
       user: 譯者
       post: 文章
+      library: 語料庫
     attributes:
       user:
         name: 名字
@@ -39,7 +40,24 @@ zh-TW:
         content: 內容
         source: 資料來源
         note: 備註
+      library:
+        country_classification: 媒體來源
+        original_name: 原文名稱
+        translated_name: 翻譯後名稱
   enumerize:
+    library:
+      country_classification:
+        Franch: 法媒 
+        Russia: 俄媒 
+        Arab: 阿媒 
+        Germany: 德媒 
+        Korean: 韓媒 
+        Spanish: 西媒 
+        Japan: 日媒 
+        Polish: 波蘭媒 
+        Czech: 捷克媒 
+        Turkey: 土媒
+        Other: 其他
     post:
       complete:
         complete: 已完成

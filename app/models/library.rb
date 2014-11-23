@@ -4,6 +4,8 @@ class Library < ActiveRecord::Base
 
   # Association
   has_many :librarizations
+  has_many :users, :through => :librarizations
+
   # Validation
   validates :original_name, presence: true
   validates :translated_name, presence: true

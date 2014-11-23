@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   # Normal resources
   resources :posts
+  resources :libraries
   resources :stallions
+
   
   # admin
   namespace :admin do

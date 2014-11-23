@@ -11,7 +11,10 @@ class User < ActiveRecord::Base
   before_create :check_name
 
   has_many :posts, dependent: :destroy
+  
   has_many :librarizations
+  has_many :libraries, :through => :librarizations
+
   def self.current
     Thread.current[:user]
   end

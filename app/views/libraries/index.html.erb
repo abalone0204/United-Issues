@@ -12,9 +12,7 @@
 <table class="table table-bordered table-hover">
   <thead>
     <th></th>
-    <% if can? :update, @libraries %>
     <th></th>
-    <% end %>
     <th><%= t('activerecord.attributes.library.country_classification') %></th>
     <th><%= t('activerecord.attributes.library.original_name') %></th>
     <th><%= t('activerecord.attributes.library.translated_name') %></th>
@@ -23,11 +21,10 @@
     <% @libraries.each_with_index do |library, i| %>
     <tr>
       <td><%= i+1 %></td>
-      <% if can? :update, library %>
+      
       <td>
         <%= render partial: "edit_options", locals: {library: library} %>
       </td>
-      <% end %>
       <td><%= library.country_classification.text %></td>
       <td><%= library.original_name %></td>
       <td><%= library.translated_name %></td>

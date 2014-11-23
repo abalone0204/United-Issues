@@ -1,7 +1,9 @@
 class Library < ActiveRecord::Base
   extend Enumerize
   extend ActiveModel::Naming
-
+  # Scope
+  scope :country, ->(country) { where(:country_classification => country) if country.present?}
+  
   # Association
   has_many :librarizations
   has_many :users, :through => :librarizations

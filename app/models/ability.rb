@@ -56,5 +56,6 @@ class Ability
 
     def basic_read_only
         can :read,    Post
+        can :read, Library
     end
 end

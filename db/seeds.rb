@@ -36,6 +36,17 @@ if User.blank?
     end
 end
 
+if Library.blank?
+    20.times do 
+        library = Library.new(
+            original_name: Faker::Lorem.word,
+            translated_name: Faker::Lorem.word,
+            country_classification: Library.country_classification.values.sample)
+        library.save!
+        puts library.original_name 
+    end
+end
+
 
 
 

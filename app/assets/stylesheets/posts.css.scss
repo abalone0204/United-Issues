@@ -81,6 +81,7 @@
 }
 
 .edit-options-container{
+  text-align: center;
   a{
     font-size: 1.5rem;
     color: $link-text-color;
@@ -90,7 +91,6 @@
     transition:   font-size .20s linear;
   }
   a:hover{
-    font-size: 2rem;
     background: transparent; 
   }
 } 

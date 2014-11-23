@@ -1,0 +1,39 @@
+<h1>語料庫</h1>
+<% if can? :create, @libraries %>
+<%= link_to "新增語料", new_library_path, class: "btn btn-default" %>
+<% end %>
+
+<div class="library-filter-container">
+  <%= link_to "所有語料", libraries_path, class: "btn filter-btn" %>
+  <% Library.country_classification.options.each do |country_classification| %>
+  <%= link_to country_classification[0], libraries_path(country:country_classification[1]), class: "btn filter-btn"  %>
+  <% end %>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <th></th>
+    <% if can? :update, @libraries %>
+    <th></th>
+    <% end %>
+    <th><%= t('activerecord.attributes.library.country_classification') %></th>
+    <th><%= t('activerecord.attributes.library.original_name') %></th>
+    <th><%= t('activerecord.attributes.library.translated_name') %></th>
+  </thead>
+  <tbody>
+    <% @libraries.each_with_index do |library, i| %>
+    <tr>
+      <td><%= i+1 %></td>
+      <% if can? :update, library %>
+      <td>
+        <%= render partial: "edit_options", locals: {library: library} %>
+      </td>
+      <% end %>
+      <td><%= library.country_classification.text %></td>
+      <td><%= library.original_name %></td>
+      <td><%= library.translated_name %></td>
+      
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @libraries %>

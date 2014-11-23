@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114160924) do
+ActiveRecord::Schema.define(version: 20141123055916) do
+
+  create_table "libraries", force: true do |t|
+    t.string   "translated_name"
+    t.string   "country_classification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "original_name"
+  end
+
+  create_table "librirarizations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "library_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"

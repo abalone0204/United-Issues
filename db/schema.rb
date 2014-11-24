@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124075808) do
+ActiveRecord::Schema.define(version: 20141124164516) do
 
   create_table "finders", force: true do |t|
     t.boolean  "available"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20141124075808) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "site_url"
+  end
+
+  create_table "found_posts", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.date     "released_date"
+    t.string   "source"
+    t.integer  "finder_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "original_author"
   end
 
   create_table "libraries", force: true do |t|

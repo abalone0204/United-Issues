@@ -88,6 +88,9 @@ zh-TW:
         localization: 社會地方
         other: 其他
     finder:
+      available:
+        active: 已啟用
+        inactive: 待啟用
       country_classification:
         Franch: 法媒 
         Russia: 俄媒 

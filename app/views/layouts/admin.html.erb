@@ -35,7 +35,11 @@
           <li>
             <%= link_to t('link.announcement'), '#' %>
           </li>
-          <li><%=link_to t('link.statistics'), statistics_admin_posts_path %></li>
+          <li>
+            <%= link_to "Finder", admin_finders_path %>
+          </li>
+          <li><%=link_to t('link.statistics'), statistics_admin_posts_path %>
+          </li>
           <li>
             
             <%= link_to root_path do %>

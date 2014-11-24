@@ -87,5 +87,18 @@ zh-TW:
         sport: 運動競技
         localization: 社會地方
         other: 其他
+    finder:
+      country_classification:
+        Franch: 法媒 
+        Russia: 俄媒 
+        Arab: 阿媒 
+        Germany: 德媒 
+        Korean: 韓媒 
+        Spanish: 西媒 
+        Japan: 日媒 
+        Polish: 波蘭媒 
+        Czech: 捷克媒 
+        Turkey: 土媒
+        Other: 其他
 
     

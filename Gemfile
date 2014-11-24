@@ -83,6 +83,11 @@ gem 'googl'
 # Visualize Data
 gem "d3-rails"
 
+
+# Finder
+
+gem "nokogiri"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

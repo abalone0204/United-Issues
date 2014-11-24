@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'finders/show'
+
   get 'finders/index'
 
   devise_for :users, :controllers =>
@@ -23,12 +25,13 @@ Rails.application.routes.draw do
   # Normal resources
   resources :posts
   resources :libraries
-  resources :finders, only:[:index]
+  resources :finders, only:[:index, :show]
   resources :stallions
 
   
   # admin
   namespace :admin do
+    resources :finders
     resources :posts do
       collection do
         get :statistics

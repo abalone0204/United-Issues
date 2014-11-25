@@ -1,5 +1,10 @@
 class Admin::FindersController < AdminController
-  before_action :get_finder, only: [:show, :edit, :destroy, :update]
+  before_action :get_finder, only: [:show, :edit, :destroy, :update, :find_daily_news]
+
+  def find_daily_news
+    @finder.get_daily_news
+    redirect_to admin_finders_path 
+  end
 
   def index
     @finders = Admin::Finder.all
@@ -20,7 +25,7 @@ class Admin::FindersController < AdminController
   end
 
   def show
-
+    @found_posts = @finder.found_posts
   end
 
   def edit

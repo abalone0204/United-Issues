@@ -27,11 +27,14 @@ Rails.application.routes.draw do
   resources :libraries
   resources :finders, only:[:index, :show]
   resources :stallions
-
   
   # admin
   namespace :admin do
-    resources :finders
+    resources :finders do
+      member do
+        post :find_daily_news
+      end
+    end
     resources :posts do
       collection do
         get :statistics

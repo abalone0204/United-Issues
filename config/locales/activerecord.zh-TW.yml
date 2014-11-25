@@ -44,6 +44,13 @@ zh-TW:
         country_classification: 媒體來源
         original_name: 原文名稱
         translated_name: 翻譯後名稱
+      found_post:
+        title: 標題
+        description: 簡介
+        released_date: 來源日期
+        image: 圖片網址
+        source: 來源網址
+        original_author: 原作者
   enumerize:
     library:
       country_classification:

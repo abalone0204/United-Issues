@@ -13,9 +13,12 @@
   <tbody>
     <% @finders.each_with_index do |finder, index| %>
     <tr>
+      <td>
+        <%= render partial: 'go_scraping_link', locals:{ finder: finder} %>
+      </td>
       <td><%= index+1 %></td>
       <td><%= finder.country_classification.text %></td>
-      <td><%= finder.site_name %></td>
+      <td><%=  link_to finder.site_name, finder %></td>
       <td><%= finder.site_url %></td>
       <td>
         <%= link_to "檢視", finder_path(finder) %>

@@ -1,7 +1,6 @@
 
 module HuffingtonPost
   class Huffington
-
     def self.simple_strip(text)
       return text.strip.gsub(/\t/,"").gsub(/\n/, " ")
     end
@@ -39,7 +38,6 @@ module HuffingtonPost
         result.push(news_element)
       end
     end
-
   end
 
   def huffington_scraping(data)

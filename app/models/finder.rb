@@ -4,7 +4,7 @@ class Finder < ActiveRecord::Base
   extend Enumerize
   extend ActiveModel::Naming
   enumerize :site_url,
-    in: ["http://www.huffingtonpost.jp"]
+    in: ["http://www.huffingtonpost.jp" , "http://itar-tass.com/mezhdunarodnaya-panorama"]
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
   enumerize :available,
@@ -25,14 +25,14 @@ class Finder < ActiveRecord::Base
     end
     if found_posts.blank? || found_posts.first.released_date < Date.today
       finder = self
-      mantis = Mantis.new(self)  
+      mantis = Mantis.new(self)
       result = mantis.scraping_result
       import_data_to_found_posts(finder, result)
     end
-
   end
 
   private
+
 
   def check_news
     self.found_posts.where("created_at <= ?", Date.today-7).destroy_all

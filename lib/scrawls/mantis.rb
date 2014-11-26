@@ -18,11 +18,11 @@ class Mantis
     if @url == "http://www.huffingtonpost.jp"
       result = huffington_scraping(@data)
     elsif @url == "http://itar-tass.com/mezhdunarodnaya-panorama"
-      result = mezhdunarodnaya_scraping(@data)
+      result = mezhdunarodnaya_scraping(@data, @url)
     end
     return result
   end
-  
+
   def simple_strip(text)
       return text.strip.gsub(/\t/,"").gsub(/\n/, " ")
   end

@@ -1,9 +1,14 @@
 <h1>Admin finders</h1>
 
 <%= link_to "啟用新Finder", new_admin_finder_path %>
-
+<div class="container flash-container">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
+</div>
 <table class="table table-striped table-hover">
   <thead>
+    <th></th>
     <th>#</th>
     <th>國家</th>
     <th>名稱</th>

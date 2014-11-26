@@ -3,6 +3,7 @@ class Admin::FindersController < AdminController
 
   def find_daily_news
     @finder.get_daily_news
+    flash[:notice] = "已成功更新Finder news"
     redirect_to admin_finders_path 
   end
 
@@ -53,6 +54,8 @@ class Admin::FindersController < AdminController
   def check_country(finder)
     if finder.site_url.end_with?(".jp")
       finder.update_attribute(:country_classification, 'Japan')  
+    elsif finder.site_url == "http://itar-tass.com/mezhdunarodnaya-panorama"
+      finder.update_attribute(:country_classification, 'Russia')  
     end
   end
 

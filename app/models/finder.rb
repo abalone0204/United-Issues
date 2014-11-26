@@ -6,14 +6,14 @@ class Finder < ActiveRecord::Base
   enumerize :site_url,
     in: ["http://www.huffingtonpost.jp" , 
          "http://itar-tass.com/mezhdunarodnaya-panorama",
-         "http://www.dw.de/themen/s-9077"]
+         "http://www.dw.de"]
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
   enumerize :available,
     in: {active: true, inactive: false}
 
   # Association
-  has_many :found_posts
+  has_many :found_posts,dependent: :destroy
 
   #  Validation
   validates_uniqueness_of :site_url
@@ -25,7 +25,7 @@ class Finder < ActiveRecord::Base
     if found_posts.present?
       check_news
     end
-    if found_posts.blank? || found_posts.first.released_date < Date.today
+    if found_posts.blank? || self.found_posts.first.released_date < Date.today
       finder = self
       mantis = Mantis.new(self)
       result = mantis.scraping_result

@@ -1,5 +1,6 @@
 require "huffingtonpost"
 require "mezhdunarodnaya"
+require "dw"
 
 
 class Mantis
@@ -7,6 +8,7 @@ class Mantis
   attr_accessor :data
   include HuffingtonPost
   include Hezhdunarodnaya
+  include DW
   
   def initialize(finder)
     @url = finder.site_url
@@ -19,7 +21,10 @@ class Mantis
       result = huffington_scraping(@data)
     elsif @url == "http://itar-tass.com/mezhdunarodnaya-panorama"
       result = mezhdunarodnaya_scraping(@data, @url)
+    elsif @url == "http://www.dw.de"
+      result = dw_scraping(@data, @url)
     end
+
     return result
   end
 

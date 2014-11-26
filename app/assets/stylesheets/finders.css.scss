@@ -5,8 +5,14 @@
 @import "color_var";
 @import "default";
 
+
 .finder{
   h1,h2,h3{
     color: $affe-red;
+  }
+  .found-posts-table{
+    *{
+      letter-spacing: 0.75px;
+    }
   }
 }

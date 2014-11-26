@@ -25,7 +25,11 @@ Rails.application.routes.draw do
   # Normal resources
   resources :posts
   resources :libraries
-  resources :finders, only:[:index, :show]
+  resources :finders, only:[:index, :show] do
+    member do
+      post :find_daily_news
+    end
+  end
   resources :stallions
   
   # admin

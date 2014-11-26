@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124164516) do
+ActiveRecord::Schema.define(version: 20141126134709) do
 
   create_table "finders", force: true do |t|
     t.boolean  "available"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20141124164516) do
     t.string   "provider"
     t.string   "uid"
     t.string   "avatar"
+    t.integer  "gg_point",               default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

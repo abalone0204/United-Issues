@@ -1,0 +1,13 @@
+<%= simple_form_for @finder, html: {multipart: true} do |f| %>
+<div class="form-group">
+  <%= f.select :available, Finder.available.options,{} %>
+  </div>
+  <%= f.input :site_name, wrapper_html: {class: "form-group"} %>
+  <% if params[:action] == 'new' %>
+  <div class="form-group">
+    <%= f.select :site_url, Finder.site_url.options,{} %>
+  </div>
+  <% end %>
+  <%= f.button :submit, "儲存",class: "btn-primary" %>
+  <%= link_to "返回Finder控制台", admin_finders_path, class: "btn btn-default"  %>
+<% end %>

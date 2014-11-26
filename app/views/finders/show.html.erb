@@ -1,0 +1,49 @@
+<div class="container finder">
+  <h1>
+  Finder: <%= @finder.site_name %>
+  </h1>
+  <div class="flash-container">
+    <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to @finder.site_url, @finder.site_url %>
+  </div>
+  <div>
+    <%= render partial:'go_scraping_link', locals:{finder: @finder} %>
+  </div>
+  <div>
+    <%= link_to "返回Finder首頁", finders_path, class: "btn btn-default" %>
+  </div>
+  <table class="table table-hover table-responsive">
+    <thead>
+      <th>#</th>
+      <th><%= t('activerecord.attributes.found_post.released_date') %></th>
+      <th><%= t('activerecord.attributes.found_post.title') %></th>
+      <th><%= t('activerecord.attributes.found_post.original_author') %></th>
+      <th><%= t('activerecord.attributes.found_post.description') %></th>
+      
+      <th><%= t('activerecord.attributes.found_post.source') %></th>
+      <th><%= t('activerecord.attributes.found_post.image') %></th>
+    </thead>
+    <tbody>
+      <% @found_posts.each_with_index do|found_post, index| %>
+      <tr>
+        <td class='col-xs-1'><%= index+1 %></td>
+        <td class='col-xs-1'><%= found_post.released_date %></td>
+        <td class='col-xs-2'><%= link_to found_post.title, found_post.source %></td>
+        <td class='col-xs-1'><%= found_post.original_author %></td>
+        <td class='col-xs-3'><%= found_post.description %></td>
+        
+        <td class='col-xs-1'><%= link_to  "新聞#{index+1}",found_post.source ,:target => "_blank"%></td>
+        <td class='col-xs-3'>
+          <%= image_tag found_post.image, data: {original: found_post.image},class: 'lazy img-thumb img-responsive' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @found_posts %>
+</div>
+<%= javascript_include_tag 'page/finder', :cache => true %>

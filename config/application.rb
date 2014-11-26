@@ -11,6 +11,8 @@ module UnitedIssues
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.autoload_paths += Dir["#{config.root}/lib/scrawls/"]
+    config.autoload_paths += Dir["#{config.root}/lib/scrawls/site"]
     # config.assets.paths << Rails.root.join('bower_components','sweetalert','lib')
     config.assets.paths << Rails.root.join('app','assets', 'vendor')
     config.assets.paths << Rails.root.join('app','assets', 'vendor', 'jqueryui-timepicker-addon', 'src')

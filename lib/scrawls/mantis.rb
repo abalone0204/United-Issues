@@ -1,0 +1,23 @@
+require "huffingtonpost"
+
+class Mantis
+  include HuffingtonPost
+  
+  def initialize(finder)
+    @url = finder.site_url
+    @data = Nokogiri::HTML(open(@url))
+  end
+
+  def scraping_result
+    result= []
+    if @url == "http://www.huffingtonpost.jp"
+      result = huffington_scraping(@data)
+    end
+    return result
+  end
+
+  def simple_strip(text)
+    return text.strip.gsub(/\t/,"").gsub(/\n/, " ")
+  end
+
+end

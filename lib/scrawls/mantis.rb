@@ -21,7 +21,7 @@ class Mantis
       result = huffington_scraping(@data)
     elsif @url == "http://itar-tass.com/mezhdunarodnaya-panorama"
       result = mezhdunarodnaya_scraping(@data, @url)
-    elsif @url == "http://www.dw.de"
+    elsif @url == "http://www.dw.de/themen/s-9077"
       result = dw_scraping(@data, @url)
     end
 

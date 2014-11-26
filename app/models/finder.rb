@@ -6,7 +6,7 @@ class Finder < ActiveRecord::Base
   enumerize :site_url,
     in: ["http://www.huffingtonpost.jp" , 
          "http://itar-tass.com/mezhdunarodnaya-panorama",
-         "http://www.dw.de"]
+         "http://www.dw.de/themen/s-9077"]
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
   enumerize :available,

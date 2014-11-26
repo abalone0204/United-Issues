@@ -1,2 +1,33 @@
-<h1>Finders#index</h1>
-<p>Find me in app/views/finders/index.html.erb</p>
+<div class="container">
+  <h1>Finders</h1>
+  <p>Find me in app/views/finders/index.html.erb</p>
+  <table class="table table-striped table-hover">
+    <thead>
+      <th></th>
+      <th>#</th>
+      <th>國家</th>
+      <th>名稱</th>
+      <th>網址</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @finders.each_with_index do |finder, index| %>
+      <tr>
+        <td>
+          <%#= render partial: 'go_scraping_link', locals:{ finder: finder} %>
+        </td>
+        <td><%= index+1 %></td>
+        <td><%= finder.country_classification.text %></td>
+        <td><%=  link_to finder.site_name, finder %></td>
+        <td><%= finder.site_url %></td>
+        <td>
+          <%= link_to "檢視", finder_path(finder) %>
+          <%= link_to t('common.edit'), edit_admin_finder_path(finder) %>
+          <%= link_to t('common.destroy'), admin_finder_path(finder),
+          method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

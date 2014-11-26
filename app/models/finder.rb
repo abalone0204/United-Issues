@@ -1,3 +1,5 @@
+require_relative '../../lib/scrawls/huffingtonpost'
+
 class Finder < ActiveRecord::Base
   extend Enumerize
   extend ActiveModel::Naming
@@ -85,11 +87,4 @@ class Finder < ActiveRecord::Base
     end
   end
 
-
-  # def check_country
-  #   if site_url.end_with?(".jp")
-  #     self.country_classification ='Japan'
-  #     self.save
-  #   end
-  # end
 end

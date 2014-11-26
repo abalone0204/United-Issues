@@ -21,7 +21,7 @@ class Finder < ActiveRecord::Base
   # Callback
   # after_save :check_country
 
-  def get_daily_news
+  def get_daily_news(user)
     if found_posts.present?
       check_news
     end
@@ -30,6 +30,8 @@ class Finder < ActiveRecord::Base
       mantis = Mantis.new(self)
       result = mantis.scraping_result
       import_data_to_found_posts(finder, result)
+      user.gg_point += 1
+      user.save
     end
   end
 

@@ -1,6 +1,6 @@
 class FindersController < ApplicationController
   before_action :get_finder, only: [:show]
-
+  authorize_resource :finder
   def index
     @finders = Finder.all
   end

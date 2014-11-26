@@ -32,7 +32,8 @@
       <% @found_posts.each_with_index do|found_post, index| %>
       <tr>
         <td><%= index+1 %></td>
-        <td class='col-xs-1'><%= link_to "我要翻譯", '#' %></td>
+        <td class='col-xs-1'>
+          <%= link_to "我要翻譯", new_post_path(found_post:import_found_post_to_post(found_post)) %></td>
         <td class='col-xs-2'><%= found_post.released_date %></td>
         <td class='col-xs-3'><%= link_to found_post.title, found_post.source %></td>
         <td class='col-xs-3'><%= found_post.description %></td>

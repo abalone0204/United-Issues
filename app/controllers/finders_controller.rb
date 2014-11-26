@@ -8,6 +8,12 @@ class FindersController < ApplicationController
   def show
     @found_posts = @finder.found_posts.page(params[:page]).per(10)
   end
+  
+  def find_daily_news
+    @finder.get_daily_news
+    flash[:notice] = "已成功更新Finder news"
+    redirect_to admin_finders_path
+  end
 
   private
   def get_finder

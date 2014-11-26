@@ -4,7 +4,7 @@ class Admin::FindersController < AdminController
   def find_daily_news
     @finder.get_daily_news
     flash[:notice] = "已成功更新Finder news"
-    redirect_to admin_finders_path
+    redirect_to finder_path(@finder)
   end
 
   def index

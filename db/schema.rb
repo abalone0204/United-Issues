@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126134709) do
+ActiveRecord::Schema.define(version: 20141127095958) do
+
+  create_table "announcements", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "finders", force: true do |t|
     t.boolean  "available"

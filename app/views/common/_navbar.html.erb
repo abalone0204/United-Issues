@@ -42,6 +42,9 @@
       
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
+      <li>
+        <%= link_to "譯言堂", announcements_path %>
+      </li>
       <% if user_signed_in? %>
       <li><%= link_to "我翻譯的文章", my_posts_path %></li>
       <% end %>

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="announcements col-md-8 col-md-offset-2">
+    <header>
+      <h1>譯言堂</h1>
+      <p>這裏是UI公告的地方，有任何意見歡迎留言指教</p>
+      <p>這裏是譯言堂不是一言堂，所以有任何意見請大方說出來</p>
+    </header>
+    <div class="latest-announcement well">
+      <h2>最新公告</h2>
+      <hr>
+      <%= link_to @latest_announcement do %>
+      <div class="announcement-element">
+        <h3>
+        <%= @latest_announcement.title %>
+        </h3>
+        <div class="announcement-info">
+          <span class="date">
+          <%= @latest_announcement.created_at.strftime("%Y-%m-%d") %>
+          </span>
+          <span class='admin-name'>
+          by <%= @latest_announcement.user.name %>
+          </span>
+        </div>
+        <div class="content">
+          <%= briefly @latest_announcement, 20 %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="table-header">
+      其他公告事項：
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <th class='col-xs-1'>#</th>
+        <th class='col-xs-2'>日期</th>
+        <th class='col-xs-1'>發布人</th>
+        <th class='col-xs-3'>標題</th>
+      </thead>
+      <tbody>
+        <% @announcements.each_with_index do|announcement, i| %>
+        <tr>
+          <td class='col-xs-1'><%= i+1 %></td>
+          <td class='col-xs-2'><%= announcement.created_at.strftime("%Y-%m-%d") %></td>
+          <td class='col-xs-1'><%= announcement.user.name %></td>
+          <td class='col-xs-3'><%= announcement.title %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<%= simple_form_for @announcement, html: {multipart: true} do |f| %>
+
+<%= f.input :user_id, as: :hidden %> 
+<div class="row">
+<%= f.input :title, input_html: {class: 'form-control'}, wrapper_html: {class: "form-group col-xs-4"} %>
+</div>
+<div class="row">
+  <%= f.input :content, as: :text,
+  input_html: {rows: 12, class: "form-control"}, wrapper_html: {class:"form-group col-xs-4"} %>
+</div>
+<%= f.button :submit, "儲存",class: "btn-primary" %>
+<%= link_to "返回譯言堂管理頁面", admin_announcements_path, class: "btn btn-default"  %>
+<% end %>

@@ -1,2 +1,8 @@
-<h1>Announcements#show</h1>
-<p>Find me in app/views/announcements/show.html.erb</p>
+<div class="container">
+  <h1><%= @announcement.title %></h1>
+  <span><%= @announcement.created_at.strftime("%Y-%m-%d") %></span> <span>by <%= @announcement.user.name %></span>
+  <div>
+    <%= simple_format @announcement.content %>
+  </div>
+  <%= link_to "返回譯言堂", announcements_path, class: "btn btn-default" %>
+</div>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'democracy_issues/index'
+
   get 'finders/show'
 
   get 'finders/index'

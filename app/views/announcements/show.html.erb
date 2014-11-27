@@ -6,3 +6,9 @@
   </div>
   <%= link_to "返回譯言堂", announcements_path, class: "btn btn-default" %>
 </div>
+<div id="disqus_thread"></div>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<%= javascript_include_tag "disqus/thread.js", :cache => true %>

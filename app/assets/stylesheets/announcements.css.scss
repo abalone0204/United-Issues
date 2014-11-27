@@ -9,7 +9,12 @@
         color: $affe-red;
     }
     .latest-announcement {
-        
+       .announcement-info{
+        background: $shan-yellow-trans;
+        &:hover{
+          background: $shan-yellow;
+        }
+       } 
         .content {
             h1,h2, h3, h4, h5, h6 {
               font-size: 2rem;

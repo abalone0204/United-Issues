@@ -1,0 +1,28 @@
+<h1>候選人一覽</h1>
+<%= link_to "新增候選人", new_admin_candidate_path, class: "btn btn-default" %>
+<table class="table table-hover">
+  <thead>
+    <th></th>
+    <th>姓名</th>
+    <th>簡歷</th>
+    <th>政見</th>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+    <tr>
+      <td>
+        
+      </td>
+      <td>
+        <%= candidate.name %>
+      </td>
+      <td>
+        <%= candidate.profile %>
+      </td>
+      <td>
+        <%= candidate.politics %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

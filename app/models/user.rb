@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
 
   before_create :format_name
   before_create :check_name
-
-  has_many :posts, dependent: :destroy
   
+  has_many :posts, dependent: :destroy
+  has_many :announcements, dependent: :destroy
   has_many :librarizations
   has_many :libraries, :through => :librarizations
 

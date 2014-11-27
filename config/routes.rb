@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'finders/show'
 
   get 'finders/index'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   # Normal resources
   resources :posts
   resources :libraries
+  resources :announcements, only: [:index, :show]
   resources :finders, only:[:index, :show] do
     member do
       post :find_daily_news
@@ -34,6 +36,7 @@ Rails.application.routes.draw do
   
   # admin
   namespace :admin do
+    resources :announcements
     resources :finders do
       member do
         post :find_daily_news

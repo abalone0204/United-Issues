@@ -5,7 +5,9 @@
       <p>這裏是UI公告的地方，有任何意見歡迎留言指教</p>
       <p>這裏是譯言堂不是一言堂，所以有任何意見請大方說出來</p>
     </header>
+    <% if @latest_announcement.present? %>
     <div class="latest-announcement well">
+
       <h2>最新公告</h2>
       <hr>
       <%= link_to @latest_announcement do %>
@@ -27,6 +29,7 @@
       </div>
       <% end %>
     </div>
+        <% end %>
     <div class="table-header">
       其他公告事項：
     </div>

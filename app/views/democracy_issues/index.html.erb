@@ -28,8 +28,10 @@
           <div class="candidate-image">
             <%= image_tag candidate.avatar, class: "img-responsive" %>
           </div>
-          <div class="candidate-name rotate">
-            <%= candidate.name %>
+          <div class="candidate-name">
+            <h3>
+              <%= candidate.name %>
+            </h3>
           </div>
         </div>        
         <% end %>

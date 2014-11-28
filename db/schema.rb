@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123060624) do
+ActiveRecord::Schema.define(version: 20141128101837) do
+
+  create_table "announcements", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "candidates", force: true do |t|
+    t.string   "name"
+    t.string   "profile"
+    t.string   "politics"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar"
+  end
+
+  create_table "finders", force: true do |t|
+    t.boolean  "available"
+    t.string   "site_name"
+    t.string   "country_classification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "site_url"
+  end
+
+  create_table "found_posts", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.date     "released_date"
+    t.string   "source"
+    t.integer  "finder_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "original_author"
+    t.boolean  "translated",      default: false
+  end
 
   create_table "libraries", force: true do |t|
     t.string   "translated_name"
@@ -51,6 +90,7 @@ ActiveRecord::Schema.define(version: 20141123060624) do
     t.string   "classification"
     t.string   "original_author"
     t.boolean  "complete",               default: false
+    t.integer  "found_post_id"
   end
 
   create_table "users", force: true do |t|
@@ -73,9 +113,17 @@ ActiveRecord::Schema.define(version: 20141123060624) do
     t.string   "provider"
     t.string   "uid"
     t.string   "avatar"
+    t.integer  "gg_point",               default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "candidate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="results col-md-8 col-md-offset-2">
+      <h2>別只是鍵盤投票</h2>
+      <p>11/29請一定要出門投下你神聖的一票，</p>
+      <p>不論你投給誰，那都是民主大代誌。</p>
+      <div>
+        附上2014選舉黃頁供您參考：
+        <%= link_to "http://k.olc.tw/elections/", "http://k.olc.tw/elections/", target: "_blank" %>
+      </div>
+      <%= link_to "回首頁", root_path,class:'btn btn-default' %>
+      <div class="container vote-total-container">
+        <div class="row">
+          <div class="pie-chart-container col-md-4">
+            <div id="pie-chart">
+              
+            </div>
+          </div>
+          <div class="table-chart  col-md-5">
+            <table class="table">
+              <thead>
+                <th>候選人</th>
+                <th>得票數</th>
+                <th>得票率</th>
+              </thead>
+              <tbody>
+                <% @candidates.each do |candidate| %>
+                <tr>
+                  <td><%= candidate.name %></td>
+                  <td><%= candidate.votes.count %></td>
+                <td><%= vote_proportion(candidate) %></th>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%= javascript_include_tag 'visualize/vote.js', :cache => true %>

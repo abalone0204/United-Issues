@@ -9,6 +9,7 @@ class Ability
         elsif user.admin?
             can :manage, :all
         else
+            can :find_daily_news, Finder
             can :create, Library
             can :update, Library do |library|
                 (user.posts.published.count >= 2)
@@ -62,6 +63,7 @@ class Ability
     protected
 
     def basic_read_only
+        can :read, Finder
         can :read,    Post
         can :read, Library
     end

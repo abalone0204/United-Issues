@@ -8,7 +8,7 @@
     <span class="icon-bar"></span>
     </button>
     <div class="brand-container">
-      <%= link_to "United Issue", root_path, id: "brand",class:"navbar-brand brand" %>
+      <%= link_to "Democracy Issue", root_path, id: "brand",class:"navbar-brand brand" %>
     </div>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,6 +42,9 @@
       
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
+      <li>
+        <%= link_to "譯言堂", announcements_path %>
+      </li>
       <% if user_signed_in? %>
       <li><%= link_to "我翻譯的文章", my_posts_path %></li>
       <% end %>
@@ -52,6 +55,9 @@
         <ul class="dropdown-menu translation-tool-box" role="menu">
           <li>
             <%= link_to t('activerecord.models.library')+"(beta)", libraries_path %>
+          </li>
+          <li>
+            <%= link_to "Finder", finders_path %>
           </li>
         </ul>
       </li>

@@ -1,6 +1,25 @@
+
 <div class="jumbotron post">
+  <% if @found_post_hash.present? %>
+  <div class="row">
+  <div class="title col-md-8 col-md-offset-2">
+    <div class="from-finder-notify">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+     如果你是從Finder找到這篇文章的，<br>
+    在開始翻譯之前先按下儲存，<br>
+    這樣才能讓其他人知道這篇文章已經有人在翻譯囉！
+
+    </div>
+  </div>
+</div>
+<% end %>
+
 <%= simple_form_for @post, html: {multipart: true} do |f| %>
 <%= f.input :user_id, as: :hidden %> 
+<%= f.input :found_post_id, as: :hidden %> 
+
+
 <div class="form-group">
   <%= f.select :complete, Post.complete.options,{} %>
 </div>
@@ -15,6 +34,7 @@
   <%= f.select :country_classification, Post.country_classification.options,{} %>
   </div>
   <%= f.input :image, as: :file %>
+  
   <%= f.input :remote_image_url, label: "或是圖片網址", input_html: {class:"form-control"} %>
   <%= f.input :title, 
   input_html: {class: 'form-control'},wrapper_html: {class:"form-group"} %>

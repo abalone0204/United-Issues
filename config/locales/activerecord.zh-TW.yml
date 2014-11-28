@@ -44,6 +44,13 @@ zh-TW:
         country_classification: 媒體來源
         original_name: 原文名稱
         translated_name: 翻譯後名稱
+      found_post:
+        title: 標題
+        description: 簡介
+        released_date: 來源日期
+        image: 圖片網址
+        source: 來源網址
+        original_author: 原作者
   enumerize:
     library:
       country_classification:
@@ -87,5 +94,21 @@ zh-TW:
         sport: 運動競技
         localization: 社會地方
         other: 其他
+    finder:
+      available:
+        active: 已啟用
+        inactive: 待啟用
+      country_classification:
+        Franch: 法媒 
+        Russia: 俄媒 
+        Arab: 阿媒 
+        Germany: 德媒 
+        Korean: 韓媒 
+        Spanish: 西媒 
+        Japan: 日媒 
+        Polish: 波蘭媒 
+        Czech: 捷克媒 
+        Turkey: 土媒
+        Other: 其他
 
     

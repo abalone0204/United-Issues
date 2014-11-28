@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>公告標題： <%= @announcement.title %></h1>
+  <p>by <%= @announcement.user.name %></p>
+  <div>
+    <%= simple_format @announcement.content %>
+  </div>
+  <%= link_to "返回譯言堂", announcements_path, class: "btn btn-default" %>
+</div>

@@ -329,6 +329,7 @@ DEPENDENCIES
   kaminari
   minitest
   mysql2
+  nokogiri
   omniauth
   omniauth-facebook
   pry-rails

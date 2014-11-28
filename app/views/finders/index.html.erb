@@ -1,2 +1,27 @@
-<h1>Finders#index</h1>
-<p>Find me in app/views/finders/index.html.erb</p>
+<div class="container">
+  <h1>Finders</h1>
+  <%= render partial: "common/flash" %>
+
+  <table class="table table-hover">
+    <thead>
+      <th></th>
+      <th>#</th>
+      <th>國家</th>
+      <th>名稱</th>
+      <th>網址</th>
+    </thead>
+    <tbody>
+      <% @finders.each_with_index do |finder, index| %>
+      <tr>
+        <td>
+          <%#= render partial: 'go_scraping_link', locals:{ finder: finder} %>
+        </td>
+        <td><%= index+1 %></td>
+        <td><%= finder.country_classification.text %></td>
+        <td><%=  link_to finder.site_name, finder %></td>
+        <td><%= finder.site_url %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

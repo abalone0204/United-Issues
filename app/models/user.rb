@@ -9,11 +9,14 @@ class User < ActiveRecord::Base
 
   before_create :format_name
   before_create :check_name
-
-  has_many :posts, dependent: :destroy
   
+  has_many :posts, dependent: :destroy
+  has_many :announcements, dependent: :destroy
   has_many :librarizations
   has_many :libraries, :through => :librarizations
+
+  #11/29選舉fun
+  has_one :vote
 
   def self.current
     Thread.current[:user]

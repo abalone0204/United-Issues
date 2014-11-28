@@ -1,0 +1,8 @@
+<%= simple_form_for @candidate, html: {multipart: true} do |f| %>
+<%= f.input :name %>
+<%= f.input :avatar %>
+<%= f.input :politics, as: :text %>
+<%= f.input :profile, as: :text %>
+<%= f.button :submit, "儲存",class: "btn-primary" %>
+  <%= link_to "返回文章列表", admin_candidates_path, class: "btn btn-default"  %>
+<% end %>

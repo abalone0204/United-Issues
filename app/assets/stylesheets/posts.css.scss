@@ -109,7 +109,7 @@
   color: $affe-red;
 }
 
-  .complete-notify{
+  .complete-notify, .from-finder-notify{
     @extend .font-smoothing;
     p{
       text-align: center;

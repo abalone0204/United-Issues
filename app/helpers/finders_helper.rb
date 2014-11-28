@@ -1,6 +1,7 @@
 module FindersHelper
   def import_found_post_to_post(found_post)
     hash = {}
+    hash[:found_post_id] = found_post.id
     hash[:title] =found_post.title
     hash[:original_author] =found_post.original_author
     hash[:country_classification] =found_post.finder.country_classification

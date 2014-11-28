@@ -15,10 +15,10 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 50}
   validates :source_date, presence: true
   validates :source, presence: true
-
+  validates_uniqueness_of :found_post_id
   # Association
-
-  belongs_to :user
+  belongs_to :found_post
+  belongs_to :user, :counter_cache => true
 
   enumerize :classification,
     in: %w[ society comment internation culture economics medical tech education travel sport localization other]
@@ -32,6 +32,7 @@ class Post < ActiveRecord::Base
 
   before_save :set_user_id
   before_save :short_url
+  after_create :set_found_post_translated
 
   def self.search(options)
     posts = self.classify(options[:classification])
@@ -52,6 +53,10 @@ class Post < ActiveRecord::Base
   end
 
   private
+
+  def set_found_post_translated
+    self.found_post.update_attribute(:translated, true)
+  end
 
   def set_user_id
     self.user_id ||= User.current.id

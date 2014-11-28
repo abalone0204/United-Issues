@@ -22,9 +22,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    if params[:found_post].present?
-      import_hash = params[:found_post]
-      import_hash_value(@post, import_hash)
+    @found_post_hash =params[:found_post]
+    if @found_post_hash.present?
+      import_hash_value(@post, @found_post_hash)
     end
 
 
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
+
     if @post.save
       redirect_to @post
     else
@@ -73,6 +74,7 @@ class PostsController < ApplicationController
   private
 
   def import_hash_value(post, import_hash)
+    post.found_post_id = import_hash[:found_post_id].to_i
     post.title = import_hash[:title]
     post.original_author =import_hash[:original_author]
     post.country_classification = import_hash[:country_classification]
@@ -89,7 +91,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :source_date, :remote_image_url, :image, :user_id,:title, :content, :note, :source,
+    params.require(:post).permit( :found_post_id, :source_date, :remote_image_url, :image, :user_id,:title, :content, :note, :source,
                                   :country_classification, :classification, :tag_list,
                                   :original_author, :complete)
   end

@@ -1,3 +1,60 @@
 // Place all the styles related to the democracy_issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "color_var";
+@import "default";
+
+.votes {
+    h1,h2,h3,h4 {
+        color: $affe-red;
+    }
+    .candidate {
+        width: 200px;
+        padding-left: 0;
+        padding-right: 0;
+        .voteing-block {
+            img {
+                display: none;
+            }
+            &:hover {
+                img {
+                    @include transition(display, 0.5s, ease);
+                    display: block;
+                }
+            }
+            height: 200px;
+            border-bottom: solid 2px black;
+        }
+        .candidate-image {
+            img {
+                height: 100%;
+            }
+            height: 30%;
+            overflow: hidden;
+        }
+        .no {
+            font-size: 3rem;
+            padding-bottom: $padding-m;
+            text-align: center;
+            font-weight: 600;
+            height: 10%;
+            width: 100%;
+            border-bottom: solid 2px black;
+        }
+        .candidate-name {
+            height: 30%;
+            border-top: solid 2px black;
+            padding: $padding-m $padding-l;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            font-size: 3rem;
+            font-weight: 500;
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+        }
+        height: 80vh;
+        border: solid 2px black;
+        margin: $padding-m;
+    }
+}

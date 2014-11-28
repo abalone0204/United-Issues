@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   get 'posts/my_posts', to: 'posts#my_posts', as: :my_posts
 
   # Just for fun XD
+  resources :democracy_issues, only: [:index] do
+    collection do
+      post :vote
+      get :results
+    end
+  end
   get 'say/:word', to: 'static_pages#say', as: :say
   get 'car/:number', to: 'static_pages#car', as: :car
   get 'help', to: 'static_pages#help', as: :help

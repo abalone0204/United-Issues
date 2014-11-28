@@ -13,7 +13,7 @@ class Finder < ActiveRecord::Base
     in: {active: true, inactive: false}
 
   # Association
-  has_many :found_posts,dependent: :destroy
+  has_many :found_posts, dependent: :destroy
 
   #  Validation
   validates_uniqueness_of :site_url

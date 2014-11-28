@@ -1,0 +1,35 @@
+<h1>候選人一覽</h1>
+<%= link_to "新增候選人", new_admin_candidate_path, class: "btn btn-default" %>
+<table class="table table-hover">
+  <thead>
+    <th></th>
+    <th>照片</th>
+    <th>姓名</th>
+    <th>簡歷</th>
+    <th>政見</th>
+    <th>得票數</th>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+    <tr>
+      <td>
+        <%= link_to "編輯", edit_admin_candidate_path(candidate) %> |
+        <%= link_to "刪除", admin_candidate_path(candidate), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+      <td>
+        <%= image_tag candidate.avatar,class: "img-responsive img-thumbnail" %>
+      </td>
+      <td>
+        <%= candidate.name %>
+      </td>
+      <td>
+        <%= candidate.profile %>
+      </td>
+      <td>
+        <%= candidate.politics %>
+      </td>
+      <td><%= candidate.votes.count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

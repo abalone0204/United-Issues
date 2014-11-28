@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="votes col-md-8 col-md-offset-2">
+      <header>
+        <h1>Democracy Issue - 民主大代誌</h1>
+        <p>11/29，How about 鍵盤投票？</p>
+        <% if current_user.present? && current_user.vote.present? %>
+          <p>你已經投過票了！</p>
+          <%= link_to "看結果", results_democracy_issues_path, class: "btn btn-default" %>
+        <% end %>
+        <div class="fb">
+          <%= render partial: 'common/fb_login' %>
+        </div>
+      </header>
+      <div class="candidates row">
+        
+        <% @candidates.each_with_index do |candidate, index| %>
+
+        <div class="candidate col-xs-3">
+          <div class="voteing-block">
+            <%= link_to vote_democracy_issues_path(candidate_id: candidate.id ), method: :post do %>
+            <%=image_tag 'vote.png', class: "img-responsive" %>
+            <% end %>
+          </div>
+          <div class="no">
+            <%= index+1 %>
+          </div>
+          <div class="candidate-image">
+            <%= image_tag candidate.avatar, class: "img-responsive" %>
+          </div>
+          <div class="candidate-name rotate">
+            <%= candidate.name %>
+          </div>
+        </div>        
+        <% end %>
+      </div>
+    </div>
+    
+  </div>
+</div>

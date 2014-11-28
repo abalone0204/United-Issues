@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127095958) do
+ActiveRecord::Schema.define(version: 20141128013648) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20141127095958) do
     t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "candidates", force: true do |t|
+    t.string   "name"
+    t.string   "profile"
+    t.string   "politics"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "finders", force: true do |t|
@@ -107,5 +116,12 @@ ActiveRecord::Schema.define(version: 20141127095958) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "candidate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :librarizations
   has_many :libraries, :through => :librarizations
 
+  #11/29選舉fun
+  has_one :vote
+
   def self.current
     Thread.current[:user]
   end

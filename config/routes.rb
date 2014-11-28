@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'finders/show'
 
   get 'finders/index'
@@ -10,11 +11,19 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  # root 'home#index'
+  root 'democracy_issues#index'
+
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'posts/my_posts', to: 'posts#my_posts', as: :my_posts
 
   # Just for fun XD
+  resources :democracy_issues, only: [:index] do
+    collection do
+      post :vote
+      get :results
+    end
+  end
   get 'say/:word', to: 'static_pages#say', as: :say
   get 'car/:number', to: 'static_pages#car', as: :car
   get 'help', to: 'static_pages#help', as: :help
@@ -36,6 +45,7 @@ Rails.application.routes.draw do
   
   # admin
   namespace :admin do
+    resources :candidates
     resources :announcements
     resources :finders do
       member do

@@ -9,6 +9,7 @@ class Mantis
   include HuffingtonPost
   include Hezhdunarodnaya
   include DW
+  include Sabah
   
   def initialize(finder)
     @url = finder.site_url
@@ -23,6 +24,8 @@ class Mantis
       result = mezhdunarodnaya_scraping(@data, @url)
     elsif @url == "http://www.dw.de/themen/s-9077"
       result = dw_scraping(@data, @url)
+    elsif @url == "http://www.sabah.com.tr"
+      result = sabah_scraping(@data, @url)
     end
 
     return result

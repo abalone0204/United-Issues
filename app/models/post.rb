@@ -55,7 +55,9 @@ class Post < ActiveRecord::Base
   private
 
   def set_found_post_translated
-    self.found_post.update_attribute(:translated, true)
+    if found_post.present?
+      self.found_post.update_attribute(:translated, true)  
+    end
   end
 
   def set_user_id

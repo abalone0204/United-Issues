@@ -12,7 +12,8 @@
     <% @candidates.each do |candidate| %>
     <tr>
       <td>
-        
+        <%= link_to "編輯", edit_admin_candidate_path(candidate) %> |
+        <%= link_to "刪除", admin_candidate_path(candidate), method: :delete, data: {confirm: "Are you sure?"} %>
       </td>
       <td>
         <%= candidate.name %>

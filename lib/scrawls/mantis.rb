@@ -2,7 +2,7 @@ require "huffingtonpost"
 require "mezhdunarodnaya"
 require "dw"
 require "sabah"
-require "newsis"
+
 
 class Mantis
   attr_accessor :url
@@ -11,7 +11,7 @@ class Mantis
   include Hezhdunarodnaya
   include DW
   include Sabah
-  include NewsIs
+  include Hani
   
   def initialize(finder)
     @url = finder.site_url
@@ -27,8 +27,9 @@ class Mantis
     elsif @url == "http://www.dw.de/themen/s-9077"
       result = dw_scraping(@data, @url)
     elsif @url == "http://www.sabah.com.tr"
-    elsif @url == "http://www.newsis.com"
-      result = newsis_scraping(@data, @url)
+      result = sabah_scraping(@data, @url)
+    elsif @url =="http://www.hani.co.kr"
+      result= hani_scraping(@data, @url)
     end
 
     return result

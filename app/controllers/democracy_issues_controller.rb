@@ -10,7 +10,7 @@ class DemocracyIssuesController < ApplicationController
   end
 
   def results
-    @candidates = Candidate.all
+    @candidates = Candidate.all.order('created_at DESC')
     respond_to do |format|
       format.html
       format.json

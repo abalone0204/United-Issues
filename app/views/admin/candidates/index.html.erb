@@ -6,6 +6,7 @@
     <th>姓名</th>
     <th>簡歷</th>
     <th>政見</th>
+    <th>得票數</th>
   </thead>
   <tbody>
     <% @candidates.each do |candidate| %>
@@ -22,6 +23,7 @@
       <td>
         <%= candidate.politics %>
       </td>
+      <td><%= candidate.votes.count %></td>
     </tr>
     <% end %>
   </tbody>

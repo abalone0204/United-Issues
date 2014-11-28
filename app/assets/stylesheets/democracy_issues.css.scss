@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "color_var";
 @import "default";
-.results{
-    h1, h2{
+
+.results {
+    h1, h2 {
         color: $affe-red;
     }
 }
+
 .votes {
     h1,h2,h3,h4 {
         color: $affe-red;
@@ -49,13 +51,17 @@
             border-bottom: solid 2px black;
         }
         .candidate-name {
+            h3 {
+                margin: 0 40px;
+                color: black;
+                font-size: 3rem;
+                font-weight: 500;
+            }
             padding: $padding-xs $padding-l;
             height: 150px;
             border-top: solid 2px black;
             position: relative;
             width: 100%;
-            font-size: 3rem;
-            font-weight: 500;
             -webkit-writing-mode: vertical-rl;
             writing-mode: vertical-rl;
         }

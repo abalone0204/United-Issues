@@ -4,7 +4,7 @@
 @import "color_var";
 @import "default";
 .results{
-    h1{
+    h1, h2{
         color: $affe-red;
     }
 }
@@ -12,7 +12,10 @@
     h1,h2,h3,h4 {
         color: $affe-red;
     }
+    position: absolute;
     .candidate {
+        position: relative;
+        height: 80%;
         width: 200px;
         padding-left: 0;
         padding-right: 0;
@@ -33,7 +36,7 @@
             img {
                 height: 100%;
             }
-            height: 30%;
+            height: 200px;
             overflow: hidden;
         }
         .no {
@@ -41,15 +44,14 @@
             padding-bottom: $padding-m;
             text-align: center;
             font-weight: 600;
-            height: 10%;
+            height: 60px;
             width: 100%;
             border-bottom: solid 2px black;
         }
         .candidate-name {
-            height: 30%;
+            padding: $padding-xs $padding-l;
+            height: 150px;
             border-top: solid 2px black;
-            padding: $padding-m $padding-l;
-            text-align: center;
             position: relative;
             width: 100%;
             font-size: 3rem;
@@ -57,7 +59,6 @@
             -webkit-writing-mode: vertical-rl;
             writing-mode: vertical-rl;
         }
-        height: 80vh;
         border: solid 2px black;
         margin: $padding-m;
     }

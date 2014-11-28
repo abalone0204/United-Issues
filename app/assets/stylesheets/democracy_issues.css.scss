@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "color_var";
 @import "default";
-
+.results{
+    h1{
+        color: $affe-red;
+    }
+}
 .votes {
     h1,h2,h3,h4 {
         color: $affe-red;

@@ -1,18 +1,27 @@
-<h1>結果</h1>
-
-<table class="table">
-  <thead>
-    <th>候選人</th>
-    <th>得票數</th>
-    <th>得票率</th>
-  </thead>
-  <tbody>
-    <% @candidates.each do |candidate| %>
-    <tr>
-      <td><%= candidate.name %></td>
-      <td><%= candidate.votes.count %></td>
-      <td><%= vote_proportion(candidate) %></th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="results col-md-8 col-md-offset-2">
+      <h1>投票結果</h1>
+      <p>別只是鍵盤投票，</p>
+      <p>今天請一定要出門投下你神聖的一票，</p>
+      <p>不論你投給誰，那都是民主大代誌。</p>
+      <p>By U.I 團隊</p>
+      <table class="table">
+        <thead>
+          <th>候選人</th>
+          <th>得票數</th>
+          <th>得票率</th>
+        </thead>
+        <tbody>
+          <% @candidates.each do |candidate| %>
+          <tr>
+            <td><%= candidate.name %></td>
+            <td><%= candidate.votes.count %></td>
+          <td><%= vote_proportion(candidate) %></th>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

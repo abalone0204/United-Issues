@@ -11,5 +11,9 @@ class DemocracyIssuesController < ApplicationController
 
   def results
     @candidates = Candidate.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 end

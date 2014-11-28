@@ -60,6 +60,8 @@ class Admin::FindersController < AdminController
       finder.update_attribute(:country_classification, 'Germany')
     elsif finder.site_url.end_with?(".tr")
       finder.update_attribute(:country_classification, 'Turkey')
+    elsif finder.site_url == "http://www.newsis.com"
+      finder.update_attribute(:country_classification, 'Korean')
     end
   end
 

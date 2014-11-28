@@ -7,7 +7,8 @@ class Finder < ActiveRecord::Base
     in: ["http://www.huffingtonpost.jp" , 
          "http://itar-tass.com/mezhdunarodnaya-panorama",
          "http://www.dw.de/themen/s-9077",
-         "http://www.sabah.com.tr"]
+         "http://www.sabah.com.tr",
+         "http://www.newsis.com"]
   enumerize :country_classification,
     in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
   enumerize :available,

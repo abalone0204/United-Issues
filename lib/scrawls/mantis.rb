@@ -2,7 +2,7 @@ require "huffingtonpost"
 require "mezhdunarodnaya"
 require "dw"
 require "sabah"
-
+require "hani"
 
 class Mantis
   attr_accessor :url

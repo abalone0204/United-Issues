@@ -39,6 +39,6 @@ class Admin::CandidatesController < AdminController
     @candidate = Admin::Candidate.find(params[:id])
   end
   def candidate_params
-    params.require(:admin_candidate).permit(:name, :politics, :profile)
+    params.require(:admin_candidate).permit(:name, :politics, :profile, :avatar)
   end
 end

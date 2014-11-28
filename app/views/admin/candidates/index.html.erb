@@ -3,6 +3,7 @@
 <table class="table table-hover">
   <thead>
     <th></th>
+    <th>照片</th>
     <th>姓名</th>
     <th>簡歷</th>
     <th>政見</th>
@@ -14,6 +15,9 @@
       <td>
         <%= link_to "編輯", edit_admin_candidate_path(candidate) %> |
         <%= link_to "刪除", admin_candidate_path(candidate), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+      <td>
+        <%= image_tag candidate.avatar,class: "img-responsive img-thumbnail" %>
       </td>
       <td>
         <%= candidate.name %>

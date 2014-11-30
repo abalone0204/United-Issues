@@ -1,4 +1,4 @@
-<% if finder.found_posts.blank? || finder.found_posts.first.released_date <= Date.today %>
+<% if finder.found_posts.blank? || finder.found_posts.first.released_date.order('released_date DESC') < Date.today %>
   <%= link_to "開始尋找今日最新新聞", find_daily_news_admin_finder_path(finder), method: :post, class: "btn btn-default btn-start-finder" %>
 <% else %>
   <%= link_to "今日已找完，明日請早", '#', class: "btn btn-default", disabled: true %>

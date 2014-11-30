@@ -8,7 +8,7 @@ class FindersController < ApplicationController
   end
 
   def show
-    @found_posts = @finder.found_posts.page(params[:page]).per(10)
+    @found_posts = @finder.found_posts.order('released_date DESC').page(params[:page]).per(10)
   end
   
   def find_daily_news

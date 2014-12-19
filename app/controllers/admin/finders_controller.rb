@@ -56,7 +56,7 @@ class Admin::FindersController < AdminController
       finder.update_attribute(:country_classification, 'Japan')
     elsif finder.site_url == "http://itar-tass.com/mezhdunarodnaya-panorama"
       finder.update_attribute(:country_classification, 'Russia')
-    elsif finder.site_url == "http://www.dw.de/themen/s-9077"
+    elsif finder.site_url == "http://www.dw.de/themen/s-9077" || finder.site_url.end_with?(".de")
       finder.update_attribute(:country_classification, 'Germany')
     elsif finder.site_url.end_with?(".tr")
       finder.update_attribute(:country_classification, 'Turkey')

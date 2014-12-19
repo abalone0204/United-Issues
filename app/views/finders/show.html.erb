@@ -40,7 +40,7 @@
           <% end %>
           </td>
         <td class='col-xs-2'><%= found_post.released_date %></td>
-        <td class='col-xs-3'><%= link_to found_post.title, found_post.source %></td>
+        <td class='col-xs-3'><%= link_to found_post.title, found_post.source, target: "blank" %></td>
         <td class='col-xs-3'><%= found_post.description %></td>
         <td><%= found_post.original_author %></td>
         <td class='col-xs-1'><%= link_to  "新聞#{index+1}",found_post.source ,:target => "_blank"%></td>

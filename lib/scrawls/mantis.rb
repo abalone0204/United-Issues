@@ -3,6 +3,8 @@ require "mezhdunarodnaya"
 require "dw"
 require "sabah"
 require "hani"
+require "spiegel"
+
 
 class Mantis
   attr_accessor :url
@@ -12,6 +14,7 @@ class Mantis
   include DW
   include Sabah
   include Hani
+  include Spiegel
   
   def initialize(finder)
     @url = finder.site_url
@@ -30,6 +33,8 @@ class Mantis
       result = sabah_scraping(@data, @url)
     elsif @url =="http://www.hani.co.kr"
       result= hani_scraping(@data, @url)
+    elsif @url == "http://www.spiegel.de"
+      result = spiegel_scraping(@data, @url)
     end
 
     return result

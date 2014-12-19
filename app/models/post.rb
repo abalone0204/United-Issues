@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 50}
   validates :source_date, presence: true
   validates :source, presence: true
-  validates_uniqueness_of :found_post_id
   # Association
   belongs_to :found_post
   belongs_to :user, :counter_cache => true
@@ -55,7 +54,9 @@ class Post < ActiveRecord::Base
   private
 
   def set_found_post_translated
-    self.found_post.update_attribute(:translated, true)
+    if found_post.present?
+      self.found_post.update_attribute(:translated, true)  
+    end
   end
 
   def set_user_id

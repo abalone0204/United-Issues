@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'home#index'
-  root 'democracy_issues#index'
+  root 'home#index'
+  # root 'democracy_issues#index'
 
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'posts/my_posts', to: 'posts#my_posts', as: :my_posts

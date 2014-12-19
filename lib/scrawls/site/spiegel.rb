@@ -37,7 +37,7 @@ module Spiegel
     return obj.at_css(".article-title").text.strip
   end
   def get_description(obj)
-    return obj.at_css(".article-intro").text.strip
+    return obj.at_css(".article-intro").text.strip.truncate(250)
   end
   def get_image(obj)
     if obj.at_css("img").present?

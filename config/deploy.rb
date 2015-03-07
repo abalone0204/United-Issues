@@ -56,3 +56,5 @@ namespace :deploy do
   end
 
 end
+
+default_run_options[:pty] = true

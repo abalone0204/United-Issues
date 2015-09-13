@@ -2,25 +2,7 @@
   <div class="home-banner row">
     <div class="topic-container horizontal-shadow col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <div class="row">
-        <% if @topic_posts.present? %>
-        <div class="topic-news col-md-7 col-lg-6">
-          <% @topic_posts.each do |topic_post| %>
-          <%= link_to topic_post do %>
-          <div class="topic-item">
-            <div class="image">
-              <%= image_tag render_post_image(topic_post, :thumb) ,class: "img-rounded img-responsive"%>
-              <div class="description">
-                <div>
-                  <%= render_post_title topic_post %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <% end %>
-          <% end %>
-        </div>
-        <% end %>
-        <div class="intro col-md-5 col-lg-5">
+      <div class="intro col-md-5 col-lg-5">
           <div class="intro-content">
             <h2>
             <div class="orbiter"></div>
@@ -48,6 +30,25 @@
             </div>
           </div>
         </div>
+        <% if @topic_posts.present? %>
+        <div class="topic-news col-md-7 col-lg-6">
+          <% @topic_posts.each do |topic_post| %>
+          <%= link_to topic_post do %>
+          <div class="topic-item">
+            <div class="image">
+              <%= image_tag render_post_image(topic_post, :thumb) ,class: "img-rounded img-responsive"%>
+              <div class="description">
+                <div>
+                  <%= render_post_title topic_post %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <% end %>
+        
       </div>
     </div>
   </div>

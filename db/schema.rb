@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128101837) do
+ActiveRecord::Schema.define(version: 20151116123631) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
     t.string   "content"
     t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -114,6 +122,7 @@ ActiveRecord::Schema.define(version: 20141128101837) do
     t.string   "uid"
     t.string   "avatar"
     t.integer  "gg_point",               default: 0
+    t.boolean  "editor",                 default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

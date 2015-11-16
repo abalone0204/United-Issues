@@ -1,36 +1,20 @@
 class Ability
     include CanCan::Ability
-
     def initialize(user)
-
         if user.blank?
             cannot :manage, :all
             basic_read_only
         elsif user.admin?
             can :manage, :all
-        else
-            can :find_daily_news, Finder
-            can :create, Library
-            can :update, Library do |library|
-                (user.posts.published.count >= 2)
-            end
-            can :destroy, Library do |library|
-                (user.posts.published.count >= 2)
-            end
+        elsif user.editor?
+            login_do
+            user_do
             can :create, Post
-            can :update, Post do |post|
-                (post.user_id == user.id)
-            end
-            can :destroy, Post do |post|
-                (post.user_id == user.id)
-            end
-            can :my_posts, Post do |post|
-                (post.user_id == user.id)
-            end
-            can :update, User do |user|
-                (user.id == user.id)
-            end
-            basic_read_only
+            can :update, Post
+            can :destroy, Post
+        else
+            login_do
+            user_do
         end
         # Define abilities for the passed in user here. For example:
         #
@@ -64,7 +48,33 @@ class Ability
 
     def basic_read_only
         can :read, Finder
-        can :read,    Post
+        can :read, Post
         can :read, Library
     end
+    def login_do
+        can :find_daily_news, Finder
+        can :create, Library
+        can :update, Library do |library|
+            (user.posts.published.count >= 2)
+        end
+        can :destroy, Library do |library|
+            (user.posts.published.count >= 2)
+        end        
+        can :my_posts, Post do |post|
+            (post.user_id == user.id)
+        end
+    end
+    def user_do
+        can :create, Post
+        can :update, Post do |post|
+            (post.user_id == user.id)
+        end
+        can :destroy, Post do |post|
+            (post.user_id == user.id)
+        end
+        can :update, User do |user|
+            (user.id == user.id)
+        end
+        basic_read_only
+    end    
 end

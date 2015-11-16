@@ -20,8 +20,12 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to t('attributes.posts'), admin_posts_path %></li>
+          <% if current_user.admin? %>
           <li><%= link_to t('attributes.users'), admin_users_path %></li>
+          <% end %>
+          <% if current_user.admin? %>
           <li><%= link_to t('link.schedule'), schedule_admin_posts_path %></li>
+          <% end %>
           <li>
             <%= link_to notification_admin_posts_path, class: "notification-link"  do %>
             <%= t('link.notification') %>
@@ -32,7 +36,6 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "候選人", admin_candidates_path %></li>
           <li>
             <%= link_to t('link.announcement'), admin_announcements_path %>
           </li>

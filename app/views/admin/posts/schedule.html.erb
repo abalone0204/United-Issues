@@ -5,6 +5,6 @@
   <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
 </div>
 <%= render partial:"admin/common/posts_config_table",
-locals: {admin_posts: @admin_posts} %>
+locals: {admin_posts: @posts} %>
 <% end %>
 <%= javascript_include_tag 'page/admin_schedule' %>

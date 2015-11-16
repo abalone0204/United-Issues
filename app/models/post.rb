@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
     in: %w[ society comment internation culture economics environment medical tech education travel sport localization other]
 
   enumerize :country_classification,
-    in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey Other]
+    in: %w[Franch Russia Arab Germany Korean Spanish Japan Polish Czech Turkey UnitedCollege Other]
 
   enumerize :complete,
   in: {complete: true, not_yet: false}

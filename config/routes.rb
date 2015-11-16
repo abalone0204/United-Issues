@@ -64,6 +64,7 @@ Rails.application.routes.draw do
     resources :users do
       collection do
         put :toggle_admin
+        put :toggle_editor
       end
     end
   end

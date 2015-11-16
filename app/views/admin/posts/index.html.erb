@@ -1,9 +1,12 @@
+<% if current_user.admin? %>
 <%= render partial: "published_filter", locals:{current_page: admin_posts_path} %>
-
+<% end %>
 <%= form_tag(toggle_publish_admin_posts_path, method: 'put') do %>
+<% if current_user.admin? %>
 <%= submit_tag "變更文章發佈狀態", class: 'btn btn-success' %>
+<% end %>
 
 <%= render partial:"admin/common/posts_config_table", 
-           locals: {admin_posts: @admin_posts} %>
+           locals: {admin_posts: @posts} %>
 
 <% end -%>

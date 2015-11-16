@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new]
-  authorize_resource :post
   before_action :validate_publish, only: [:show]
 
   def index

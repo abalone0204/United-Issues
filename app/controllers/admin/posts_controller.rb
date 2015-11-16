@@ -1,22 +1,21 @@
 class Admin::PostsController < AdminController
-  http_basic_authenticate_with name: ENV["admin"], password: ENV["adpwd"]
   before_action :get_admin_post, only: [:edit, :update, :destroy]
-
+  authorize_resource :post
   def notification
-    @admin_posts = Admin::Post.includes(:user).order("publish_date DESC").ready.page(params[:page])
+    @posts = Admin::Post.includes(:user).order("publish_date DESC").ready.page(params[:page])
   end
 
   def schedule
     get_sorted_posts
-    @admin_posts = Kaminari.paginate_array(@admin_posts).page(params[:page]).per(8)
+    @posts = Kaminari.paginate_array(@admin_posts).page(params[:page]).per(8)
     # @admin_posts = display_options(@admin_posts, params[:display_options])
   end
 
   def set_publish_time
     if params[:post_ids].present?
       params[:post_ids] = params[:post_ids].map{|i| i.to_i}
-      @admin_posts = Admin::Post.find(params[:post_ids])
-      @admin_posts.each do |post|
+      @posts = Admin::Post.find(params[:post_ids])
+      @posts.each do |post|
         post.publish = true
         post.update_attribute(:publish_date, params[:set_publish_time])
         post.save
@@ -39,8 +38,8 @@ class Admin::PostsController < AdminController
   #GET /admin/posts
   # GET /admin/posts.json
   def index
-    @admin_posts = Admin::Post.includes(:user).order("created_at DESC").page(params[:page])
-    @admin_posts = display_options(@admin_posts, params[:display_options])
+    @posts = Admin::Post.includes(:user).order("created_at DESC").page(params[:page])
+    @posts = display_options(@posts, params[:display_options])
   end
 
   # GET /admin/posts/1

@@ -1,9 +1,12 @@
+
 <%= form_tag(set_publish_time_admin_posts_path, method: 'put') do %>
+<% if current_user.admin? %>
 <div class="time-setting">
   <%= text_field_tag :set_publish_time, nil, placeholder: "點這裏一下設定日期和時間",id:"datetimepicker", class:"form-control" %>
   <%= submit_tag "變更文章發佈時間", class: 'btn btn-success' %>
 </div>
+<% end %>
 <%= render partial:"admin/common/posts_config_table",
-locals: {admin_posts: @admin_posts} %>
+locals: {admin_posts: @posts} %>
 <% end %>
 <%= javascript_include_tag 'page/admin_schedule' %>

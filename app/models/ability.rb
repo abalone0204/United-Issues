@@ -14,7 +14,17 @@ class Ability
             can :destroy, Post
         else
             login_do
-            user_do
+            can :create, Post
+            can :update, Post do |post|
+                (post.user_id == user.id)
+            end
+            can :destroy, Post do |post|
+                (post.user_id == user.id)
+            end
+            can :update, User do |user|
+                (user.id == user.id)
+            end
+            basic_read_only
         end
         # Define abilities for the passed in user here. For example:
         #
@@ -64,17 +74,5 @@ class Ability
             (post.user_id == user.id)
         end
     end
-    def user_do
-        can :create, Post
-        can :update, Post do |post|
-            (post.user_id == user.id)
-        end
-        can :destroy, Post do |post|
-            (post.user_id == user.id)
-        end
-        can :update, User do |user|
-            (user.id == user.id)
-        end
-        basic_read_only
-    end    
+       
 end

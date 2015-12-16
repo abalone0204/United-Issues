@@ -197,8 +197,8 @@
     .content-container {
         .content {
             img {
-                width: 400px;
-                height: 319px;
+                max-width: 600px;
+                height: auto;
             }
 
             border-top: $padding-xs solid $affe-red;

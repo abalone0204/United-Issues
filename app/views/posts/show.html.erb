@@ -32,7 +32,10 @@
         </div>
         <% end %>
         <div class="translator-name">
-          譯者: <%= @post.user.name if @post.user.present? %>
+        <% if @post.user.present? %>
+        貼文由<%= @post.user.name  %>發布
+        <% end %>
+        
         </div>
       </div>
     </div>

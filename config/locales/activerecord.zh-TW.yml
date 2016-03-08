@@ -70,6 +70,8 @@ zh-TW:
         complete: 已完成
         not_yet: 草稿
       country_classification:
+        Vietnam: 越南媒
+        Indo: 印尼媒
         Franch: 法媒 
         Russia: 俄媒 
         Arab: 阿媒 

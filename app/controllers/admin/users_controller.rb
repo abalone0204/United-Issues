@@ -1,7 +1,7 @@
 class Admin::UsersController < AdminController
   authorize_resource :user
   def index
-    @admin_users = Admin::User.includes(:posts)
+    @admin_users = Admin::User.includes(:posts).order('posts_count DESC')
   end
 
   def show
